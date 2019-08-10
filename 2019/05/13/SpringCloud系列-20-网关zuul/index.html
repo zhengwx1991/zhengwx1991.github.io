@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>SpringCloud系列-网关Zuul | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="项目地址https://github.com/zhengwx1991/api-gateway.git">
+<meta name="keywords" content="SpringCloud,Zuul">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud系列-网关Zuul">
+<meta property="og:url" content="http://yoursite.com/2019/05/13/SpringCloud系列-20-网关zuul/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="项目地址https://github.com/zhengwx1991/api-gateway.git">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:35:07.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="SpringCloud系列-网关Zuul">
+<meta name="twitter:description" content="项目地址https://github.com/zhengwx1991/api-gateway.git">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,192 +65,116 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/27/Linux安装Docker/" class="archive-article-date">
-  <time datetime="2019-05-27T11:18:05.000Z" itemprop="datePublished">May 27</time>
+        <section id="main"><article id="post-SpringCloud系列-20-网关zuul" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="article-date">
+  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">2019-05-13</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SpringCloud/">SpringCloud</a>►<a class="article-category-link" href="/categories/SpringCloud/Zuul/">Zuul</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+    <h1 class="article-title" itemprop="name">
+      SpringCloud系列-网关Zuul
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" class="archive-article-date">
-  <time datetime="2019-05-26T11:18:05.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
-    </h1>
-  
+        <h6 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h6><pre><code>https://github.com/zhengwx1991/api-gateway.git</code></pre><a id="more"></a>
+<h6 id="微服务网关介绍和使用场景"><a href="#微服务网关介绍和使用场景" class="headerlink" title="微服务网关介绍和使用场景"></a>微服务网关介绍和使用场景</h6><pre><code>1）什么是网关
+    API Gateway，是系统的唯一对外的入口，介于客户端和服务器端之间的中间层，处理非业务功能 提供路由请求、鉴权、监控、缓存、限流等功能
+        统一接入
+            智能路由
+            AB测试、灰度测试
+            负载均衡、容灾处理
+            日志埋点（类似Nignx日志）
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="archive-article-date">
-  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">May 16</time>
-</a>
+        流量监控
+            限流处理
+            服务降级
+
+        安全防护
+            鉴权处理
+            监控
+            机器网络隔离
+2）主流的网关
+    zuul：是Netflix开源的微服务网关，和Eureka,Ribbon,Hystrix等组件配合使用，Zuul 2.0比1.0的性能提高很多
+    kong: 由Mashape公司开源的，基于Nginx的API gateway
+    nginx+lua：是一个高性能的HTTP和反向代理服务器,lua是脚本语言，让Nginx执行Lua脚本，并且高并发、非阻塞的处理各种请求</code></pre><h6 id="SpringCloud的网关组件zuul基本使用"><a href="#SpringCloud的网关组件zuul基本使用" class="headerlink" title="SpringCloud的网关组件zuul基本使用"></a>SpringCloud的网关组件zuul基本使用</h6><pre><code>1、加入依赖
+2、启动类加入注解 @EnableZuulProxy
+    默认集成断路器  @EnableCircuitBreaker
+    默认访问规则  
+        http://gateway:port/service-id/**
+            例子：默认 /order-service/api/v1/order/save?user_id=2&amp;product_id=1
+                 自定义 /xdclass_order/api/v1/order/save?user_id=2&amp;product_id=1
+
+    自定义路由转发：
+        zuul:
+         routes:
+             order-service: /apigateway/**
+
+    环境隔离配置：
+        需求 ：不想让默认的服务对外暴露接口
+            /order-service/api/v1/order/save
+
+        配置：
+        zuul: 
+            ignored-patterns:
+                - /*-service/api/v1/order/save</code></pre><h6 id="高级篇幅之Zuul常用问题分析和网关过滤器原理分析"><a href="#高级篇幅之Zuul常用问题分析和网关过滤器原理分析" class="headerlink" title="高级篇幅之Zuul常用问题分析和网关过滤器原理分析"></a>高级篇幅之Zuul常用问题分析和网关过滤器原理分析</h6><pre><code>1、路由名称定义问题
+    路由映射重复覆盖问题
+2、Http请求头过滤问题
+3、过滤器执行顺序问题 ，过滤器的order值越小，越先执行
+4、共享RequestContext，上下文对象</code></pre><h6 id="自定义Zuul过滤器实现登录鉴权实战"><a href="#自定义Zuul过滤器实现登录鉴权实战" class="headerlink" title="自定义Zuul过滤器实现登录鉴权实战"></a>自定义Zuul过滤器实现登录鉴权实战</h6><pre><code>1、新建一个filter包
+2、新建一个类，实现ZuulFilter，重写里面的方法
+3、在类顶部加注解，@Component,让Spring扫描</code></pre><h6 id="高级篇幅之高并发情况下接口限流特技"><a href="#高级篇幅之高并发情况下接口限流特技" class="headerlink" title="高级篇幅之高并发情况下接口限流特技"></a>高级篇幅之高并发情况下接口限流特技</h6><pre><code>谷歌guava框架，网关限流使用
+1、nginx层限流
+2、网关层限流</code></pre><h6 id="Zuul微服务网关集群搭建"><a href="#Zuul微服务网关集群搭建" class="headerlink" title="Zuul微服务网关集群搭建"></a>Zuul微服务网关集群搭建</h6><pre><code>微服务网关Zull集群搭建
+1、nginx+lvs+keepalive 
+https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="archive-article-date">
-  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">May 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/13/SpringCloud系列-20-网关zuul/" data-id="cjz5mqv7o000u78b4laojgjac" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="archive-article-date">
-  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">May 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zuul/">Zuul</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" class="archive-article-date">
-  <time datetime="2019-05-12T11:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
-    </h1>
+    <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SpringCloud系列-配置中心Config
+        
+      </div>
+    </a>
   
+  
+    <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SpringCloud系列-链路追踪系统Sleuth和ZipKin</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="archive-article-date">
-  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/11/SpringCloud系列-5-Feign/" class="archive-article-date">
-  <time datetime="2019-05-11T11:18:05.000Z" itemprop="datePublished">May 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/" class="archive-article-date">
-  <time datetime="2019-05-10T11:18:05.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

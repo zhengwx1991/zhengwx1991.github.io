@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>SpringCloud系列-消息总线Bus | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="消息总线Bus结合消息队列RabbitMQ官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint消息总线Bus介绍和使用场景简介：讲解消息总线Bus介绍和使用场景 1、什么是消息     一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个     配置更新">
+<meta name="keywords" content="SpringCloud,Bus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud系列-消息总线Bus">
+<meta property="og:url" content="http://yoursite.com/2019/05/16/SpringCloud系列-30-消息总线Bus/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="消息总线Bus结合消息队列RabbitMQ官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint消息总线Bus介绍和使用场景简介：讲解消息总线Bus介绍和使用场景 1、什么是消息     一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个     配置更新">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:35:41.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="SpringCloud系列-消息总线Bus">
+<meta name="twitter:description" content="消息总线Bus结合消息队列RabbitMQ官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint消息总线Bus介绍和使用场景简介：讲解消息总线Bus介绍和使用场景 1、什么是消息     一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个     配置更新">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,192 +65,188 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/27/Linux安装Docker/" class="archive-article-date">
-  <time datetime="2019-05-27T11:18:05.000Z" itemprop="datePublished">May 27</time>
+        <section id="main"><article id="post-SpringCloud系列-30-消息总线Bus" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="article-date">
+  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">2019-05-16</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SpringCloud/">SpringCloud</a>►<a class="article-category-link" href="/categories/SpringCloud/Bus/">Bus</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+    <h1 class="article-title" itemprop="name">
+      SpringCloud系列-消息总线Bus
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" class="archive-article-date">
-  <time datetime="2019-05-26T11:18:05.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
-    </h1>
-  
+        <h4 id="消息总线Bus结合消息队列RabbitMQ"><a href="#消息总线Bus结合消息队列RabbitMQ" class="headerlink" title="消息总线Bus结合消息队列RabbitMQ"></a>消息总线Bus结合消息队列RabbitMQ</h4><h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint</code></pre><h6 id="消息总线Bus介绍和使用场景"><a href="#消息总线Bus介绍和使用场景" class="headerlink" title="消息总线Bus介绍和使用场景"></a>消息总线Bus介绍和使用场景</h6><pre><code>简介：讲解消息总线Bus介绍和使用场景
+1、什么是消息
+    一个事件，需要广播或者单独传递给某个接口
+2、为什么使用这个
+    配置更新了，但是其他系统不知道是否更新</code></pre><a id="more"></a>
+<h6 id="消息队列和RabbitMQ基础介绍"><a href="#消息队列和RabbitMQ基础介绍" class="headerlink" title="消息队列和RabbitMQ基础介绍"></a>消息队列和RabbitMQ基础介绍</h6><pre><code>1、消息队列介绍
+    https://www.cnblogs.com/linjiqin/p/5720865.html
+2、同类产品
+    ActiveMQ
+    RocketMQ
+    Kafka
+3、SpringCloud默认推荐使用RabbitMQ
+4、RabbitMQ介绍    
+    官方文档：http://www.rabbitmq.com/getstarted.html
+    中文文档：http://rabbitmq.mr-ping.com/</code></pre><h6 id="使用Docker搭建RabbitMQ"><a href="#使用Docker搭建RabbitMQ" class="headerlink" title="使用Docker搭建RabbitMQ"></a>使用Docker搭建RabbitMQ</h6><pre><code>简装方式有多种，推荐使用docker安装，极为方便
+安装步骤
+    1)拉取镜像：docker pull rabbitmq:management
+    2)查看当前镜像列表：docker images
+    3)删除指定镜像：docker rmi -f IMAGE_ID (如果需要强制删除加 -f)
+    4)创建容器
+    docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management
+    参数讲解: 
+        run: 创建一个新的容器并运行一个命令
+         -d: 后台运行容器，并返回容器ID
+         -p: 端口映射，格式为：主机(宿主)端口:容器端口
+         --name=&quot;rabbitmq&quot;: 为容器指定一个名称
+    注意：RabbitMQ默认创建了一个 guest 用户，密码也是 guest, 如果访问不了记得查看防火墙，端口或者云服务器的安全组
+      管理后台：http://127.0.0.1:15672
+其他安装方式：
+    Linux安装：https://blog.csdn.net/qq_34021712/article/details/72567786
+    windows安装：http://www.rabbitmq.com/install-windows.html
+    https://blog.csdn.net/liyuejin/article/details/78410586</code></pre><h6 id="总线整合配置中心架构流程图"><a href="#总线整合配置中心架构流程图" class="headerlink" title="总线整合配置中心架构流程图"></a>总线整合配置中心架构流程图</h6><pre><code>消息总线Bus结合config组件搭建配置中心项目架构图和操作流程            
+启动
+    rabbitmq： docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management
+    rabbitmq默认是5672,所以改为5672端口
+1、config-client加入依赖                           
+    &lt;!--配置中心结合消息队列--&gt;               
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;
+    &lt;/dependency&gt;            
+官方文档：http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint
+文档里面 暴露端点 management.endpoints.web.exposure.include=bus-refresh
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="archive-article-date">
-  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">May 16</time>
-</a>
+2、在配置文件中增加关于RabbitMQ的连接(如果是本机，则可以直接启动，采用默认连接配置)
+    spring:
+      rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+    #暴露全部的监控信息
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: &quot;*&quot;
+
+3、需要刷新配置的地方，增加注解 
+    @RefreshScope
+
+4、访问验证 post方式：
+    http://localhost:8773/actuator/bus-refresh
+
+5、动态刷新配置: 
+    在开发和测试环境使用，尽量少在生产环境使用,方式更新出问题，各个系统更新不一致造成更大的问题，尽量还是要相关的系统重新启动拉取最新配置。也防止系统被攻击，被攻击了系统配置导致全部系统都受影响</code></pre><h4 id="微服务相关项目改造配置中心"><a href="#微服务相关项目改造配置中心" class="headerlink" title="微服务相关项目改造配置中心"></a>微服务相关项目改造配置中心</h4><h6 id="项目改造成配置中心"><a href="#项目改造成配置中心" class="headerlink" title="项目改造成配置中心"></a>项目改造成配置中心</h6><pre><code>1、git里面新增对应项目的配置文件，都要添加下面的配置
+    #服务的名称
+    spring:
+      rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+    #暴露全部的监控信息
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: &quot;*&quot;
+2、项目里面添加maven依赖
+
+    &lt;!--配置中心客户端--&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-config-client&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!--config server--&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+3、修改application.properties为bootstrap.yml 并拷贝配置文件            
+        #指定注册中心地址
+        eureka:
+          client:
+            serviceUrl:
+              defaultZone: http://localhost:8761/eureka/
+        #服务的名称
+        spring:
+          application:
+            name: order-service
+          #指定从哪个配置中心读取
+          cloud:
+            config:
+              discovery:
+                service-id: CONFIG-SERVER
+                enabled: true
+              profile: test
+4、各个项目启动顺序
+    1）注册中心
+    2）配置中心
+    3）对应的服务：商品服务、订单服务。。。
+    4）启动网关</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="archive-article-date">
-  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">May 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/SpringCloud系列-30-消息总线Bus/" data-id="cjz5mqv7q000x78b4l76cxoao" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="archive-article-date">
-  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">May 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bus/">Bus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" class="archive-article-date">
-  <time datetime="2019-05-12T11:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
-    </h1>
+    <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sourcetree（企业版）跳过验证安装
+        
+      </div>
+    </a>
   
+  
+    <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SpringCloud系列-配置中心Config</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="archive-article-date">
-  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/11/SpringCloud系列-5-Feign/" class="archive-article-date">
-  <time datetime="2019-05-11T11:18:05.000Z" itemprop="datePublished">May 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/" class="archive-article-date">
-  <time datetime="2019-05-10T11:18:05.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>Linux安装JDK、MAVEN | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
+<meta name="keywords" content="Linux,JDK,MAVEN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux安装JDK、MAVEN">
+<meta property="og:url" content="http://yoursite.com/2018/09/09/Linux安装jdk_Maven/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:38:28.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linux安装JDK、MAVEN">
+<meta name="twitter:description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,192 +65,100 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/27/Linux安装Docker/" class="archive-article-date">
-  <time datetime="2019-05-27T11:18:05.000Z" itemprop="datePublished">May 27</time>
+        <section id="main"><article id="post-Linux安装jdk_Maven" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/09/Linux安装jdk_Maven/" class="article-date">
+  <time datetime="2018-09-09T08:10:05.000Z" itemprop="datePublished">2018-09-09</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/JDK/">JDK</a>►<a class="article-category-link" href="/categories/Linux/JDK/MAVEN/">MAVEN</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+    <h1 class="article-title" itemprop="name">
+      Linux安装JDK、MAVEN
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" class="archive-article-date">
-  <time datetime="2019-05-26T11:18:05.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
-    </h1>
-  
+        <h6 id="下载JDK1-8"><a href="#下载JDK1-8" class="headerlink" title="下载JDK1.8"></a>下载JDK1.8</h6><pre><code>下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</code></pre><a id="more"></a>
+<h6 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h6><pre><code>解压安装包并移动到/usr/local/路径下
+tar -zxvf jdk-8u221-linux-i586.tar.gz -C /usr/local/</code></pre><h6 id="更改环境变量"><a href="#更改环境变量" class="headerlink" title="更改环境变量"></a>更改环境变量</h6><pre><code>vi /etc/profile
+在最下面，按i进入insert模式，添加一下内容
+    JAVA_HOME=/usr/local/jdk1.8.0_211
+    export JAVA_HOME
+    CLASSPATH=.:$JAVA_HOME/lib
+    export CLASSPATH
+    PATH=$PATH:$JAVA_HOME/bin:$CLASSPATH
+    export PATH
+按esc进入命令行模式，再输入:wq  回车保存退出
+激活配置
+    source /etc/profile</code></pre><h6 id="查看版本号确认成功"><a href="#查看版本号确认成功" class="headerlink" title="查看版本号确认成功"></a>查看版本号确认成功</h6><pre><code>java -version
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="archive-article-date">
-  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">May 16</time>
-</a>
+系统出现如下提示，表示安装成功
+java version &quot;1.8.0_211&quot;
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)</code></pre><h6 id="下载maven"><a href="#下载maven" class="headerlink" title="下载maven"></a>下载maven</h6><pre><code>https://maven.apache.org/download.cgi
+下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中</code></pre><h6 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h6><pre><code>解压安装包并移动到/usr/local/路径下
+tar -zxvf apache-maven-3.6.1-bin.tar.gz -C /usr/local/</code></pre><h6 id="更改环境变量-1"><a href="#更改环境变量-1" class="headerlink" title="更改环境变量"></a>更改环境变量</h6><pre><code>vi /etc/profile
+在最下面，按i进入insert模式，添加一下内容
+    MAVEN_HOME=/usr/local/apache-maven-3.6.1
+    export MAVEN_HOME
+    PATH=$PATH:$MAVEN_HOME/bin
+    export PATH
+按esc进入命令行模式，再输入:wq  回车保存退出
+激活配置
+    source /etc/profile</code></pre><h6 id="查看版本号确认成功-1"><a href="#查看版本号确认成功-1" class="headerlink" title="查看版本号确认成功"></a>查看版本号确认成功</h6><pre><code>mvn -version
+
+系统出现如下提示，表示安装成功
+Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-05T03:00:29+08:00)
+Maven home: /usr/local/apache-maven-3.6.1
+Java version: 1.8.0_211, vendor: Oracle Corporation, runtime: /usr/local/jdk1.8.0_211/jre
+Default locale: en_US, platform encoding: UTF-8</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="archive-article-date">
-  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">May 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/09/Linux安装jdk_Maven/" data-id="cjz5mqv79000f78b445li17bw" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="archive-article-date">
-  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">May 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/">JDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MAVEN/">MAVEN</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" class="archive-article-date">
-  <time datetime="2019-05-12T11:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
-    </h1>
+    <a href="/2018/09/09/Linux安装Maven私服/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux安装Nexus
+        
+      </div>
+    </a>
   
+  
+    <a href="/2018/09/09/Linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux常用命令</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="archive-article-date">
-  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/11/SpringCloud系列-5-Feign/" class="archive-article-date">
-  <time datetime="2019-05-11T11:18:05.000Z" itemprop="datePublished">May 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/" class="archive-article-date">
-  <time datetime="2019-05-10T11:18:05.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

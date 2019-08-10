@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>Linux安装MySQL | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="下载MySQLwget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm安装mysql源yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
+<meta name="keywords" content="Linux,MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux安装MySQL">
+<meta property="og:url" content="http://yoursite.com/2018/09/09/Linux安装MySQL/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="下载MySQLwget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm安装mysql源yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:37:26.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linux安装MySQL">
+<meta name="twitter:description" content="下载MySQLwget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm安装mysql源yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,192 +65,90 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/27/Linux安装Docker/" class="archive-article-date">
-  <time datetime="2019-05-27T11:18:05.000Z" itemprop="datePublished">May 27</time>
+        <section id="main"><article id="post-Linux安装MySQL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/09/Linux安装MySQL/" class="article-date">
+  <time datetime="2018-09-09T11:05:05.000Z" itemprop="datePublished">2018-09-09</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/MySQL/">MySQL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+    <h1 class="article-title" itemprop="name">
+      Linux安装MySQL
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" class="archive-article-date">
-  <time datetime="2019-05-26T11:18:05.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="archive-article-date">
-  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">May 16</time>
-</a>
+        <h4 id="下载MySQL"><a href="#下载MySQL" class="headerlink" title="下载MySQL"></a>下载MySQL</h4><pre><code>wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</code></pre><h4 id="安装mysql源"><a href="#安装mysql源" class="headerlink" title="安装mysql源"></a>安装mysql源</h4><pre><code>yum -y localinstall mysql57-community-release-el7-11.noarch.rpm</code></pre><a id="more"></a>
+<h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><pre><code>yum -y install mysql-community-server</code></pre><h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><pre><code>systemctl start mysqld</code></pre><h4 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h4><pre><code>systemctl enable mysqld
+systemctl daemon-reload</code></pre><h4 id="修改root本地登录密码"><a href="#修改root本地登录密码" class="headerlink" title="修改root本地登录密码"></a>修改root本地登录密码</h4><pre><code>vi /etc/my.cnf
+在[mysqld]后面任意一行添加&quot;&quot;用来跳过密码验证的过程
+skip-grant-tables
+vi /var/log/mysqld.log
+password 改成!TestTest
+// root 登陆
+mysql -u root -p
+ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;!Test123456&apos;;</code></pre><h4 id="设置允许远程登录"><a href="#设置允许远程登录" class="headerlink" title="设置允许远程登录"></a>设置允许远程登录</h4><pre><code>flush privileges;
+GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;!TestTest&apos; WITH GRANT OPTION;
+exit;</code></pre><h4 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h4><pre><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent
+// 刷新防火墙规则
+firewall-cmd --reload
+// 验证端口,查询防火墙开放端口
+firewall-cmd --zone=public --list-port
+// 重启防火墙
+systemctl restart firewalld.service</code></pre><h4 id="配置默认编码为UTF-8"><a href="#配置默认编码为UTF-8" class="headerlink" title="配置默认编码为UTF-8"></a>配置默认编码为UTF-8</h4><pre><code>vi /etc/my.cnf
+[mysqld]
+character_set_server=utf8
+init_connect=&apos;SET NAMES utf8&apos;
+// 重启服务
+systemctl restart mysqld
+// 查看编码
+show variables like &apos;%character%&apos;;</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="archive-article-date">
-  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">May 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/09/Linux安装MySQL/" data-id="cjz5mqv72000578b41pr07aaf" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="archive-article-date">
-  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">May 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" class="archive-article-date">
-  <time datetime="2019-05-12T11:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
-    </h1>
+    <a href="/2018/09/09/Linux安装RabbitMQ/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux安装RabbitMQ
+        
+      </div>
+    </a>
   
+  
+    <a href="/2018/09/09/Linux安装Maven私服/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux安装Nexus</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="archive-article-date">
-  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/11/SpringCloud系列-5-Feign/" class="archive-article-date">
-  <time datetime="2019-05-11T11:18:05.000Z" itemprop="datePublished">May 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/" class="archive-article-date">
-  <time datetime="2019-05-10T11:18:05.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

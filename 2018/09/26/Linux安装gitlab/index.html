@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>Linux安装GitLab | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="防火墙开启http ssh端口yum install lokkit yum install curl openssh-server openssh-clients postfix cronie -y service postfix start chkxonfig postfix start lokkit -s http -s ssh">
+<meta name="keywords" content="Linux,GitHub,GitLab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux安装GitLab">
+<meta property="og:url" content="http://yoursite.com/2018/09/26/Linux安装gitlab/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="防火墙开启http ssh端口yum install lokkit yum install curl openssh-server openssh-clients postfix cronie -y service postfix start chkxonfig postfix start lokkit -s http -s ssh">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:14:36.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linux安装GitLab">
+<meta name="twitter:description" content="防火墙开启http ssh端口yum install lokkit yum install curl openssh-server openssh-clients postfix cronie -y service postfix start chkxonfig postfix start lokkit -s http -s ssh">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,192 +65,77 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/27/Linux安装Docker/" class="archive-article-date">
-  <time datetime="2019-05-27T11:18:05.000Z" itemprop="datePublished">May 27</time>
+        <section id="main"><article id="post-Linux安装gitlab" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/26/Linux安装gitlab/" class="article-date">
+  <time datetime="2018-09-26T02:01:16.000Z" itemprop="datePublished">2018-09-26</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GitHub/">GitHub</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+    <h1 class="article-title" itemprop="name">
+      Linux安装GitLab
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" class="archive-article-date">
-  <time datetime="2019-05-26T11:18:05.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="archive-article-date">
-  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">May 16</time>
-</a>
+        <h4 id="防火墙开启http-ssh端口"><a href="#防火墙开启http-ssh端口" class="headerlink" title="防火墙开启http ssh端口"></a>防火墙开启http ssh端口</h4><pre><code>yum install lokkit
+yum install curl openssh-server openssh-clients postfix cronie -y
+service postfix start
+chkxonfig postfix start
+lokkit -s http -s ssh</code></pre><a id="more"></a>
+<h4 id="添加gitlab仓库并安装"><a href="#添加gitlab仓库并安装" class="headerlink" title="添加gitlab仓库并安装"></a>添加gitlab仓库并安装</h4><pre><code>curl -sS http://packages.gitlab.cc/install/gitlab-ce/script.rpm.sh | sudo bash
+sudo yum install gitlab-ce</code></pre><h4 id="启动gitlab"><a href="#启动gitlab" class="headerlink" title="启动gitlab"></a>启动gitlab</h4><pre><code>gitlab-ctl reconfigure
+vim /etc/gitlab/gitlab.rb
+修改external_url
+gitlab-ctl reconfigure
+gitlab-ctl restart</code></pre><h4 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h4><pre><code>vim /etc/sysconfig/iptables
+yy复制p粘贴，开放8899端口</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="archive-article-date">
-  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">May 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/26/Linux安装gitlab/" data-id="cjz5mqv77000b78b4yb6wlb0x" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="archive-article-date">
-  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">May 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitLab/">GitLab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" class="archive-article-date">
-  <time datetime="2019-05-12T11:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
-    </h1>
+    <a href="/2018/09/29/Linux安装Jenkins/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux安装Jenkins
+        
+      </div>
+    </a>
   
+  
+    <a href="/2018/09/09/Linux安装sonarQube/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux安装sonarQube</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="archive-article-date">
-  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/11/SpringCloud系列-5-Feign/" class="archive-article-date">
-  <time datetime="2019-05-11T11:18:05.000Z" itemprop="datePublished">May 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/" class="archive-article-date">
-  <time datetime="2019-05-10T11:18:05.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

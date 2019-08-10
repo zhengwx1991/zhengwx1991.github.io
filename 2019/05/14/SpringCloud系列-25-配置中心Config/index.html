@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>SpringCloud系列-配置中心Config | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="官方文档服务端开发：     http://cloud.spring.io/spring-cloud-config/ 客户端开发：     http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client">
+<meta name="keywords" content="SpringCloud,Config">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud系列-配置中心Config">
+<meta property="og:url" content="http://yoursite.com/2019/05/14/SpringCloud系列-25-配置中心Config/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="官方文档服务端开发：     http://cloud.spring.io/spring-cloud-config/ 客户端开发：     http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:35:24.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="SpringCloud系列-配置中心Config">
+<meta name="twitter:description" content="官方文档服务端开发：     http://cloud.spring.io/spring-cloud-config/ 客户端开发：     http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,192 +65,150 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/27/Linux安装Docker/" class="archive-article-date">
-  <time datetime="2019-05-27T11:18:05.000Z" itemprop="datePublished">May 27</time>
+        <section id="main"><article id="post-SpringCloud系列-25-配置中心Config" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="article-date">
+  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">2019-05-14</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SpringCloud/">SpringCloud</a>►<a class="article-category-link" href="/categories/SpringCloud/Config/">Config</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+    <h1 class="article-title" itemprop="name">
+      SpringCloud系列-配置中心Config
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" class="archive-article-date">
-  <time datetime="2019-05-26T11:18:05.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
-    </h1>
-  
+        <h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>服务端开发：
+    http://cloud.spring.io/spring-cloud-config/
+客户端开发：
+    http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client</code></pre><a id="more"></a>
+<h6 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h6><pre><code>配置中心服务端
+https://github.com/zhengwx1991/config-server.git
+配置中心
+https://github.com/zhengwx1991/config-cloud.git</code></pre><h6 id="1、微服务下的分布式配置中心"><a href="#1、微服务下的分布式配置中心" class="headerlink" title="1、微服务下的分布式配置中心"></a>1、微服务下的分布式配置中心</h6><pre><code>什么是配置中心及使用前后的好处
+什么是配置中心：
+    一句话：统一管理配置, 快速切换各个环境的配置
+相关产品：
+    百度的disconf 
+        地址:https://github.com/knightliao/disconf
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="archive-article-date">
-  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">May 16</time>
-</a>
+    阿里的diamand
+        地址：https://github.com/takeseem/diamond
+
+    springcloud的configs-server:
+        地址：http://cloud.spring.io/spring-cloud-config/
+推荐干货文章：http://jm.taobao.org/2016/09/28/an-article-about-config-center/</code></pre><h6 id="2、SpringCloud的配置中心组件config-server开发"><a href="#2、SpringCloud的配置中心组件config-server开发" class="headerlink" title="2、SpringCloud的配置中心组件config-server开发"></a>2、SpringCloud的配置中心组件config-server开发</h6><pre><code>SpringCloud配置中心config-server开发
+1、新建项目，创建config-server
+2、启动类增加注解
+    @EnableConfigServer</code></pre><h6 id="3、使用git服务器结合Config搭建分布式配置中心"><a href="#3、使用git服务器结合Config搭建分布式配置中心" class="headerlink" title="3、使用git服务器结合Config搭建分布式配置中心"></a>3、使用git服务器结合Config搭建分布式配置中心</h6><pre><code>使用git服务器结合Config搭建分布式配置中心
+1、默认使用git存储配置中心
+    使用git服务器，可以自己搭建gitlab服务器
+    或者使用github、开源中国git、阿里云git
+2、配置文件添加配置
+    spring:
+      application:
+        name: config-server
+    #git配置
+      cloud:
+        config:
+          server:
+            git:
+              uri: https://gitee.com/waitforxy/config_cloud
+              username: github用户名
+              password: 登陆密码
+              #超时时间
+              timeout: 5
+              #分支
+              default-label: master
+
+3、访问方式（一定要注意语法，如果有问题，会出错）
+    多种访问路径，可以通过启动日志去查看
+    例子 http://localhost:9100/product-service.yml
+
+    /{name}-{profiles}.properties
+    /{name}-{profiles}.yml
+    /{name}-{profiles}.json
+    /{label}/{name}-{profiles}.yml
+
+    name 服务器名称
+    profile 环境名称，开发、测试、生产
+    lable 仓库分支、默认master分支</code></pre><h6 id="4、分布式配置中心客户端使用"><a href="#4、分布式配置中心客户端使用" class="headerlink" title="4、分布式配置中心客户端使用"></a>4、分布式配置中心客户端使用</h6><pre><code>微服务里面客户端接入配置中心开发
+官方文档：http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client
+1、加入依赖
+     &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-config-client&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+
+ 2、修改对应服务的配置文件,把application.yml 改为 bootstrap.yml
+    #指定注册中心地址
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+
+    #服务的名称
+    spring:
+      application:
+        name: product-service
+      #指定从哪个配置中心读取
+      cloud:
+        config:
+          discovery:
+            service-id: CONFIG-SERVER
+            enabled: true
+          profile: test
+          #建议用lable去区分环境，默认是lable是master分支
+          #label: test
+注意点：
+    1.配置文件要用bootstrap.yml
+    2.默认读取文件名是 服务名称</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="archive-article-date">
-  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">May 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/14/SpringCloud系列-25-配置中心Config/" data-id="cjz5mqv7p000v78b4nik4j6ol" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="archive-article-date">
-  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">May 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Config/">Config</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" class="archive-article-date">
-  <time datetime="2019-05-12T11:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
-    </h1>
+    <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SpringCloud系列-消息总线Bus
+        
+      </div>
+    </a>
   
+  
+    <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SpringCloud系列-网关Zuul</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="archive-article-date">
-  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/11/SpringCloud系列-5-Feign/" class="archive-article-date">
-  <time datetime="2019-05-11T11:18:05.000Z" itemprop="datePublished">May 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/" class="archive-article-date">
-  <time datetime="2019-05-10T11:18:05.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

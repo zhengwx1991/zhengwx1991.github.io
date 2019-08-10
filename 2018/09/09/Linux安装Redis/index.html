@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Hexo</title>
+  <title>Linux安装Redis | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="登陆Redis官网，找到最新版的下载地址：https://redis.io/download登陆到Linux1、下载wget http://download.redis.io/releases/redis-5.0.5.tar.gz2、解压tar -zxvf redis-5.0.5.tar.gz">
+<meta name="keywords" content="Linux,Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux安装Redis">
+<meta property="og:url" content="http://yoursite.com/2018/09/09/Linux安装Redis/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="登陆Redis官网，找到最新版的下载地址：https://redis.io/download登陆到Linux1、下载wget http://download.redis.io/releases/redis-5.0.5.tar.gz2、解压tar -zxvf redis-5.0.5.tar.gz">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:36:49.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Linux安装Redis">
+<meta name="twitter:description" content="登陆Redis官网，找到最新版的下载地址：https://redis.io/download登陆到Linux1、下载wget http://download.redis.io/releases/redis-5.0.5.tar.gz2、解压tar -zxvf redis-5.0.5.tar.gz">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,192 +65,96 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/27/Linux安装Docker/" class="archive-article-date">
-  <time datetime="2019-05-27T11:18:05.000Z" itemprop="datePublished">May 27</time>
+        <section id="main"><article id="post-Linux安装Redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/09/Linux安装Redis/" class="article-date">
+  <time datetime="2018-09-09T11:07:05.000Z" itemprop="datePublished">2018-09-09</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/Redis/">Redis</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+    <h1 class="article-title" itemprop="name">
+      Linux安装Redis
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/" class="archive-article-date">
-  <time datetime="2019-05-26T11:18:05.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
-    </h1>
-  
+        <h6 id="登陆Redis官网，找到最新版的下载地址：https-redis-io-download"><a href="#登陆Redis官网，找到最新版的下载地址：https-redis-io-download" class="headerlink" title="登陆Redis官网，找到最新版的下载地址：https://redis.io/download"></a>登陆Redis官网，找到最新版的下载地址：<a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a></h6><h6 id="登陆到Linux"><a href="#登陆到Linux" class="headerlink" title="登陆到Linux"></a>登陆到Linux</h6><h6 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h6><pre><code>wget http://download.redis.io/releases/redis-5.0.5.tar.gz</code></pre><h6 id="2、解压"><a href="#2、解压" class="headerlink" title="2、解压"></a>2、解压</h6><pre><code>tar -zxvf redis-5.0.5.tar.gz</code></pre><a id="more"></a>
+<h6 id="3、安装GCC"><a href="#3、安装GCC" class="headerlink" title="3、安装GCC"></a>3、安装GCC</h6><pre><code>yum install -y gcc g++ gcc-c++</code></pre><h6 id="4、进入目录"><a href="#4、进入目录" class="headerlink" title="4、进入目录"></a>4、进入目录</h6><pre><code>cd redis-5.0.5</code></pre><h6 id="5、编译"><a href="#5、编译" class="headerlink" title="5、编译"></a>5、编译</h6><pre><code>make</code></pre><h6 id="6、安装"><a href="#6、安装" class="headerlink" title="6、安装"></a>6、安装</h6><pre><code>make install</code></pre><h6 id="7、创建新目录"><a href="#7、创建新目录" class="headerlink" title="7、创建新目录"></a>7、创建新目录</h6><pre><code>mkdir -p /usr/local/redis/bin
+mkdir -p /usr/local/redis/etc</code></pre><h6 id="8、将安装所得文件redis-conf移入新建文件夹etc中"><a href="#8、将安装所得文件redis-conf移入新建文件夹etc中" class="headerlink" title="8、将安装所得文件redis.conf移入新建文件夹etc中"></a>8、将安装所得文件redis.conf移入新建文件夹etc中</h6><pre><code>mv redis.conf /usr/local/redis/etc</code></pre><h6 id="9、进入src目录"><a href="#9、进入src目录" class="headerlink" title="9、进入src目录"></a>9、进入src目录</h6><pre><code>cd src</code></pre><h6 id="10、将安装所得以下文件移入新建文件夹bin中"><a href="#10、将安装所得以下文件移入新建文件夹bin中" class="headerlink" title="10、将安装所得以下文件移入新建文件夹bin中"></a>10、将安装所得以下文件移入新建文件夹bin中</h6><pre><code>mv mkreleasehdr.sh /usr/local/redis/bin
+mv redis-benchmark  /usr/local/redis/bin
+mv redis-check-aof  /usr/local/redis/bin
+mv redis-check-rdb  /usr/local/redis/bin
+mv redis-cli  /usr/local/redis/bin
+mv redis-server  /usr/local/redis/bin</code></pre><h6 id="11、启动Redis服务"><a href="#11、启动Redis服务" class="headerlink" title="11、启动Redis服务"></a>11、启动Redis服务</h6><pre><code>cd /usr/local/redis/bin
+redis-server</code></pre><h6 id="12、设置后台运行和密码"><a href="#12、设置后台运行和密码" class="headerlink" title="12、设置后台运行和密码"></a>12、设置后台运行和密码</h6><pre><code>vi /usr/local/redis/etc/redis.conf
+// daemonize on 改为yes
+daemonize yes
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="archive-article-date">
-  <time datetime="2019-05-16T11:18:05.000Z" itemprop="datePublished">May 16</time>
-</a>
+// 找到# requirepass foobared，在下边添加
+requirepass 123456　
+
+protected-mode no
+bind 0.0.0.0</code></pre><h6 id="远程设置，防火墙"><a href="#远程设置，防火墙" class="headerlink" title="远程设置，防火墙"></a>远程设置，防火墙</h6><pre><code>// 向防火墙添加 Redis 端口
+firewall-cmd --zone=public --add-port=6379/tcp --permanent
+// 刷新防火墙规则
+firewall-cmd --reload
+// 验证端口,查询防火墙开放端口
+firewall-cmd --zone=public --list-port
+// 重启防火墙
+systemctl restart firewalld.service</code></pre><h6 id="Redis常用命令"><a href="#Redis常用命令" class="headerlink" title="Redis常用命令"></a>Redis常用命令</h6><pre><code>// 查看redis状态     
+ps -ef|grep redis
+
+// 重启redis
+cd /usr/local/redis/bin
+./redis-server /usr/local/redis/etc/redis.conf
+
+./redis-cli -h 192.168.128.130 -p 6379 -a 123456</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="archive-article-date">
-  <time datetime="2019-05-14T11:18:05.000Z" itemprop="datePublished">May 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/09/Linux安装Redis/" data-id="cjz5mqv73000678b4xthmejmz" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/SpringCloud系列-20-网关zuul/" class="archive-article-date">
-  <time datetime="2019-05-13T11:18:05.000Z" itemprop="datePublished">May 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" class="archive-article-date">
-  <time datetime="2019-05-12T11:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
-    </h1>
+    <a href="/2018/09/09/Linux安装sonarQube/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux安装sonarQube
+        
+      </div>
+    </a>
   
+  
+    <a href="/2018/09/09/Linux安装RabbitMQ/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux安装RabbitMQ</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="archive-article-date">
-  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">May 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/11/SpringCloud系列-5-Feign/" class="archive-article-date">
-  <time datetime="2019-05-11T11:18:05.000Z" itemprop="datePublished">May 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/" class="archive-article-date">
-  <time datetime="2019-05-10T11:18:05.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

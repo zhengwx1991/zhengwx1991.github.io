@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>SpringCloud系列-降级熔断Hystrix | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="官方文档https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy https://github.com/Netflix/Hystrix https://github.com/Netflix/Hystrix/wiki https://github.com/Netflix/Hystrix/wik">
+<meta name="keywords" content="SpringCloud,Hystrix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud系列-降级熔断Hystrix">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="官方文档https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy https://github.com/Netflix/Hystrix https://github.com/Netflix/Hystrix/wiki https://github.com/Netflix/Hystrix/wik">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-10T03:32:29.309Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringCloud系列-降级熔断Hystrix">
+<meta name="twitter:description" content="官方文档https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy https://github.com/Netflix/Hystrix https://github.com/Netflix/Hystrix/wiki https://github.com/Netflix/Hystrix/wik">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SpringCloud系列-10-降级熔断Hystrix" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" class="article-date">
+  <time datetime="2019-05-12T07:18:05.000Z" itemprop="datePublished">2019-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SpringCloud/">SpringCloud</a>►<a class="article-category-link" href="/categories/SpringCloud/Hystrix/">Hystrix</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringCloud系列-降级熔断Hystrix
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy
+https://github.com/Netflix/Hystrix
+https://github.com/Netflix/Hystrix/wiki
+https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h6><pre><code>https://github.com/zhengwx1991/order_service.git</code></pre><a id="more"></a>
+<h6 id="什么是分布式核心知识之熔断、降级"><a href="#什么是分布式核心知识之熔断、降级" class="headerlink" title="什么是分布式核心知识之熔断、降级"></a>什么是分布式核心知识之熔断、降级</h6><pre><code>1、熔断：
+    保险丝，熔断服务，为了防止整个系统故障，包含子和下游服务
+    下单服务 -》商品服务
+            -》用户服务 （出现异常-》熔断）
+2、降级：
+    抛弃一些非核心的接口和数据
+    旅行箱的例子：只带核心的物品，抛弃非核心的，等有条件的时候再去携带这些物品        
+3、熔断和降级互相交集
+    相同点：
+        1）从可用性和可靠性触发，为了防止系统崩溃
+        2）最终让用户体验到的是某些功能暂时不能用
+    不同点
+        1）服务熔断一般是下游服务故障导致的，而服务降级一般是从整体系统负荷考虑，由调用方控制</code></pre><h6 id="Netflix开源组件断路器Hystrix介绍"><a href="#Netflix开源组件断路器Hystrix介绍" class="headerlink" title="Netflix开源组件断路器Hystrix介绍"></a>Netflix开源组件断路器Hystrix介绍</h6><pre><code>文档地址：
+    https://github.com/Netflix/Hystrix
+    https://github.com/Netflix/Hystrix/wiki
+1、什么是Hystrix？
+    1）hystrix对应的中文名字是“豪猪”
+2、为什么要用？
+    在一个分布式系统里，一个服务依赖多个服务，可能存在某个服务调用失败，
+    比如超时、异常等，如何能够保证在一个依赖出问题的情况下，不会导致整体服务失败，
+    通过Hystrix就可以解决
+    http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients
+3、提供了熔断、隔离、Fallback、cache、监控等功能
+4、熔断后怎么处理？
+    出现错误之后可以 fallback 错误的处理信息
+    兜底数据</code></pre><h6 id="Feign结合Hystrix断路器开发（上）"><a href="#Feign结合Hystrix断路器开发（上）" class="headerlink" title="Feign结合Hystrix断路器开发（上）"></a>Feign结合Hystrix断路器开发（上）</h6><pre><code>1、加入依赖
+注意：网上新旧版本问题，所以要以官网为主，不然部分注解会丢失，最新版本 2.0
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;
+&lt;/dependency&gt;
+2、增加注解
+    启动类里面增加注解
+    @EnableCircuitBreaker
+    注解越来越多-》 可以用@SpringCloudApplication注解代替，里边包含了众多springcloud的注解，如果想要知道自己用了哪些注解，也可以单独写，不用@SpringCloudApplication
+3、API接口编码实战
+    熔断-》降级
+    1）最外层api使用，好比异常处理（网络异常，参数或者内部调用问题）
+        api方法上增加 @HystrixCommand(fallbackMethod = &quot;saveOrderFail&quot;)
+        编写fallback方法实现，方法签名一定要和api方法签名一致（注意点！！！）</code></pre><h6 id="Feign结合Hystrix断路器开发（下）"><a href="#Feign结合Hystrix断路器开发（下）" class="headerlink" title="Feign结合Hystrix断路器开发（下）"></a>Feign结合Hystrix断路器开发（下）</h6><pre><code>1、feign结合Hystrix        
+1）开启feign支持hystrix  (注意，一定要开启，旧版本默认支持，新版本默认关闭)
+    feign:
+      hystrix:
+        enabled: true    
+2）FeignClient(name=&quot;xxx&quot;, fallback=xxx.class ), class需要继承当前FeignClient的类</code></pre><h6 id="熔断降级服务异常报警通知实战"><a href="#熔断降级服务异常报警通知实战" class="headerlink" title="熔断降级服务异常报警通知实战"></a>熔断降级服务异常报警通知实战</h6><pre><code>完善服务熔断处理，报警机制完善
+1、加入redis依赖
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+2、配置redis链接信息
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 2000
+3、使用
+    //监控报警
+    String saveOrderKye = &quot;save-order&quot;;
+    String sendValue = redisTemplate.opsForValue().get(saveOrderKye);
+    final String ip = request.getRemoteAddr();
+    new Thread( ()-&gt;{
+        if (StringUtils.isBlank(sendValue)) {
+            System.out.println(&quot;紧急短信，用户下单失败，请离开查找原因,ip地址是=&quot;+ip);
+            //发送一个http请求，调用短信服务 TODO
+            redisTemplate.opsForValue().set(saveOrderKye, &quot;save-order-fail&quot;, 20, TimeUnit.SECONDS);
+        }else{
+            System.out.println(&quot;已经发送过短信，20秒内不重复发送&quot;);
+        }
+    }).start();</code></pre><h6 id="源码分析Hystrix降级策略和调整"><a href="#源码分析Hystrix降级策略和调整" class="headerlink" title="源码分析Hystrix降级策略和调整"></a>源码分析Hystrix降级策略和调整</h6><pre><code>1、查看默认讲解策略 HystrixCommandProperties
+    1）execution.isolation.strategy   隔离策略
+        THREAD 线程池隔离 （默认）
+        SEMAPHORE 信号量
+            信号量适用于接口并发量高的情况，如每秒数千次调用的情况，导致的线程开销过高，通常只适用于非网络调用，执行速度快
+    2）execution.isolation.thread.timeoutInMilliseconds  超时时间，默认 1000毫秒
+    3）execution.timeout.enabled 是否开启超时限制 （一定不要禁用）
+    4）execution.isolation.semaphore.maxConcurrentRequests 隔离策略为 信号量的时候，如果达到最大并发数时，后续请求会被拒绝，默认是10
+官方文档:
+    https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy
+2、调整策略
+    超时时间调整
+    hystrix:
+      command:
+        default:
+          execution:
+            isolation:
+              thread:
+                timeoutInMilliseconds: 4000</code></pre><h6 id="断路器Dashboard监控仪表盘使用"><a href="#断路器Dashboard监控仪表盘使用" class="headerlink" title="断路器Dashboard监控仪表盘使用"></a>断路器Dashboard监控仪表盘使用</h6><pre><code>断路器Dashboard基础使用和查看，开发时也可以不用这个，作为拓展
+1、加入依赖
+     &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix-dashboard&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+2、启动类增加注解
+    @EnableHystrixDashboard     
+3、配置文件增加endpoint
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: &quot;*&quot;
+4、访问入口
+    http://localhost:8781/hystrix
+    Hystrix Dashboard输入： http://localhost:8781/actuator/hystrix.stream 
+参考资料
+    默认开启监控配置
+    https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-security-actuator
+    配置文件类：spring-configuration-metadata.json</code></pre><h6 id="断路器监控仪表参数讲解和模拟熔断"><a href="#断路器监控仪表参数讲解和模拟熔断" class="headerlink" title="断路器监控仪表参数讲解和模拟熔断"></a>断路器监控仪表参数讲解和模拟熔断</h6><pre><code>断路器监控仪表盘参数和模拟熔断
+1、sse  server-send-event推送到前端
+资料：https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/" data-id="cjz5mqv7l000p78b40bjdnroe" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hystrix/">Hystrix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SpringCloud系列-链路追踪系统Sleuth和ZipKin
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/11/SpringCloud系列-5-Feign/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SpringCloud系列——Feign</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GitHub/">GitHub</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IDEA/">IDEA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/JDK/">JDK</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/JDK/MAVEN/">MAVEN</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Jenkins/">Jenkins</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Maven/">Maven</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Maven/Nexus/">Nexus</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/RabbitMQ/">RabbitMQ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Redis/">Redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/">SpringCloud</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Bus/">Bus</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Config/">Config</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Eureka/">Eureka</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Feign/">Feign</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Hystrix/">Hystrix</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Sleuth/">Sleuth</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Sleuth/ZipKin/">ZipKin</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SpringCloud/Zuul/">Zuul</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bus/">Bus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Config/">Config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eureka/">Eureka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Feign/">Feign</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitLab/">GitLab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hystrix/">Hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/">IDEA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MAVEN/">MAVEN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nexus/">Nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMQ/">RabbitMQ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sleuth/">Sleuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZipKin/">ZipKin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zuul/">Zuul</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sourcetree/">sourcetree</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/27/Linux安装Docker/">Linux安装Docker及应用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/26/sourcetree（企业版）跳过验证安装/">sourcetree（企业版）跳过验证安装</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
