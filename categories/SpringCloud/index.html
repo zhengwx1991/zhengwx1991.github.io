@@ -153,7 +153,66 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-16T11:18:05.000Z">2019-05-16</time>
+                <time class="level-item has-text-grey" datetime="2019-10-10T12:26:05.000Z">2019-10-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Eureka/">Eureka</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 分钟 读完 (大约 1271 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#spring-cloud-eureka-server" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#spring-cloud-eureka-server</a></p>
+<h3 id="什么是注册中心"><a href="#什么是注册中心" class="headerlink" title="什么是注册中心"></a>什么是注册中心</h3><pre><code>理解注册中心：服务管理,核心是有个服务注册表，心跳机制动态维护
+服务提供者provider: 启动的时候向注册中心上报自己的网络信息    
+服务消费者consumer: 启动的时候向注册中心上报自己的网络信息，拉取provider的相关网络信息
+为什么要用：
+    微服务应用和机器越来越多，调用方需要知道接口的网络地址，如果靠配置文件的方式去控制网络地址，对于动态新增机器，维护带来很大问题
+主流的注册中心：
+    zookeeper、Eureka、consul、etcd 等</code></pre>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/10/SpringCloud系列-1-注册中心Eureka/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-17T09:18:20.000Z">2018-10-17</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Bus/">Bus</a>
@@ -163,7 +222,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 分钟 读完 (大约 959 个字)
+                    6 分钟 读完 (大约 848 个字)
                 </span>
                 
                 
@@ -172,22 +231,20 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
+                <a class="has-link-black-ter" href="/2018/10/17/SpringCloud系列-30-消息总线Bus/">SpringCloud系列-消息总线Bus</a>
             
         </h1>
         <div class="content">
-            <h4 id="消息总线Bus结合消息队列RabbitMQ"><a href="#消息总线Bus结合消息队列RabbitMQ" class="headerlink" title="消息总线Bus结合消息队列RabbitMQ"></a>消息总线Bus结合消息队列RabbitMQ</h4><h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint</code></pre><h6 id="消息总线Bus介绍和使用场景"><a href="#消息总线Bus介绍和使用场景" class="headerlink" title="消息总线Bus介绍和使用场景"></a>消息总线Bus介绍和使用场景</h6><pre><code>简介：讲解消息总线Bus介绍和使用场景
-1、什么是消息
-    一个事件，需要广播或者单独传递给某个接口
-2、为什么使用这个
-    配置更新了，但是其他系统不知道是否更新</code></pre>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint</a></p>
+<h3 id="消息总线Bus介绍和使用场景"><a href="#消息总线Bus介绍和使用场景" class="headerlink" title="消息总线Bus介绍和使用场景"></a>消息总线Bus介绍和使用场景</h3><h6 id="1、什么是消息总线"><a href="#1、什么是消息总线" class="headerlink" title="1、什么是消息总线"></a>1、什么是消息总线</h6><p>​    一个事件，需要广播或者单独传递给某个接口</p>
+<h6 id="2、为什么使用这个"><a href="#2、为什么使用这个" class="headerlink" title="2、为什么使用这个"></a>2、为什么使用这个</h6><p>​    配置更新了，但是其他系统不知道是否更新</p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/16/SpringCloud系列-30-消息总线Bus/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/10/17/SpringCloud系列-30-消息总线Bus/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -209,7 +266,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-14T11:18:05.000Z">2019-05-14</time>
+                <time class="level-item has-text-grey" datetime="2018-10-16T06:55:48.000Z">2018-10-16</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Config/">Config</a>
@@ -219,7 +276,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 620 个字)
+                    4 分钟 读完 (大约 618 个字)
                 </span>
                 
                 
@@ -228,21 +285,18 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/14/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
+                <a class="has-link-black-ter" href="/2018/10/16/SpringCloud系列-25-配置中心Config/">SpringCloud系列-配置中心Config</a>
             
         </h1>
         <div class="content">
-            <h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>服务端开发：
-    http://cloud.spring.io/spring-cloud-config/
-客户端开发：
-    http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client</code></pre>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p>服务端开发：<a href="http://cloud.spring.io/spring-cloud-config/" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/</a><br>客户端开发：<a href="http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client</a></p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/14/SpringCloud系列-25-配置中心Config/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/10/16/SpringCloud系列-25-配置中心Config/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -264,7 +318,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T11:18:05.000Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2018-10-15T13:05:18.000Z">2018-10-15</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Zuul/">Zuul</a>
@@ -283,18 +337,18 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/13/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
+                <a class="has-link-black-ter" href="/2018/10/15/SpringCloud系列-20-网关zuul/">SpringCloud系列-网关Zuul</a>
             
         </h1>
         <div class="content">
-            <h6 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h6><pre><code>https://github.com/zhengwx1991/api-gateway.git</code></pre>
+            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/api-gateway.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/api-gateway.git</a></p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/13/SpringCloud系列-20-网关zuul/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/10/15/SpringCloud系列-20-网关zuul/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -316,7 +370,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T11:18:05.000Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2018-10-14T12:19:05.000Z">2018-10-14</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Sleuth/">Sleuth</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Sleuth/ZipKin/">ZipKin</a>
@@ -326,7 +380,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 718 个字)
+                    5 分钟 读完 (大约 697 个字)
                 </span>
                 
                 
@@ -335,18 +389,18 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
+                <a class="has-link-black-ter" href="/2018/10/14/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/">SpringCloud系列-链路追踪系统Sleuth和ZipKin</a>
             
         </h1>
         <div class="content">
-            <h5 id="分布式链路追踪系统Sleuth和ZipKin"><a href="#分布式链路追踪系统Sleuth和ZipKin" class="headerlink" title="分布式链路追踪系统Sleuth和ZipKin"></a>分布式链路追踪系统Sleuth和ZipKin</h5><h5 id="微服务下的链路追踪讲解和重要性"><a href="#微服务下的链路追踪讲解和重要性" class="headerlink" title="微服务下的链路追踪讲解和重要性"></a>微服务下的链路追踪讲解和重要性</h5><pre><code>什么是分布式链路追踪系统，及使用好处</code></pre>
+            <h3 id="微服务下的链路追踪"><a href="#微服务下的链路追踪" class="headerlink" title="微服务下的链路追踪"></a>微服务下的链路追踪</h3><pre><code>什么是分布式链路追踪系统，及使用好处</code></pre>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/12/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/10/14/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -368,7 +422,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T07:18:05.000Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2018-10-12T07:18:05.000Z">2018-10-12</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Hystrix/">Hystrix</a>
@@ -387,21 +441,19 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
+                <a class="has-link-black-ter" href="/2018/10/12/SpringCloud系列-10-降级熔断Hystrix/">SpringCloud系列-降级熔断Hystrix</a>
             
         </h1>
         <div class="content">
-            <h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy
-https://github.com/Netflix/Hystrix
-https://github.com/Netflix/Hystrix/wiki
-https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h6><pre><code>https://github.com/zhengwx1991/order_service.git</code></pre>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy</a><br><a href="https://github.com/Netflix/Hystrix" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix</a><br><a href="https://github.com/Netflix/Hystrix/wiki" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki</a><br><a href="https://github.com/Netflix/Hystrix/wiki/Dashboard" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Dashboard</a></p>
+<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/order_service.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/order_service.git</a></p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/12/SpringCloud系列-10-降级熔断Hystrix/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/10/12/SpringCloud系列-10-降级熔断Hystrix/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -423,7 +475,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-11T11:18:05.000Z">2019-05-11</time>
+                <time class="level-item has-text-grey" datetime="2018-10-11T03:18:05.000Z">2018-10-11</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Feign/">Feign</a>
@@ -433,7 +485,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 777 个字)
+                    5 分钟 读完 (大约 776 个字)
                 </span>
                 
                 
@@ -442,76 +494,19 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
+                <a class="has-link-black-ter" href="/2018/10/11/SpringCloud系列-5-Feign/">SpringCloud系列——Feign</a>
             
         </h1>
         <div class="content">
-            <h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign</code></pre><h6 id="项目路径"><a href="#项目路径" class="headerlink" title="项目路径"></a>项目路径</h6><pre><code>https://github.com/zhengwx1991/order_service.git</code></pre>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign</a></p>
+<h3 id="项目路径"><a href="#项目路径" class="headerlink" title="项目路径"></a>项目路径</h3><p><a href="https://github.com/zhengwx1991/order_service.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/order_service.git</a></p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/11/SpringCloud系列-5-Feign/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-10T11:18:05.000Z">2019-05-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringCloud/Eureka/">Eureka</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 分钟 读完 (大约 1269 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/">SpringCloud系列——注册中心Eureka</a>
-            
-        </h1>
-        <div class="content">
-            <h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#spring-cloud-eureka-server</code></pre><h6 id="什么是注册中心"><a href="#什么是注册中心" class="headerlink" title="什么是注册中心"></a>什么是注册中心</h6><pre><code>理解注册中心：服务管理,核心是有个服务注册表，心跳机制动态维护
-服务提供者provider: 启动的时候向注册中心上报自己的网络信息    
-服务消费者consumer: 启动的时候向注册中心上报自己的网络信息，拉取provider的相关网络信息
-为什么要用：
-    微服务应用和机器越来越多，调用方需要知道接口的网络地址，如果靠配置文件的方式去控制网络地址，对于动态新增机器，维护带来很大问题
-主流的注册中心：
-    zookeeper、Eureka、consul、etcd 等</code></pre>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/10/SpringCloud系列-1-注册中心Eureka/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/10/11/SpringCloud系列-5-Feign/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -561,7 +556,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        22
+                        27
                     </p>
                 </div>
             </div>
@@ -571,7 +566,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        29
                     </p>
                 </div>
             </div>
@@ -581,7 +576,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        35
                     </p>
                 </div>
             </div>
@@ -746,9 +741,49 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <span class="level-item">SpringBoot</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">7</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/LogBack/">
+            <span class="level-start">
+                <span class="level-item">LogBack</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/Mybatis/">
+            <span class="level-start">
+                <span class="level-item">Mybatis</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/banner/">
+            <span class="level-start">
+                <span class="level-item">banner</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/http/">
+            <span class="level-start">
+                <span class="level-item">http</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/多环境/">
+            <span class="level-start">
+                <span class="level-item">多环境</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/SpringBoot/热部署/">
             <span class="level-start">
                 <span class="level-item">热部署</span>
@@ -840,7 +875,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -854,6 +889,19 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T12:26:05.000Z">2019-10-10</time></div>
+                    <a href="/2019/10/10/SpringCloud系列-1-注册中心Eureka/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列——注册中心Eureka</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Eureka/">Eureka</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -898,23 +946,10 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T11:18:05.000Z">2019-05-16</time></div>
-                    <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-17T09:18:20.000Z">2018-10-17</time></div>
+                    <a href="/2018/10/17/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Bus/">Bus</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T11:18:05.000Z">2019-05-14</time></div>
-                    <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-配置中心Config</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Config/">Config</a>
                     </p>
                 </div>
             </div>
@@ -933,6 +968,17 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
                     <span class="level-item">八月 2019</span>
@@ -949,7 +995,18 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -960,7 +1017,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">16</span>
                 </span>
             </a>
         </li>
@@ -969,17 +1026,6 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
             <a class="level is-marginless" href="/archives/2018/03/">
                 <span class="level-start">
                     <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2017</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1085,6 +1131,13 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/LogBack/">
+                        <span class="tag">LogBack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/MAVEN/">
                         <span class="tag">MAVEN</span>
                         <span class="tag is-grey">1</span>
@@ -1108,6 +1161,13 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MySQL/">
                         <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mybatis/">
+                        <span class="tag">Mybatis</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1143,7 +1203,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <div class="control">
                     <a class="tags has-addons" href="/tags/SpringBoot/">
                         <span class="tag">SpringBoot</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1169,8 +1229,22 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/banner/">
+                        <span class="tag">banner</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/devtools/">
                         <span class="tag">devtools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/http/">
+                        <span class="tag">http</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1185,6 +1259,27 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <div class="control">
                     <a class="tags has-addons" href="/tags/博客/">
                         <span class="tag">博客</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多环境/">
+                        <span class="tag">多环境</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/定时任务/">
+                        <span class="tag">定时任务</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/异步任务/">
+                        <span class="tag">异步任务</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1223,6 +1318,19 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T12:26:05.000Z">2019-10-10</time></div>
+                    <a href="/2019/10/10/SpringCloud系列-1-注册中心Eureka/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列——注册中心Eureka</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Eureka/">Eureka</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-12T13:18:05.000Z">2019-08-12</time></div>
                     <a href="/2019/08/12/README/" class="title has-link-black-ter is-size-6 has-text-weight-normal">博客相关</a>
                     <p class="is-size-7 is-uppercase">
@@ -1262,23 +1370,10 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T11:18:05.000Z">2019-05-16</time></div>
-                    <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-17T09:18:20.000Z">2018-10-17</time></div>
+                    <a href="/2018/10/17/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Bus/">Bus</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T11:18:05.000Z">2019-05-14</time></div>
-                    <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-配置中心Config</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Config/">Config</a>
                     </p>
                 </div>
             </div>
@@ -1297,6 +1392,17 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
                     <span class="level-item">八月 2019</span>
@@ -1313,7 +1419,18 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1324,7 +1441,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">16</span>
                 </span>
             </a>
         </li>
@@ -1333,17 +1450,6 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
             <a class="level is-marginless" href="/archives/2018/03/">
                 <span class="level-start">
                     <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2017</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1449,6 +1555,13 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/LogBack/">
+                        <span class="tag">LogBack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/MAVEN/">
                         <span class="tag">MAVEN</span>
                         <span class="tag is-grey">1</span>
@@ -1472,6 +1585,13 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MySQL/">
                         <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mybatis/">
+                        <span class="tag">Mybatis</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1507,7 +1627,7 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <div class="control">
                     <a class="tags has-addons" href="/tags/SpringBoot/">
                         <span class="tag">SpringBoot</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1533,8 +1653,22 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/banner/">
+                        <span class="tag">banner</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/devtools/">
                         <span class="tag">devtools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/http/">
+                        <span class="tag">http</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1549,6 +1683,27 @@ https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre><h6 id="项目地�
                 <div class="control">
                     <a class="tags has-addons" href="/tags/博客/">
                         <span class="tag">博客</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多环境/">
+                        <span class="tag">多环境</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/定时任务/">
+                        <span class="tag">定时任务</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/异步任务/">
+                        <span class="tag">异步任务</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

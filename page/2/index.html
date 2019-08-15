@@ -142,58 +142,6 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-10T11:18:05.000Z">2019-05-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/SpringBoot/">SpringBoot</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringBoot/热部署/">热部署</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 335 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/10/SpringBoot系列-1-热部署/">SpringBoot系列--热部署devtools</a>
-            
-        </h1>
-        <div class="content">
-            <h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h6><pre><code>https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#using-boot-devtools</code></pre>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/10/SpringBoot系列-1-热部署/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2018-09-29T11:03:05.000Z">2018-09-29</time>
                 
                 <div class="level-item">
@@ -204,7 +152,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 41 个字)
+                    几秒 读完 (大约 40 个字)
                 </span>
                 
                 
@@ -218,17 +166,10 @@
         </h1>
         <div class="content">
             <h6 id="下载Jenkins到本地"><a href="#下载Jenkins到本地" class="headerlink" title="下载Jenkins到本地"></a>下载Jenkins到本地</h6><pre><code>https://jenkins.io/zh/download/
-下载长期支持版本 (LTS)的war包版本《jenkins.war》</code></pre><p>######<br>    将war包上传到tomcat的webapps目录</p>
+下载长期支持版本 (LTS)的war包版本《jenkins.war》</code></pre><p>将war包上传到tomcat的webapps目录</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/09/29/Linux安装Jenkins/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -657,6 +598,67 @@ cd /home/admin</code></pre>
 
 
 
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-07T13:20:05.000Z">2018-09-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/SpringBoot/">SpringBoot</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/SpringBoot/Mybatis/">Mybatis</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 645 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/09/07/SpringBoot系列-7-Mybatis/">SpringBoot系列--整合Mybatis</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
+<h3 id="SpringBoot整合Mybatis"><a href="#SpringBoot整合Mybatis" class="headerlink" title="SpringBoot整合Mybatis"></a>SpringBoot整合Mybatis</h3><h6 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h6><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!--SpringBoot整合Mybatis开始--&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!-- 引入starter--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">&lt;!-- MySQL的JDBC驱动包	--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>runtime<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">&lt;!-- 引入第三方数据源 --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>druid<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.1.6<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--SpringBoot整合Mybatis结束--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="配置数据库连接"><a href="#配置数据库连接" class="headerlink" title="配置数据库连接"></a>配置数据库连接</h6><figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line">  <span class="hljs-comment"># 配置mysql数据库</span></span><br><span class="line"><span class="hljs-attr">  datasource:</span></span><br><span class="line"><span class="hljs-attr">    url:</span> <span class="hljs-attr">jdbc:mysql://192.168.56.105:3306/mybatis?useUnicode=true&amp;characterEncoding=utf-8</span></span><br><span class="line"><span class="hljs-attr">    username:</span> <span class="hljs-string">root</span></span><br><span class="line"><span class="hljs-attr">    password:</span> <span class="hljs-string">root</span></span><br><span class="line">    <span class="hljs-comment"># 默认数据源为（com.zaxxer.hikari.HikariDataSource）</span></span><br><span class="line">    <span class="hljs-comment"># 配置第三方数据源，如下阿里巴巴的druid</span></span><br><span class="line"><span class="hljs-attr">    type:</span> <span class="hljs-string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 开启控制台打印sql，一般用于本地开发测试部署时应注释掉</span></span><br><span class="line"><span class="hljs-attr">mybatis:</span></span><br><span class="line"><span class="hljs-attr">  configuration:</span></span><br><span class="line"><span class="hljs-attr">    log-impl:</span> <span class="hljs-string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="启动类增加mapper扫描"><a href="#启动类增加mapper扫描" class="headerlink" title="启动类增加mapper扫描"></a>启动类增加mapper扫描</h6><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@SpringBootApplication</span></span><br><span class="line"><span class="hljs-meta">@MapperScan</span>(<span class="hljs-string">"com.sysware.mybatis.mapper"</span>)</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpringBootDemoApplication</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(SpringBootDemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="开发mapper"><a href="#开发mapper" class="headerlink" title="开发mapper"></a>开发mapper</h6><p>参考语法：<a href="http://www.mybatis.org/mybatis-3/zh/java-api.html" target="_blank" rel="noopener">http://www.mybatis.org/mybatis-3/zh/java-api.html</a></p>
+<h6 id="相关资料："><a href="#相关资料：" class="headerlink" title="相关资料："></a>相关资料：</h6><p><a href="http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/#Configuration" target="_blank" rel="noopener">http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/#Configuration</a></p>
+<p><a href="https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-samples" target="_blank" rel="noopener">https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-samples</a></p>
+<h6 id="整合问题集合："><a href="#整合问题集合：" class="headerlink" title="整合问题集合："></a>整合问题集合：</h6><p><a href="https://my.oschina.net/hxflar1314520/blog/1800035" target="_blank" rel="noopener">https://my.oschina.net/hxflar1314520/blog/1800035</a></p>
+<p><a href="https://blog.csdn.net/tingxuetage/article/details/80179772" target="_blank" rel="noopener">https://blog.csdn.net/tingxuetage/article/details/80179772</a></p>
+<h3 id="事务、隔离级别、传播行为"><a href="#事务、隔离级别、传播行为" class="headerlink" title="事务、隔离级别、传播行为"></a>事务、隔离级别、传播行为</h3><h6 id="常见的隔离级别"><a href="#常见的隔离级别" class="headerlink" title="常见的隔离级别"></a>常见的隔离级别</h6><p>Serializable： 最严格，串行处理，消耗资源大<br>Repeatable Read：保证了一个事务不会修改已经由另一个事务读取但未提交（回滚）的数据<br>Read Committed：大多数主流数据库的默认事务等级<br>Read Uncommitted：保证了读取过程中不会读取到非法数据</p>
+<h6 id="常见的传播行为"><a href="#常见的传播行为" class="headerlink" title="常见的传播行为"></a>常见的传播行为</h6><p>PROPAGATION_REQUIRED：支持当前事务，如果当前没有事务，就新建一个事务,最常见的选择<br>PROPAGATION_SUPPORTS：支持当前事务，如果当前没有事务，就以非事务方式执行<br>PROPAGATION_MANDATORY：支持当前事务，如果当前没有事务，就抛出异常<br>PROPAGATION_REQUIRES_NEW：新建事务，如果当前存在事务，把当前事务挂起, 两个事务之间没有关系，一个异常，一个提交，不会同时回滚<br>PROPAGATION_NOT_SUPPORTED：以非事务方式执行操作，如果当前存在事务，就把当前事务挂起<br>PROPAGATION_NEVER：以非事务方式执行，如果当前存在事务，则抛出异常</p>
+<h6 id="Mybatis引入事务"><a href="#Mybatis引入事务" class="headerlink" title="Mybatis引入事务"></a>Mybatis引入事务</h6><p>service的实现类引入事务 ，可用作整个类也可以用于指定的的方法@Transantional(propagation=Propagation.REQUIRED)</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Override</span></span><br><span class="line"><span class="hljs-meta">@Transactional</span>(propagation = Propagation.REQUIRED)</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">testTransaction</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    User user = <span class="hljs-keyword">new</span> User();</span><br><span class="line">    user.setAge(<span class="hljs-number">9</span>);</span><br><span class="line">    user.setCreateTime(<span class="hljs-keyword">new</span> Date());</span><br><span class="line">    user.setName(<span class="hljs-string">"事务测试"</span>);</span><br><span class="line">    user.setPhone(<span class="hljs-string">"000121212"</span>);</span><br><span class="line">    userMapper.insert(user);</span><br><span class="line">    <span class="hljs-comment">// 加入异常</span></span><br><span class="line">    <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>/<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> user.getId();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
 
     
 <div class="card card-transparent">
@@ -712,7 +714,7 @@ cd /home/admin</code></pre>
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        22
+                        27
                     </p>
                 </div>
             </div>
@@ -722,7 +724,7 @@ cd /home/admin</code></pre>
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        29
                     </p>
                 </div>
             </div>
@@ -732,7 +734,7 @@ cd /home/admin</code></pre>
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        35
                     </p>
                 </div>
             </div>
@@ -897,9 +899,49 @@ cd /home/admin</code></pre>
                 <span class="level-item">SpringBoot</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">7</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/LogBack/">
+            <span class="level-start">
+                <span class="level-item">LogBack</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/Mybatis/">
+            <span class="level-start">
+                <span class="level-item">Mybatis</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/banner/">
+            <span class="level-start">
+                <span class="level-item">banner</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/http/">
+            <span class="level-start">
+                <span class="level-item">http</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/SpringBoot/多环境/">
+            <span class="level-start">
+                <span class="level-item">多环境</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/SpringBoot/热部署/">
             <span class="level-start">
                 <span class="level-item">热部署</span>
@@ -991,7 +1033,7 @@ cd /home/admin</code></pre>
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -1005,6 +1047,19 @@ cd /home/admin</code></pre>
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T12:26:05.000Z">2019-10-10</time></div>
+                    <a href="/2019/10/10/SpringCloud系列-1-注册中心Eureka/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列——注册中心Eureka</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Eureka/">Eureka</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1049,23 +1104,10 @@ cd /home/admin</code></pre>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T11:18:05.000Z">2019-05-16</time></div>
-                    <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-17T09:18:20.000Z">2018-10-17</time></div>
+                    <a href="/2018/10/17/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Bus/">Bus</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T11:18:05.000Z">2019-05-14</time></div>
-                    <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-配置中心Config</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Config/">Config</a>
                     </p>
                 </div>
             </div>
@@ -1084,6 +1126,17 @@ cd /home/admin</code></pre>
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
                     <span class="level-item">八月 2019</span>
@@ -1100,7 +1153,18 @@ cd /home/admin</code></pre>
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1111,7 +1175,7 @@ cd /home/admin</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">16</span>
                 </span>
             </a>
         </li>
@@ -1120,17 +1184,6 @@ cd /home/admin</code></pre>
             <a class="level is-marginless" href="/archives/2018/03/">
                 <span class="level-start">
                     <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2017</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1236,6 +1289,13 @@ cd /home/admin</code></pre>
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/LogBack/">
+                        <span class="tag">LogBack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/MAVEN/">
                         <span class="tag">MAVEN</span>
                         <span class="tag is-grey">1</span>
@@ -1259,6 +1319,13 @@ cd /home/admin</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MySQL/">
                         <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mybatis/">
+                        <span class="tag">Mybatis</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1294,7 +1361,7 @@ cd /home/admin</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/SpringBoot/">
                         <span class="tag">SpringBoot</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1320,8 +1387,22 @@ cd /home/admin</code></pre>
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/banner/">
+                        <span class="tag">banner</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/devtools/">
                         <span class="tag">devtools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/http/">
+                        <span class="tag">http</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1336,6 +1417,27 @@ cd /home/admin</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/博客/">
                         <span class="tag">博客</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多环境/">
+                        <span class="tag">多环境</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/定时任务/">
+                        <span class="tag">定时任务</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/异步任务/">
+                        <span class="tag">异步任务</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1374,6 +1476,19 @@ cd /home/admin</code></pre>
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T12:26:05.000Z">2019-10-10</time></div>
+                    <a href="/2019/10/10/SpringCloud系列-1-注册中心Eureka/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列——注册中心Eureka</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Eureka/">Eureka</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-12T13:18:05.000Z">2019-08-12</time></div>
                     <a href="/2019/08/12/README/" class="title has-link-black-ter is-size-6 has-text-weight-normal">博客相关</a>
                     <p class="is-size-7 is-uppercase">
@@ -1413,23 +1528,10 @@ cd /home/admin</code></pre>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-16T11:18:05.000Z">2019-05-16</time></div>
-                    <a href="/2019/05/16/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-17T09:18:20.000Z">2018-10-17</time></div>
+                    <a href="/2018/10/17/SpringCloud系列-30-消息总线Bus/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-消息总线Bus</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Bus/">Bus</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-14T11:18:05.000Z">2019-05-14</time></div>
-                    <a href="/2019/05/14/SpringCloud系列-25-配置中心Config/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SpringCloud系列-配置中心Config</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/SpringCloud/">SpringCloud</a> / <a class="has-link-grey -link" href="/categories/SpringCloud/Config/">Config</a>
                     </p>
                 </div>
             </div>
@@ -1448,6 +1550,17 @@ cd /home/admin</code></pre>
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
                     <span class="level-item">八月 2019</span>
@@ -1464,7 +1577,18 @@ cd /home/admin</code></pre>
                     <span class="level-item">五月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1475,7 +1599,7 @@ cd /home/admin</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">16</span>
                 </span>
             </a>
         </li>
@@ -1484,17 +1608,6 @@ cd /home/admin</code></pre>
             <a class="level is-marginless" href="/archives/2018/03/">
                 <span class="level-start">
                     <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2017</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1600,6 +1713,13 @@ cd /home/admin</code></pre>
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/LogBack/">
+                        <span class="tag">LogBack</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/MAVEN/">
                         <span class="tag">MAVEN</span>
                         <span class="tag is-grey">1</span>
@@ -1623,6 +1743,13 @@ cd /home/admin</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MySQL/">
                         <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mybatis/">
+                        <span class="tag">Mybatis</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1658,7 +1785,7 @@ cd /home/admin</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/SpringBoot/">
                         <span class="tag">SpringBoot</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1684,8 +1811,22 @@ cd /home/admin</code></pre>
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/banner/">
+                        <span class="tag">banner</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/devtools/">
                         <span class="tag">devtools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/http/">
+                        <span class="tag">http</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1700,6 +1841,27 @@ cd /home/admin</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/博客/">
                         <span class="tag">博客</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/多环境/">
+                        <span class="tag">多环境</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/定时任务/">
+                        <span class="tag">定时任务</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/异步任务/">
+                        <span class="tag">异步任务</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
