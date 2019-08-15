@@ -223,7 +223,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 430 个字)
+                    3 分钟 读完 (大约 432 个字)
                 </span>
                 
                 
@@ -236,17 +236,18 @@
             
         </h1>
         <div class="content">
-            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
-<h3 id="常用注解，注解等效"><a href="#常用注解，注解等效" class="headerlink" title="常用注解，注解等效"></a>常用注解，注解等效</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@RestController和@RequestMapping是springMVC的注解，不是springboot特有的	</span><br><span class="line">@RestController = @Controller+@ResponseBody	</span><br><span class="line">@SpringBootApplication = @Configuration+@EnableAutoConfiguration+@ComponentScan</span><br><span class="line"></span><br><span class="line">@GetMapping = @RequestMapping(method = RequestMethod.GET)</span><br><span class="line">@PostMapping = @RequestMapping(method = RequestMethod.POST)</span><br><span class="line">@PutMapping = @RequestMapping(method = RequestMethod.PUT)</span><br><span class="line">@DeleteMapping = @RequestMapping(method = RequestMethod.DELETE)</span><br></pre></td></tr></table></figure>
-
-<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><h6 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h6><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">   <span class="hljs-comment">//单一参数</span></span><br><span class="line">   <span class="hljs-meta">@RequestMapping</span>(path = <span class="hljs-string">"/&#123;id&#125;"</span>, method = RequestMethod.GET)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getUser</span><span class="hljs-params">(@PathVariable String id )</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-comment">// 可以同时指定多个参数</span></span><br><span class="line">   <span class="hljs-meta">@RequestMapping</span>(path = <span class="hljs-string">"/&#123;depid&#125;/&#123;userid&#125;"</span>, method = RequestMethod.GET)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getUser</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">"depid"</span>)</span> String departmentID,@<span class="hljs-title">PathVariable</span><span class="hljs-params">(<span class="hljs-string">"userid"</span>)</span> String userid)</span>&#123;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 默认值，如果接口没传该参数，则使用默认值</span></span><br><span class="line"><span class="hljs-comment">    * 参数是否必填验证（不是强项,可以由前端或者拦截器等验证）</span></span><br><span class="line"><span class="hljs-comment">    * page是前端传过来的对应值，也可以不设置</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> from</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> size</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">   <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"page_user2"</span>)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">pageUser2</span><span class="hljs-params">(@RequestParam(defaultValue = <span class="hljs-string">"0"</span>, name = <span class="hljs-string">"page"</span>, required = <span class="hljs-keyword">true</span>)</span> <span class="hljs-keyword">int</span> from, <span class="hljs-keyword">int</span> size)</span>&#123;</span><br><span class="line">       params.clear();</span><br><span class="line">       params.put(<span class="hljs-string">"from"</span>, from);</span><br><span class="line">       params.put(<span class="hljs-string">"size"</span>, size);</span><br><span class="line">       <span class="hljs-keyword">return</span> params;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * bean对象传参</span></span><br><span class="line"><span class="hljs-comment">    * 注意：1、注意需要指定http头为content-type为application/json</span></span><br><span class="line"><span class="hljs-comment">    * 2、使用body传输数据</span></span><br><span class="line"><span class="hljs-comment">    * 3、只能用post提交，所以注解不是<span class="hljs-doctag">@GetMapping</span>而是<span class="hljs-doctag">@RequestMapping</span></span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> user</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">   <span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">"save_user"</span>)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">saveUser</span><span class="hljs-params">(@RequestBody User user)</span></span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 获取http请求头信息，比如鉴权</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> accessToken</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> id</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">   <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">"get_header"</span>)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">getHeader</span><span class="hljs-params">(@RequestHeader(<span class="hljs-string">"access_token"</span>)</span> String accessToken, String id)</span>&#123;</span><br><span class="line">       params.clear();</span><br><span class="line">       params.put(<span class="hljs-string">"accessToken"</span>, accessToken);</span><br><span class="line">       params.put(<span class="hljs-string">"id"</span>, id);</span><br><span class="line">       <span class="hljs-keyword">return</span> params;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="其他请求"><a href="#其他请求" class="headerlink" title="其他请求"></a>其他请求</h6><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * post提交，一般用于登陆，表单提交等</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> id</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> pwd</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">   <span class="hljs-meta">@PostMapping</span>(<span class="hljs-string">"post"</span>)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">post</span><span class="hljs-params">(String id, String pwd)</span></span>&#123;</span><br><span class="line">       params.clear();</span><br><span class="line">       params.put(<span class="hljs-string">"id"</span>, id);</span><br><span class="line">       params.put(<span class="hljs-string">"pwd"</span>, pwd);</span><br><span class="line">       <span class="hljs-keyword">return</span> params;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * put提交，一般用于更新</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> id</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">   <span class="hljs-meta">@PutMapping</span>(<span class="hljs-string">"put"</span>)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">put</span><span class="hljs-params">(String id)</span></span>&#123;</span><br><span class="line">       params.clear();</span><br><span class="line">       params.put(<span class="hljs-string">"id"</span>, id);</span><br><span class="line">       <span class="hljs-keyword">return</span> params;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * DeleteMapping提交，删除</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> id</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">   <span class="hljs-meta">@DeleteMapping</span>(<span class="hljs-string">"del"</span>)</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">del</span><span class="hljs-params">(String id)</span></span>&#123;</span><br><span class="line">       params.clear();</span><br><span class="line">       params.put(<span class="hljs-string">"id"</span>, id);</span><br><span class="line">       <span class="hljs-keyword">return</span> params;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="postman接口"><a href="#postman接口" class="headerlink" title="postman接口"></a>postman接口</h6><p>详见src/main/resources/postman/HTTP请求.postman_collection.json</p>
-
+            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><strong>项目地址</strong></h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
+<h3 id="常用注解，注解等效"><a href="#常用注解，注解等效" class="headerlink" title="常用注解，注解等效"></a><strong>常用注解，注解等效</strong></h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@RestController</span>和<span class="hljs-meta">@RequestMapping</span>是springMVC的注解，不是springboot特有的	</span><br><span class="line"><span class="hljs-meta">@RestController</span> = <span class="hljs-meta">@Controller</span>+<span class="hljs-meta">@ResponseBody</span>	</span><br><span class="line"><span class="hljs-meta">@SpringBootApplication</span> = <span class="hljs-meta">@Configuration</span>+<span class="hljs-meta">@EnableAutoConfiguration</span>+<span class="hljs-meta">@ComponentScan</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@GetMapping</span> = <span class="hljs-meta">@RequestMapping</span>(method = RequestMethod.GET)</span><br><span class="line"><span class="hljs-meta">@PostMapping</span> = <span class="hljs-meta">@RequestMapping</span>(method = RequestMethod.POST)</span><br><span class="line"><span class="hljs-meta">@PutMapping</span> = <span class="hljs-meta">@RequestMapping</span>(method = RequestMethod.PUT)</span><br><span class="line"><span class="hljs-meta">@DeleteMapping</span> = <span class="hljs-meta">@RequestMapping</span>(method = RequestMethod.DELETE)</span><br></pre></td></tr></table></figure>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/06/SpringBoot系列-6-http请求配置/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -275,7 +276,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 312 个字)
+                    2 分钟 读完 (大约 316 个字)
                 </span>
                 
                 
@@ -288,24 +289,18 @@
             
         </h1>
         <div class="content">
-            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
-<h3 id="多环境配置"><a href="#多环境配置" class="headerlink" title="多环境配置"></a>多环境配置</h3><p>不同环境使用不同配置：例如数据库配置，在开发的时候，我们一般用开发数据库，而在生产环境的时候，我们是用正式的数据</p>
-<h3 id="多环境配置开发"><a href="#多环境配置开发" class="headerlink" title="多环境配置开发"></a>多环境配置开发</h3><p>创建多环境配置文件，示例如下：<br>spring boot允许通过命名约定按照一定的格式(application-{profile}.properties)来定义多个配置文件。<br>创建多环境配置文件时一定要遵循规范。</p>
-<p>新建application-dev.yml</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test:</span><br><span class="line">  url: dev.com</span><br></pre></td></tr></table></figure>
-
-<p>新建application-test.yml</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test:</span><br><span class="line">  url: test.com</span><br></pre></td></tr></table></figure>
-
-<p>修改application.yml</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  # springboot多环境配置，指定读取的配置文件，主要名字要与配置文件名字吻合</span><br><span class="line">  profiles:</span><br><span class="line">    active: test</span><br><span class="line"># 如果上边不指定读取的文件，则系统会读取application.yml里边对应的配置</span><br><span class="line">test:</span><br><span class="line">  url: localhost</span><br></pre></td></tr></table></figure>
-
-<p>读取配置，验证是否成功：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;api/v1&quot;)</span><br><span class="line">public class DemoController &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 获取配置信息</span><br><span class="line">     */</span><br><span class="line">    @Value(&quot;$&#123;test.url&#125;&quot;)</span><br><span class="line">    private String url;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 读取springboot多环境配置信息</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;many_env&quot;)</span><br><span class="line">    public Object manyEnv()&#123;</span><br><span class="line">        return url;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><strong>项目地址</strong></h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
+<h3 id="多环境配置"><a href="#多环境配置" class="headerlink" title="多环境配置"></a><strong>多环境配置</strong></h3><p>不同环境使用不同配置：例如数据库配置，在开发的时候，我们一般用开发数据库，而在生产环境的时候，我们是用正式的数据</p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/05/SpringBoot系列-5-多环境配置/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -334,7 +329,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 643 个字)
+                    4 分钟 读完 (大约 635 个字)
                 </span>
                 
                 
@@ -347,13 +342,9 @@
             
         </h1>
         <div class="content">
-            <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><h6 id="常用日志组件"><a href="#常用日志组件" class="headerlink" title="常用日志组件"></a>常用日志组件</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">常用处理java的日志组件：</span><br><span class="line">	slf4j,log4j,logback,common-logging 等</span><br></pre></td></tr></table></figure>
-
-<h6 id="logback介绍"><a href="#logback介绍" class="headerlink" title="logback介绍"></a>logback介绍</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">基于Log4j基础上大量改良，不能单独使用，推荐配合日志框架SLF4J来使用</span><br><span class="line">logback当前分成三个模块：logback-core,logback-classic和logback-access;</span><br><span class="line">logback-core是其它两个模块的基础模块</span><br></pre></td></tr></table></figure>
-
-<h6 id="Logback的核心对象："><a href="#Logback的核心对象：" class="headerlink" title="Logback的核心对象："></a>Logback的核心对象：</h6><pre><code>Logger：日志记录器
-Appender：指定日志输出的目的地，目的地可以是控制台，文件
-Layout：日志布局 格式化日志信息的输出    </code></pre>
+            <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a><strong>基本介绍</strong></h3><h6 id="常用日志组件"><a href="#常用日志组件" class="headerlink" title="常用日志组件"></a><strong>常用日志组件</strong></h6><p>slf4j、log4j、logback、common-logging等</p>
+<h6 id="logback介绍"><a href="#logback介绍" class="headerlink" title="logback介绍"></a><strong>logback介绍</strong></h6><p>基于Log4j基础上大量改良，不能单独使用，推荐配合日志框架SLF4J来使用<br>logback当前分成三个模块：logback-core,logback-classic和logback-access;<br>logback-core是其它两个模块的基础模块</p>
+<h6 id="Logback的核心对象："><a href="#Logback的核心对象：" class="headerlink" title="Logback的核心对象："></a><strong>Logback的核心对象：</strong></h6><p>Logger：日志记录器<br>Appender：指定日志输出的目的地，目的地可以是控制台，文件<br>Layout：日志布局 格式化日志信息的输出    </p>
         </div>
         
         
@@ -392,7 +383,7 @@ Layout：日志布局 格式化日志信息的输出    </code></pre>
                 <span class="level-item has-text-grey">
                     
                     
-                    7 分钟 读完 (大约 1007 个字)
+                    7 分钟 读完 (大约 1008 个字)
                 </span>
                 
                 
@@ -444,7 +435,7 @@ Layout：日志布局 格式化日志信息的输出    </code></pre>
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 102 个字)
+                    几秒 读完 (大约 103 个字)
                 </span>
                 
                 
@@ -457,17 +448,18 @@ Layout：日志布局 格式化日志信息的输出    </code></pre>
             
         </h1>
         <div class="content">
-            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
-<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-banners" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-banners</a></p>
-<h3 id="设置个性化启动banner"><a href="#设置个性化启动banner" class="headerlink" title="设置个性化启动banner"></a>设置个性化启动banner</h3><h6 id="banner生成网站"><a href="#banner生成网站" class="headerlink" title="banner生成网站"></a>banner生成网站</h6><p><a href="https://www.bootschool.net/ascii" target="_blank" rel="noopener">https://www.bootschool.net/ascii</a></p>
-<h6 id="修改application-yml"><a href="#修改application-yml" class="headerlink" title="修改application.yml"></a>修改application.yml</h6><figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  banner:</span></span><br><span class="line">    <span class="hljs-comment"># 个性化banner文件地址</span></span><br><span class="line"><span class="hljs-attr">    location:</span> <span class="hljs-string">banner.txt</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="在resources目录下增加banner-txt"><a href="#在resources目录下增加banner-txt" class="headerlink" title="在resources目录下增加banner.txt"></a>在resources目录下增加banner.txt</h6><p>在banner.txt写入自己需要自定义的banner，如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  ____   __   __  ____   __        __     _      ____    _____</span><br><span class="line"> / ___|  \ \ / / / ___|  \ \      / /    / \    |  _ \  | ____|</span><br><span class="line"> \___ \   \ V /  \___ \   \ \ /\ / /    / _ \   | |_) | |  _|</span><br><span class="line">  ___) |   | |    ___) |   \ V  V /    / ___ \  |  _ &lt;  | |___</span><br><span class="line"> |____/    |_|   |____/     \_/\_/    /_/   \_\ |_| \_\ |_____|</span><br><span class="line">======================= XX系统欢迎您 ! =======================</span><br></pre></td></tr></table></figure>
-
-
+            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><strong>项目地址</strong></h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
+<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h3><p><a href="https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-banners" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#boot-features-banners</a></p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/02/SpringBoot系列-2-个性化启动banner/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -509,7 +501,7 @@ Layout：日志布局 格式化日志信息的输出    </code></pre>
             
         </h1>
         <div class="content">
-            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#using-boot-devtools" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#using-boot-devtools</a></p>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h3><p><a href="https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#using-boot-devtools" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.1.0.BUILD-SNAPSHOT/reference/htmlsingle/#using-boot-devtools</a></p>
         </div>
         
         

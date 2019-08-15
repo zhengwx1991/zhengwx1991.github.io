@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 312 个字)
+                    2 分钟 读完 (大约 316 个字)
                 </span>
                 
                 
@@ -178,24 +178,18 @@
             
         </h1>
         <div class="content">
-            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
-<h3 id="多环境配置"><a href="#多环境配置" class="headerlink" title="多环境配置"></a>多环境配置</h3><p>不同环境使用不同配置：例如数据库配置，在开发的时候，我们一般用开发数据库，而在生产环境的时候，我们是用正式的数据</p>
-<h3 id="多环境配置开发"><a href="#多环境配置开发" class="headerlink" title="多环境配置开发"></a>多环境配置开发</h3><p>创建多环境配置文件，示例如下：<br>spring boot允许通过命名约定按照一定的格式(application-{profile}.properties)来定义多个配置文件。<br>创建多环境配置文件时一定要遵循规范。</p>
-<p>新建application-dev.yml</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test:</span><br><span class="line">  url: dev.com</span><br></pre></td></tr></table></figure>
-
-<p>新建application-test.yml</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test:</span><br><span class="line">  url: test.com</span><br></pre></td></tr></table></figure>
-
-<p>修改application.yml</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  # springboot多环境配置，指定读取的配置文件，主要名字要与配置文件名字吻合</span><br><span class="line">  profiles:</span><br><span class="line">    active: test</span><br><span class="line"># 如果上边不指定读取的文件，则系统会读取application.yml里边对应的配置</span><br><span class="line">test:</span><br><span class="line">  url: localhost</span><br></pre></td></tr></table></figure>
-
-<p>读取配置，验证是否成功：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;api/v1&quot;)</span><br><span class="line">public class DemoController &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 获取配置信息</span><br><span class="line">     */</span><br><span class="line">    @Value(&quot;$&#123;test.url&#125;&quot;)</span><br><span class="line">    private String url;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 读取springboot多环境配置信息</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;many_env&quot;)</span><br><span class="line">    public Object manyEnv()&#123;</span><br><span class="line">        return url;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><strong>项目地址</strong></h3><p><a href="https://github.com/zhengwx1991/spring-boot-demo.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/spring-boot-demo.git</a></p>
+<h3 id="多环境配置"><a href="#多环境配置" class="headerlink" title="多环境配置"></a><strong>多环境配置</strong></h3><p>不同环境使用不同配置：例如数据库配置，在开发的时候，我们一般用开发数据库，而在生产环境的时候，我们是用正式的数据</p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/05/SpringBoot系列-5-多环境配置/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
