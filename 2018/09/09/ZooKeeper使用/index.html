@@ -2,24 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Linux安装Redis - 942猫的博客</title>
+<title>ZooKeeper的使用 - 942猫的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Redis官网https://redis.io/download下载1wget http://download.redis.io/releases/redis-5.0.5.tar.gz  解压1tar -zxvf redis-5.0.5.tar.gz">
-<meta name="keywords" content="Linux,Redish">
+    <meta name="description" content="ZooKeeper的安装linux下安装ZooKeeperDocker下安装ZooKeeper 拉取镜像 1docker pull zookeeper  查看镜像 1docker images  启动镜像容器 1docker run -d -p 2181:2181 -v /usr/local/zookeeper/data/:/data/ --name=zookeeper1 --privileged">
+<meta name="keywords" content="ZooKeeper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux安装Redis">
-<meta property="og:url" content="http://zhengwx1991.cn/2018/09/09/Linux安装Redis/index.html">
+<meta property="og:title" content="ZooKeeper的使用">
+<meta property="og:url" content="http://zhengwx1991.cn/2018/09/09/ZooKeeper使用/index.html">
 <meta property="og:site_name" content="942猫的博客">
-<meta property="og:description" content="Redis官网https://redis.io/download下载1wget http://download.redis.io/releases/redis-5.0.5.tar.gz  解压1tar -zxvf redis-5.0.5.tar.gz">
+<meta property="og:description" content="ZooKeeper的安装linux下安装ZooKeeperDocker下安装ZooKeeper 拉取镜像 1docker pull zookeeper  查看镜像 1docker images  启动镜像容器 1docker run -d -p 2181:2181 -v /usr/local/zookeeper/data/:/data/ --name=zookeeper1 --privileged">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-18T10:02:19.177Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.205Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux安装Redis">
-<meta name="twitter:description" content="Redis官网https://redis.io/download下载1wget http://download.redis.io/releases/redis-5.0.5.tar.gz  解压1tar -zxvf redis-5.0.5.tar.gz">
+<meta name="twitter:title" content="ZooKeeper的使用">
+<meta name="twitter:description" content="ZooKeeper的安装linux下安装ZooKeeperDocker下安装ZooKeeper 拉取镜像 1docker pull zookeeper  查看镜像 1docker images  启动镜像容器 1docker run -d -p 2181:2181 -v /usr/local/zookeeper/data/:/data/ --name=zookeeper1 --privileged">
 <meta name="twitter:image" content="http://zhengwx1991.cn/images/og_image.png">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Linux安装Redis" height="28">
+                <img src="/images/logo.svg" alt="ZooKeeper的使用" height="28">
             
             </a>
         </div>
@@ -143,17 +143,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-09-09T11:07:05.000Z">2018-09-09</time>
+                <time class="level-item has-text-grey" datetime="2018-09-09T08:09:05.000Z">2018-09-09</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Linux/Redis/">Redis</a>
+                <a class="has-link-grey -link" href="/categories/ZooKeeper/">ZooKeeper</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 323 个字)
+                    几秒 读完 (大约 105 个字)
                 </span>
                 
                 
@@ -162,39 +162,40 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Linux安装Redis
+                ZooKeeper的使用
             
         </h1>
         <div class="content">
-            <h3 id="Redis官网"><a href="#Redis官网" class="headerlink" title="Redis官网"></a><strong>Redis官网</strong></h3><h6 id="https-redis-io-download"><a href="#https-redis-io-download" class="headerlink" title="https://redis.io/download"></a><a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a></h6><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a><strong>下载</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-5.0.5.tar.gz</span><br></pre></td></tr></table></figure>
+            <h3 id="ZooKeeper的安装"><a href="#ZooKeeper的安装" class="headerlink" title="ZooKeeper的安装"></a>ZooKeeper的安装</h3><h6 id="linux下安装ZooKeeper"><a href="#linux下安装ZooKeeper" class="headerlink" title="linux下安装ZooKeeper"></a><strong>linux下安装ZooKeeper</strong></h6><h6 id="Docker下安装ZooKeeper"><a href="#Docker下安装ZooKeeper" class="headerlink" title="Docker下安装ZooKeeper"></a><strong>Docker下安装ZooKeeper</strong></h6><ul>
+<li><p>拉取镜像</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull zookeeper</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看镜像</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动镜像容器</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 2181:2181 -v /usr/local/zookeeper/data/:/data/ --name=zookeeper1 --privileged zookeeper</span><br></pre></td></tr></table></figure>
 
-<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a><strong>解压</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-5.0.5.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="使用ZooKeeper可视化客户端"><a href="#使用ZooKeeper可视化客户端" class="headerlink" title="使用ZooKeeper可视化客户端"></a><strong>使用ZooKeeper可视化客户端</strong></h6><ul>
+<li><p>下载<br><a href="https://issues.apache.org/jira/secure/attachment/12436620/ZooInspector.zip" target="_blank" rel="noopener">https://issues.apache.org/jira/secure/attachment/12436620/ZooInspector.zip</a></p>
+</li>
+<li><p>解压ZooInspector.zip</p>
+</li>
+<li><p>进入..\ZooInspector\build目录，在当前目录下打开命令窗口，输入命令</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar zookeeper-dev-ZooInspector.jar</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
-<h3 id="安装GCC"><a href="#安装GCC" class="headerlink" title="安装GCC"></a><strong>安装GCC</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc g++ gcc-c++</span><br></pre></td></tr></table></figure>
 
-<h3 id="进入目录"><a href="#进入目录" class="headerlink" title="进入目录"></a><strong>进入目录</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd redis-5.0.5</span><br></pre></td></tr></table></figure>
 
-<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a><strong>编译</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
 
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
 
-<h3 id="创建新目录"><a href="#创建新目录" class="headerlink" title="创建新目录"></a><strong>创建新目录</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/redis/bin</span><br><span class="line">mkdir -p /usr/local/redis/etc</span><br></pre></td></tr></table></figure>
 
-<h3 id="将安装所得文件redis-conf移入新建文件夹etc中"><a href="#将安装所得文件redis-conf移入新建文件夹etc中" class="headerlink" title="将安装所得文件redis.conf移入新建文件夹etc中"></a><strong>将安装所得文件redis.conf移入新建文件夹etc中</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv redis.conf /usr/local/redis/etc</span><br></pre></td></tr></table></figure>
 
-<h3 id="进入src目录"><a href="#进入src目录" class="headerlink" title="进入src目录"></a><strong>进入src目录</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd src</span><br></pre></td></tr></table></figure>
 
-<h3 id="将安装所得以下文件移入新建文件夹bin中"><a href="#将安装所得以下文件移入新建文件夹bin中" class="headerlink" title="将安装所得以下文件移入新建文件夹bin中"></a><strong>将安装所得以下文件移入新建文件夹bin中</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mv mkreleasehdr.sh /usr/local/redis/bin</span><br><span class="line">mv redis-benchmark  /usr/local/redis/bin</span><br><span class="line">mv redis-check-aof  /usr/local/redis/bin</span><br><span class="line">mv redis-check-rdb  /usr/local/redis/bin</span><br><span class="line">mv redis-cli  /usr/local/redis/bin</span><br><span class="line">mv redis-server  /usr/local/redis/bin</span><br></pre></td></tr></table></figure>
 
-<h3 id="启动Redis服务"><a href="#启动Redis服务" class="headerlink" title="启动Redis服务"></a><strong>启动Redis服务</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/redis/bin</span><br><span class="line">redis-server</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置后台运行和密码"><a href="#设置后台运行和密码" class="headerlink" title="设置后台运行和密码"></a><strong>设置后台运行和密码</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/local/redis/etc/redis.conf</span><br><span class="line">// daemonize on 改为yes</span><br><span class="line">daemonize yes</span><br><span class="line"></span><br><span class="line">// 找到# requirepass foobared，在下边添加</span><br><span class="line">requirepass 123456　</span><br><span class="line"></span><br><span class="line">protected-mode no</span><br><span class="line">bind 0.0.0.0</span><br></pre></td></tr></table></figure>
-
-<h3 id="远程设置，防火墙"><a href="#远程设置，防火墙" class="headerlink" title="远程设置，防火墙"></a><strong>远程设置，防火墙</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 向防火墙添加 Redis 端口</span><br><span class="line">firewall-cmd --zone=public --add-port=6379/tcp --permanent</span><br><span class="line">// 刷新防火墙规则</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">// 验证端口,查询防火墙开放端口</span><br><span class="line">firewall-cmd --zone=public --list-port</span><br><span class="line">// 重启防火墙</span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
-
-<h3 id="Redis常用命令"><a href="#Redis常用命令" class="headerlink" title="Redis常用命令"></a><strong>Redis常用命令</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 查看redis状态 	</span><br><span class="line">ps -ef|grep redis</span><br><span class="line"></span><br><span class="line">// 重启redis</span><br><span class="line">cd /usr/local/redis/bin</span><br><span class="line">./redis-server /usr/local/redis/etc/redis.conf</span><br><span class="line"></span><br><span class="line">./redis-cli -h 192.168.128.130 -p 6379 -a 123456</span><br></pre></td></tr></table></figure>
-
+</li>
+</ul>
 
         </div>
         
@@ -202,7 +203,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Linux/">Linux</a>, <a class="has-link-grey -link" href="/tags/Redish/">Redish</a>
+                    <a class="has-link-grey -link" href="/tags/ZooKeeper/">ZooKeeper</a>
                 </div>
             </div>
         </div>
@@ -249,16 +250,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/09/09/Linux安装sonarQube/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/09/09/Linux安装jdk_Maven/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Linux安装sonarQube</span>
+                <span class="level-item">Linux安装JDK、MAVEN</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/09/Linux安装RabbitMQ/">
-                <span class="level-item">Linux安装RabbitMQ</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/09/Linux常用命令/">
+                <span class="level-item">Linux常用命令</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1513,7 +1514,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Linux安装Redis" height="28">
+                    <img src="/images/logo.svg" alt="ZooKeeper的使用" height="28">
                 
                 </a>
                 <p class="is-size-7">

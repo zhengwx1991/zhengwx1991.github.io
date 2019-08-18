@@ -16,7 +16,7 @@
 <meta property="og:description" content="项目地址https://github.com/zhengwx1991/api-gateway.git">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-15T12:56:27.289Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud系列-网关Zuul">
 <meta name="twitter:description" content="项目地址https://github.com/zhengwx1991/api-gateway.git">
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 594 个字)
+                    4 分钟 读完 (大约 580 个字)
                 </span>
                 
                 
@@ -166,58 +166,79 @@
             
         </h1>
         <div class="content">
-            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/api-gateway.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/api-gateway.git</a></p>
+            <h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><strong>项目地址</strong></h3><p><a href="https://github.com/zhengwx1991/api-gateway.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/api-gateway.git</a></p>
 <a id="more"></a>
-<h3 id="微服务网关介绍和使用场景"><a href="#微服务网关介绍和使用场景" class="headerlink" title="微服务网关介绍和使用场景"></a>微服务网关介绍和使用场景</h3><pre><code>1）什么是网关
-    API Gateway，是系统的唯一对外的入口，介于客户端和服务器端之间的中间层，处理非业务功能 提供路由请求、鉴权、监控、缓存、限流等功能
-        统一接入
-            智能路由
-            AB测试、灰度测试
-            负载均衡、容灾处理
-            日志埋点（类似Nignx日志）
+<h3 id="微服务网关介绍和使用场景"><a href="#微服务网关介绍和使用场景" class="headerlink" title="微服务网关介绍和使用场景"></a><strong>微服务网关介绍和使用场景</strong></h3><ol>
+<li><p>什么是网关</p>
+<p>API Gateway，是系统的唯一对外的入口，介于客户端和服务器端之间的中间层，处理非业务功能 提供路由请求、鉴权、监控、缓存、限流等功能</p>
+<ul>
+<li>统一接入<ul>
+<li>智能路由</li>
+<li>AB测试、灰度测试</li>
+<li>负载均衡、容灾处理</li>
+<li>日志埋点（类似Nignx日志）</li>
+</ul>
+</li>
+<li>流量监控<ul>
+<li>限流处理</li>
+<li>服务降级</li>
+</ul>
+</li>
+<li>安全防护<ul>
+<li>鉴权处理</li>
+<li>监控</li>
+<li>机器网络隔离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>主流的网关</p>
+<p><strong>Zuul</strong></p>
+<p>是Netflix开源的微服务网关，和Eureka,Ribbon,Hystrix等组件配合使用，Zuul 2.0比1.0的性能提高很多</p>
+<p><strong>kong</strong></p>
+<p>由Mashape公司开源的，基于Nginx的API gateway</p>
+<p><strong>nginx+lua</strong></p>
+<p>是一个高性能的HTTP和反向代理服务器,lua是脚本语言，让Nginx执行Lua脚本，并且高并发、非阻塞的处理各种请求</p>
+</li>
+</ol>
+<h3 id="SpringCloud的网关组件zuul基本使用"><a href="#SpringCloud的网关组件zuul基本使用" class="headerlink" title="SpringCloud的网关组件zuul基本使用"></a><strong>SpringCloud的网关组件zuul基本使用</strong></h3><ol>
+<li><p>加入依赖</p>
+</li>
+<li><p>启动类加入注解 @EnableZuulProxy<br>默认集成断路器  @EnableCircuitBreaker</p>
+<ul>
+<li><p>默认访问规则:<br><a href="http://gateway:port/service-id/" target="_blank" rel="noopener">http://gateway:port/service-id/</a>**<br>例子：默认 /order-service/api/v1/order/save?user_id=2&amp;product_id=1<br>自定义 /xdclass_order/api/v1/order/save?user_id=2&amp;product_id=1</p>
+</li>
+<li><p>自定义路由转发：</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">zuul:</span></span><br><span class="line"><span class="hljs-attr">  routes:</span></span><br><span class="line">	<span class="hljs-attr">order-service:</span> <span class="hljs-string">/apigateway/**</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>环境隔离配置：</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">需求</span> <span class="hljs-string">：不想让默认的服务对外暴露接口</span></span><br><span class="line">	<span class="hljs-string">/order-service/api/v1/order/save</span></span><br><span class="line"><span class="hljs-string">配置：</span></span><br><span class="line"><span class="hljs-attr">zuul:</span> </span><br><span class="line"><span class="hljs-attr">  ignored-patterns:</span></span><br><span class="line">	<span class="hljs-bullet">-</span> <span class="hljs-string">/*-service/api/v1/order/save</span></span><br></pre></td></tr></table></figure>
 
-        流量监控
-            限流处理
-            服务降级
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="高级篇幅之Zuul常用问题分析和网关过滤器原理分析"><a href="#高级篇幅之Zuul常用问题分析和网关过滤器原理分析" class="headerlink" title="高级篇幅之Zuul常用问题分析和网关过滤器原理分析"></a><strong>高级篇幅之Zuul常用问题分析和网关过滤器原理分析</strong></h3><ol>
+<li>路由名称定义问题<br>路由映射重复覆盖问题</li>
+<li>Http请求头过滤问题</li>
+<li>过滤器执行顺序问题 ，过滤器的order值越小，越先执行</li>
+<li>共享RequestContext，上下文对象</li>
+</ol>
+<h3 id="自定义Zuul过滤器实现登录鉴权实战"><a href="#自定义Zuul过滤器实现登录鉴权实战" class="headerlink" title="自定义Zuul过滤器实现登录鉴权实战"></a><strong>自定义Zuul过滤器实现登录鉴权实战</strong></h3><ol>
+<li>新建一个filter包</li>
+<li>新建一个类，实现ZuulFilter，重写里面的方法</li>
+<li>在类顶部加注解，@Component,让Spring扫描</li>
+</ol>
+<h3 id="高级篇幅之高并发情况下接口限流特技"><a href="#高级篇幅之高并发情况下接口限流特技" class="headerlink" title="高级篇幅之高并发情况下接口限流特技"></a><strong>高级篇幅之高并发情况下接口限流特技</strong></h3><p>谷歌guava框架，网关限流使用</p>
+<ol>
+<li>nginx层限流</li>
+<li>网关层限流</li>
+</ol>
+<h3 id="Zuul微服务网关集群搭建"><a href="#Zuul微服务网关集群搭建" class="headerlink" title="Zuul微服务网关集群搭建"></a><strong>Zuul微服务网关集群搭建</strong></h3><p>微服务网关Zull集群搭建</p>
+<ul>
+<li>nginx+lvs+keepalive<br><a href="https://www.cnblogs.com/liuyisai/p/5990645.html" target="_blank" rel="noopener">https://www.cnblogs.com/liuyisai/p/5990645.html</a></li>
+</ul>
 
-        安全防护
-            鉴权处理
-            监控
-            机器网络隔离
-2）主流的网关
-    zuul：是Netflix开源的微服务网关，和Eureka,Ribbon,Hystrix等组件配合使用，Zuul 2.0比1.0的性能提高很多
-    kong: 由Mashape公司开源的，基于Nginx的API gateway
-    nginx+lua：是一个高性能的HTTP和反向代理服务器,lua是脚本语言，让Nginx执行Lua脚本，并且高并发、非阻塞的处理各种请求</code></pre><h3 id="SpringCloud的网关组件zuul基本使用"><a href="#SpringCloud的网关组件zuul基本使用" class="headerlink" title="SpringCloud的网关组件zuul基本使用"></a>SpringCloud的网关组件zuul基本使用</h3><pre><code>1、加入依赖
-2、启动类加入注解 @EnableZuulProxy
-    默认集成断路器  @EnableCircuitBreaker
-    默认访问规则  
-        http://gateway:port/service-id/**
-            例子：默认 /order-service/api/v1/order/save?user_id=2&amp;product_id=1
-                 自定义 /xdclass_order/api/v1/order/save?user_id=2&amp;product_id=1
-
-    自定义路由转发：
-        zuul:
-         routes:
-             order-service: /apigateway/**
-
-    环境隔离配置：
-        需求 ：不想让默认的服务对外暴露接口
-            /order-service/api/v1/order/save
-
-        配置：
-        zuul: 
-            ignored-patterns:
-                - /*-service/api/v1/order/save</code></pre><h3 id="高级篇幅之Zuul常用问题分析和网关过滤器原理分析"><a href="#高级篇幅之Zuul常用问题分析和网关过滤器原理分析" class="headerlink" title="高级篇幅之Zuul常用问题分析和网关过滤器原理分析"></a>高级篇幅之Zuul常用问题分析和网关过滤器原理分析</h3><pre><code>1、路由名称定义问题
-    路由映射重复覆盖问题
-2、Http请求头过滤问题
-3、过滤器执行顺序问题 ，过滤器的order值越小，越先执行
-4、共享RequestContext，上下文对象</code></pre><h3 id="自定义Zuul过滤器实现登录鉴权实战"><a href="#自定义Zuul过滤器实现登录鉴权实战" class="headerlink" title="自定义Zuul过滤器实现登录鉴权实战"></a>自定义Zuul过滤器实现登录鉴权实战</h3><pre><code>1、新建一个filter包
-2、新建一个类，实现ZuulFilter，重写里面的方法
-3、在类顶部加注解，@Component,让Spring扫描</code></pre><h3 id="高级篇幅之高并发情况下接口限流特技"><a href="#高级篇幅之高并发情况下接口限流特技" class="headerlink" title="高级篇幅之高并发情况下接口限流特技"></a>高级篇幅之高并发情况下接口限流特技</h3><pre><code>谷歌guava框架，网关限流使用
-1、nginx层限流
-2、网关层限流</code></pre><h3 id="Zuul微服务网关集群搭建"><a href="#Zuul微服务网关集群搭建" class="headerlink" title="Zuul微服务网关集群搭建"></a>Zuul微服务网关集群搭建</h3><pre><code>微服务网关Zull集群搭建
-1、nginx+lvs+keepalive 
-https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -323,7 +344,7 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -333,7 +354,7 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -343,7 +364,7 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -623,6 +644,14 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -642,7 +671,7 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -784,7 +813,7 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -956,7 +985,14 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -984,6 +1020,13 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1208,7 +1251,7 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1380,7 +1423,14 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1408,6 +1458,13 @@ https://www.cnblogs.com/liuyisai/p/5990645.html</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

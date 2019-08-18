@@ -16,7 +16,7 @@
 <meta property="og:description" content="官方文档https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign 项目路径https://github.com/zhengwx1991/order_service.git">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-15T12:56:27.291Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud系列——Feign">
 <meta name="twitter:description" content="官方文档https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign 项目路径https://github.com/zhengwx1991/order_service.git">
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 776 个字)
+                    5 分钟 读完 (大约 721 个字)
                 </span>
                 
                 
@@ -166,92 +166,87 @@
             
         </h1>
         <div class="content">
-            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign</a></p>
-<h3 id="项目路径"><a href="#项目路径" class="headerlink" title="项目路径"></a>项目路径</h3><p><a href="https://github.com/zhengwx1991/order_service.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/order_service.git</a></p>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h3><p><a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign" target="_blank" rel="noopener">https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign</a></p>
+<h3 id="项目路径"><a href="#项目路径" class="headerlink" title="项目路径"></a><strong>项目路径</strong></h3><p><a href="https://github.com/zhengwx1991/order_service.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/order_service.git</a></p>
 <a id="more"></a>
-<h3 id="常用的服务间调用方式"><a href="#常用的服务间调用方式" class="headerlink" title="常用的服务间调用方式"></a>常用的服务间调用方式</h3><pre><code>RPC:
-    远程过程调用，像调用本地服务(方法)一样调用服务器的服务
-    支持同步、异步调用
-    客户端和服务器之间建立TCP连接，可以一次建立一个，也可以多个调用复用一次链接
-    PRC数据包小
-        protobuf
-        thrift
-    rpc：编解码，序列化，链接，丢包，协议
+<h3 id="常用的服务间调用方式"><a href="#常用的服务间调用方式" class="headerlink" title="常用的服务间调用方式"></a><strong>常用的服务间调用方式</strong></h3><ul>
+<li>RPC<br>远程过程调用，像调用本地服务(方法)一样调用服务器的服务<br>支持同步、异步调用<br>客户端和服务器之间建立TCP连接，可以一次建立一个，也可以多个调用复用一次链接<br>RPC数据包小(protobuf、thrift)<br>RPC：编解码，序列化，链接，丢包，协议</li>
+<li>Rest(Http)</li>
+</ul>
+<h3 id="微服务调用方式之ribbon开发，订单调用商品服务"><a href="#微服务调用方式之ribbon开发，订单调用商品服务" class="headerlink" title="微服务调用方式之ribbon开发，订单调用商品服务"></a><strong>微服务调用方式之ribbon开发，订单调用商品服务</strong></h3><ol>
+<li><p>开发订单服务，调用商品服务获取商品信息</p>
+<ul>
+<li><p>创建order_service项目</p>
+</li>
+<li><p>开发伪下单接口</p>
+</li>
+<li><p>使用ribbon. (类似httpClient,URLConnection) </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Bean</span></span><br><span class="line"><span class="hljs-comment">// 启动类增加注解</span></span><br><span class="line"><span class="hljs-meta">@LoadBalanced</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> RestTemplate <span class="hljs-title">restTemplate</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> RestTemplate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>根据名称进行调用商品，获取商品详情</p>
+<ul>
+<li><p>创建order_service项目</p>
+</li>
+<li><p>开发伪下单接口</p>
+</li>
+<li><p>使用ribbon. (类似httpClient,URLConnection) </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Bean</span></span><br><span class="line"><span class="hljs-comment">// 启动类增加注解</span></span><br><span class="line"><span class="hljs-meta">@LoadBalanced</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> RestTemplate <span class="hljs-title">restTemplate</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> RestTemplate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根据名称进行调用商品，获取商品详情</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Autowired</span></span><br><span class="line"><span class="hljs-keyword">private</span> RestTemplate restTemplate;</span><br><span class="line">Map&lt;String, Object&gt; productMap = restTemplate.getForObject(<span class="hljs-string">"http://PRODUCT-SERVICE/api/v1/product/find?id="</span>+productId, Map.class);</span><br></pre></td></tr></table></figure>
 
-Rest(Http):
-    http请求，支持多种协议和功能
-    开发方便成本低
-    http数据包大
-    java开发：HttpClient，URLConnection</code></pre><h3 id="微服务调用方式之ribbon开发，订单调用商品服务"><a href="#微服务调用方式之ribbon开发，订单调用商品服务" class="headerlink" title="微服务调用方式之ribbon开发，订单调用商品服务"></a>微服务调用方式之ribbon开发，订单调用商品服务</h3><pre><code>订单服务 调用商品服务获取商品信息
-1、创建order_service项目
-2、开发伪下单接口
-3、使用ribbon. (类似httpClient,URLConnection) 
-    启动类增加注解
-      @Bean
-      @LoadBalanced
-      public RestTemplate restTemplate() {
-           return new RestTemplate();
-      }
-4、根据名称进行调用商品，获取商品详情
-    1、创建order_service项目
-    2、开发伪下单接口
-    3、使用ribbon. (类似httpClient,URLConnection) 
-        启动类增加注解
-        @Bean
-        @LoadBalanced
-        public RestTemplate restTemplate(){
-            return new RestTemplate();
-        }
-    4、根据名称进行调用商品，获取商品详情
-        @Autowired
-        private RestTemplate restTemplate;
-        Map&lt;String, Object&gt; productMap = restTemplate.getForObject(&quot;http://PRODUCT-SERVICE/api/v1/product/find?id=&quot;+productId, Map.class);</code></pre><h3 id="Ribbon负载均衡源码分析"><a href="#Ribbon负载均衡源码分析" class="headerlink" title="Ribbon负载均衡源码分析"></a>Ribbon负载均衡源码分析</h3><pre><code>1、完善下单接口
-2、分析@LoadBalanced
-    1）首先从注册中心获取provider的列表
-    2）通过一定的策略选择其中一个节点
-    3）再返回给restTemplate调用</code></pre><h3 id="服务间调用之负载均衡策略调整"><a href="#服务间调用之负载均衡策略调整" class="headerlink" title="服务间调用之负载均衡策略调整"></a>服务间调用之负载均衡策略调整</h3><pre><code>自定义负载均衡策略：http://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html#_customizing_the_ribbon_client_by_setting_properties
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Ribbon负载均衡源码分析"><a href="#Ribbon负载均衡源码分析" class="headerlink" title="Ribbon负载均衡源码分析"></a><strong>Ribbon负载均衡源码分析</strong></h3><p>分析@LoadBalanced</p>
+<ol>
+<li>首先从注册中心获取provider的列表</li>
+<li>通过一定的策略选择其中一个节点</li>
+<li>再返回给restTemplate调用</li>
+</ol>
+<h3 id="服务间调用之负载均衡策略调整"><a href="#服务间调用之负载均衡策略调整" class="headerlink" title="服务间调用之负载均衡策略调整"></a><strong>服务间调用之负载均衡策略调整</strong></h3><ul>
+<li><p>自定义负载均衡策略<br><a href="http://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html#_customizing_the_ribbon_client_by_setting_properties" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html#_customizing_the_ribbon_client_by_setting_properties</a></p>
+</li>
+<li><p>在配置文件yml里面，自定义负载均衡策略</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#自定义负载均衡策略</span></span><br><span class="line"><span class="hljs-attr">product-service:</span></span><br><span class="line"><span class="hljs-attr">  ribbon:</span></span><br><span class="line"><span class="hljs-attr">    NFLoadBalancerRuleClassName:</span> <span class="hljs-string">com.netflix.loadbalancer.RandomRule</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>策略选择<br>如果每个机器配置一样，则建议不修改策略 (推荐)<br>如果部分机器配置强，则可以改为 WeightedResponseTimeRule    </p>
+</li>
+</ul>
+<h3 id="微服务调用方式之-feign-实战-订单调用商品服务"><a href="#微服务调用方式之-feign-实战-订单调用商品服务" class="headerlink" title="微服务调用方式之 feign 实战 订单调用商品服务"></a><strong>微服务调用方式之 feign 实战 订单调用商品服务</strong></h3><h6 id="Feign：-伪RPC客户端-本质还是用http"><a href="#Feign：-伪RPC客户端-本质还是用http" class="headerlink" title="Feign： 伪RPC客户端(本质还是用http)"></a><strong>Feign： 伪RPC客户端(本质还是用http)</strong></h6><ol>
+<li><p>使用feign步骤（新旧版本依赖名称不一样）</p>
+<ul>
+<li><p>加入依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动类增加@EnableFeignClients</p>
+</li>
+<li><p>增加一个接口 并@FeignClient(name=”product-service”)</p>
+</li>
+</ul>
+</li>
+<li><p>注意点</p>
+<ul>
+<li>路径</li>
+<li>Http方法必须对应</li>
+<li>使用requestBody，应该使用@PostMapping</li>
+<li>多个参数的时候，通过@RequestParam（”id”) int id)方式调用</li>
+</ul>
+</li>
+</ol>
+<h6 id="Feign核心源码解读和服务调用方式ribbon和Feign选择"><a href="#Feign核心源码解读和服务调用方式ribbon和Feign选择" class="headerlink" title="Feign核心源码解读和服务调用方式ribbon和Feign选择"></a><strong>Feign核心源码解读和服务调用方式ribbon和Feign选择</strong></h6><ol>
+<li><p>ribbon和feign两个的区别和选择选择feign<br>默认集成了ribbon<br>写起来更加思路清晰和方便<br>采用注解方式进行配置，配置熔断等方式方便</p>
+</li>
+<li><p>超时配置</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">默认optons</span> <span class="hljs-string">readtimeout是60，但是由于hystrix默认是1秒超时</span></span><br><span class="line"><span class="hljs-comment">#修改调用超时时间</span></span><br><span class="line"><span class="hljs-attr">feign:</span></span><br><span class="line"><span class="hljs-attr">  client:</span></span><br><span class="line">	<span class="hljs-attr">config:</span></span><br><span class="line">	  <span class="hljs-attr">default:</span></span><br><span class="line">		<span class="hljs-attr">connectTimeout:</span> <span class="hljs-number">2000</span></span><br><span class="line">		  <span class="hljs-attr">readTimeout:</span> <span class="hljs-number">2000</span></span><br></pre></td></tr></table></figure>
 
-在配置文件yml里面，自定义负载均衡策略
-    #自定义负载均衡策略
-    product-service:
-      ribbon:
-        NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+<p>模拟接口响应慢，线程睡眠新的方式</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span> &#123;</span><br><span class="line">    TimeUnit.SECONDS.sleep(<span class="hljs-number">1</span>);</span><br><span class="line">&#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
 
-策略选择：
-    1、如果每个机器配置一样，则建议不修改策略 (推荐)
-    2、如果部分机器配置强，则可以改为 WeightedResponseTimeRule        </code></pre><h3 id="微服务调用方式之-feign-实战-订单调用商品服务"><a href="#微服务调用方式之-feign-实战-订单调用商品服务" class="headerlink" title="微服务调用方式之 feign 实战 订单调用商品服务"></a>微服务调用方式之 feign 实战 订单调用商品服务</h3><h6 id="Feign：-伪RPC客户端-本质还是用http"><a href="#Feign：-伪RPC客户端-本质还是用http" class="headerlink" title="Feign： 伪RPC客户端(本质还是用http)"></a>Feign： 伪RPC客户端(本质还是用http)</h6><pre><code>1、使用feign步骤讲解（新旧版本依赖名称不一样）
-    加入依赖
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-    启动类增加@EnableFeignClients
-    增加一个接口 并@FeignClient(name=&quot;product-service&quot;)
-2、注意点：
-    1、路径
-    2、Http方法必须对应
-    3、使用requestBody，应该使用@PostMapping
-    4、多个参数的时候，通过@RequestParam（&quot;id&quot;) int id)方式调用</code></pre><h6 id="Feign核心源码解读和服务调用方式ribbon和Feign选择"><a href="#Feign核心源码解读和服务调用方式ribbon和Feign选择" class="headerlink" title="Feign核心源码解读和服务调用方式ribbon和Feign选择"></a>Feign核心源码解读和服务调用方式ribbon和Feign选择</h6><pre><code>1、ribbon和feign两个的区别和选择
-    选择feign
-    默认集成了ribbon
-    写起来更加思路清晰和方便
-    采用注解方式进行配置，配置熔断等方式方便
-2、超时配置
-    默认optons readtimeout是60，但是由于hystrix默认是1秒超时
-    #修改调用超时时间
-    feign:
-     client:
-       config:
-         default:
-           connectTimeout: 2000
-             readTimeout: 2000
-
-    模拟接口响应慢，线程睡眠新的方式
-    try {
-        TimeUnit.SECONDS.sleep(1);
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }        </code></pre>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -357,7 +352,7 @@ Rest(Http):
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -367,7 +362,7 @@ Rest(Http):
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -377,7 +372,7 @@ Rest(Http):
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -657,6 +652,14 @@ Rest(Http):
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -676,7 +679,7 @@ Rest(Http):
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -818,7 +821,7 @@ Rest(Http):
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -990,7 +993,14 @@ Rest(Http):
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1018,6 +1028,13 @@ Rest(Http):
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1242,7 +1259,7 @@ Rest(Http):
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1414,7 +1431,14 @@ Rest(Http):
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1442,6 +1466,13 @@ Rest(Http):
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

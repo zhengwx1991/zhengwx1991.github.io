@@ -16,7 +16,7 @@
 <meta property="og:description" content="官方文档服务端开发：http://cloud.spring.io/spring-cloud-config/客户端开发：http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-15T12:56:27.289Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud系列-配置中心Config">
 <meta name="twitter:description" content="官方文档服务端开发：http://cloud.spring.io/spring-cloud-config/客户端开发：http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client">
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 618 个字)
+                    4 分钟 读完 (大约 563 个字)
                 </span>
                 
                 
@@ -166,87 +166,44 @@
             
         </h1>
         <div class="content">
-            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p>服务端开发：<a href="http://cloud.spring.io/spring-cloud-config/" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/</a><br>客户端开发：<a href="http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client</a></p>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h3><p>服务端开发：<a href="http://cloud.spring.io/spring-cloud-config/" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/</a><br>客户端开发：<a href="http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client</a></p>
 <a id="more"></a>
-<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p>配置中心服务端：<a href="https://github.com/zhengwx1991/config-server.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/config-server.git</a><br>配置中心：<a href="https://github.com/zhengwx1991/config-cloud.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/config-cloud.git</a></p>
-<h3 id="微服务下的分布式配置中心"><a href="#微服务下的分布式配置中心" class="headerlink" title="微服务下的分布式配置中心"></a>微服务下的分布式配置中心</h3><pre><code>什么是配置中心及使用前后的好处
-什么是配置中心：
-    一句话：统一管理配置, 快速切换各个环境的配置
-相关产品：
-    百度的disconf 
-        地址:https://github.com/knightliao/disconf
+<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><strong>项目地址</strong></h3><p>配置中心服务端：<a href="https://github.com/zhengwx1991/config-server.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/config-server.git</a><br>配置中心：<a href="https://github.com/zhengwx1991/config-cloud.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/config-cloud.git</a></p>
+<h3 id="微服务下的分布式配置中心"><a href="#微服务下的分布式配置中心" class="headerlink" title="微服务下的分布式配置中心"></a><strong>微服务下的分布式配置中心</strong></h3><ol>
+<li>什么是配置中心<br>一句话：统一管理配置, 快速切换各个环境的配置</li>
+<li>相关产品<br>百度的disconf：<a href="https://github.com/knightliao/disconf" target="_blank" rel="noopener">https://github.com/knightliao/disconf</a><br>阿里的diamand：地址：<a href="https://github.com/takeseem/diamond" target="_blank" rel="noopener">https://github.com/takeseem/diamond</a><br>springcloud的configs-server:<a href="http://cloud.spring.io/spring-cloud-config/" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/</a></li>
+<li>推荐干货文章<br><a href="http://jm.taobao.org/2016/09/28/an-article-about-config-center/" target="_blank" rel="noopener">http://jm.taobao.org/2016/09/28/an-article-about-config-center/</a></li>
+</ol>
+<h3 id="SpringCloud的配置中心组件config-server开发"><a href="#SpringCloud的配置中心组件config-server开发" class="headerlink" title="SpringCloud的配置中心组件config-server开发"></a><strong>SpringCloud的配置中心组件config-server开发</strong></h3><p>SpringCloud配置中心config-server开发</p>
+<ol>
+<li>新建项目，创建config-server</li>
+<li>启动类增加注解，@EnableConfigServer</li>
+</ol>
+<h3 id="使用git服务器结合Config搭建分布式配置中心"><a href="#使用git服务器结合Config搭建分布式配置中心" class="headerlink" title="使用git服务器结合Config搭建分布式配置中心"></a><strong>使用git服务器结合Config搭建分布式配置中心</strong></h3><ol>
+<li><p>默认使用git存储配置中心<br>使用git服务器，可以自己搭建gitlab服务器，或者使用github、开源中国git、阿里云git</p>
+</li>
+<li><p>配置文件添加配置</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  application:</span></span><br><span class="line">	<span class="hljs-attr">name:</span> <span class="hljs-string">config-server</span></span><br><span class="line"><span class="hljs-comment">#git配置</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    config:</span></span><br><span class="line"><span class="hljs-attr">      server:</span></span><br><span class="line"><span class="hljs-attr">        git:</span></span><br><span class="line"><span class="hljs-attr">          uri:</span> <span class="hljs-attr">https://gitee.com/waitforxy/config_cloud</span></span><br><span class="line"><span class="hljs-attr">          username:</span> <span class="hljs-string">github用户名</span></span><br><span class="line"><span class="hljs-attr">          password:</span> <span class="hljs-string">登陆密码</span></span><br><span class="line">          <span class="hljs-comment">#超时时间</span></span><br><span class="line"><span class="hljs-attr">          timeout:</span> <span class="hljs-number">5</span></span><br><span class="line">          <span class="hljs-comment">#分支</span></span><br><span class="line"><span class="hljs-attr">          default-label:</span> <span class="hljs-string">master</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问方式（一定要注意语法，如果有问题，会出错）<br>多种访问路径，可以通过启动日志去查看<br>例子 <a href="http://localhost:9100/product-service.yml/{name}-{profiles}.properties" target="_blank" rel="noopener">http://localhost:9100/product-service.yml/{name}-{profiles}.properties</a><br>/{name}-{profiles}.yml<br>/{name}-{profiles}.json<br>/{label}/{name}-{profiles}.yml</p>
+<p>name 服务器名称<br>profile 环境名称，开发、测试、生产<br>lable 仓库分支、默认master分支</p>
+</li>
+</ol>
+<h3 id="分布式配置中心客户端使用"><a href="#分布式配置中心客户端使用" class="headerlink" title="分布式配置中心客户端使用"></a><strong>分布式配置中心客户端使用</strong></h3><h6 id="官方文档-1"><a href="#官方文档-1" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h6><p><a href="http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client</a></p>
+<h6 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a><strong>开发过程</strong></h6><ol>
+<li><p>加入依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-config-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改对应服务的配置文件,把application.yml 改为 bootstrap.yml</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#指定注册中心地址</span></span><br><span class="line"><span class="hljs-attr">eureka:</span></span><br><span class="line"><span class="hljs-attr">  client:</span></span><br><span class="line"><span class="hljs-attr">    serviceUrl:</span></span><br><span class="line"><span class="hljs-attr">      defaultZone:</span> <span class="hljs-attr">http://localhost:8761/eureka/</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#服务的名称</span></span><br><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  application:</span></span><br><span class="line">	<span class="hljs-attr">name:</span> <span class="hljs-string">product-service</span></span><br><span class="line"><span class="hljs-comment">#指定从哪个配置中心读取</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">      config:</span></span><br><span class="line"><span class="hljs-attr">        discovery:</span></span><br><span class="line"><span class="hljs-attr">          service-id:</span> <span class="hljs-string">CONFIG-SERVER</span></span><br><span class="line"><span class="hljs-attr">          enabled:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">        profile:</span> <span class="hljs-string">test</span></span><br><span class="line">        <span class="hljs-comment">#建议用lable去区分环境，默认是lable是master分支</span></span><br><span class="line">        <span class="hljs-comment">#label: test</span></span><br></pre></td></tr></table></figure>
 
-    阿里的diamand
-        地址：https://github.com/takeseem/diamond
+</li>
+</ol>
+<h6 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a><strong>注意点</strong></h6><ul>
+<li>配置文件要用bootstrap.yml</li>
+<li>默认读取文件名是 服务名称</li>
+</ul>
 
-    springcloud的configs-server:
-        地址：http://cloud.spring.io/spring-cloud-config/
-推荐干货文章：http://jm.taobao.org/2016/09/28/an-article-about-config-center/</code></pre><h3 id="SpringCloud的配置中心组件config-server开发"><a href="#SpringCloud的配置中心组件config-server开发" class="headerlink" title="SpringCloud的配置中心组件config-server开发"></a>SpringCloud的配置中心组件config-server开发</h3><pre><code>SpringCloud配置中心config-server开发
-1、新建项目，创建config-server
-2、启动类增加注解
-    @EnableConfigServer</code></pre><h3 id="使用git服务器结合Config搭建分布式配置中心"><a href="#使用git服务器结合Config搭建分布式配置中心" class="headerlink" title="使用git服务器结合Config搭建分布式配置中心"></a>使用git服务器结合Config搭建分布式配置中心</h3><pre><code>使用git服务器结合Config搭建分布式配置中心
-1、默认使用git存储配置中心
-    使用git服务器，可以自己搭建gitlab服务器
-    或者使用github、开源中国git、阿里云git
-2、配置文件添加配置
-    spring:
-      application:
-        name: config-server
-    #git配置
-      cloud:
-        config:
-          server:
-            git:
-              uri: https://gitee.com/waitforxy/config_cloud
-              username: github用户名
-              password: 登陆密码
-              #超时时间
-              timeout: 5
-              #分支
-              default-label: master
-
-3、访问方式（一定要注意语法，如果有问题，会出错）
-    多种访问路径，可以通过启动日志去查看
-    例子 http://localhost:9100/product-service.yml
-
-    /{name}-{profiles}.properties
-    /{name}-{profiles}.yml
-    /{name}-{profiles}.json
-    /{label}/{name}-{profiles}.yml
-
-    name 服务器名称
-    profile 环境名称，开发、测试、生产
-    lable 仓库分支、默认master分支</code></pre><h3 id="分布式配置中心客户端使用"><a href="#分布式配置中心客户端使用" class="headerlink" title="分布式配置中心客户端使用"></a>分布式配置中心客户端使用</h3><pre><code>微服务里面客户端接入配置中心开发
-官方文档：http://cloud.spring.io/spring-cloud-config/single/spring-cloud-config.html#_spring_cloud_config_client
-1、加入依赖
-     &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-cloud-config-client&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-
- 2、修改对应服务的配置文件,把application.yml 改为 bootstrap.yml
-    #指定注册中心地址
-    eureka:
-      client:
-        serviceUrl:
-          defaultZone: http://localhost:8761/eureka/
-
-    #服务的名称
-    spring:
-      application:
-        name: product-service
-      #指定从哪个配置中心读取
-      cloud:
-        config:
-          discovery:
-            service-id: CONFIG-SERVER
-            enabled: true
-          profile: test
-          #建议用lable去区分环境，默认是lable是master分支
-          #label: test
-注意点：
-    1.配置文件要用bootstrap.yml
-    2.默认读取文件名是 服务名称</code></pre>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -352,7 +309,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -362,7 +319,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -372,7 +329,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -652,6 +609,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -671,7 +636,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -813,7 +778,7 @@
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -985,7 +950,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1013,6 +985,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1237,7 +1216,7 @@
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1409,7 +1388,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1437,6 +1423,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

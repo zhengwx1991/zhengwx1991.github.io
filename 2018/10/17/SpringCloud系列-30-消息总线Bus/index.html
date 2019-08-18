@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint 消息总线Bus介绍和使用场景1、什么是消息总线​    一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个​    配置更新了，但是其他系统不知道是否更新">
+    <meta name="description" content="官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint 消息总线Bus介绍和使用场景1、什么是消息总线 ​    一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个 ​    配置更新了，但是其他系统不知道是否更新">
 <meta name="keywords" content="SpringCloud,Bus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringCloud系列-消息总线Bus">
 <meta property="og:url" content="http://zhengwx1991.cn/2018/10/17/SpringCloud系列-30-消息总线Bus/index.html">
 <meta property="og:site_name" content="942猫的博客">
-<meta property="og:description" content="官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint 消息总线Bus介绍和使用场景1、什么是消息总线​    一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个​    配置更新了，但是其他系统不知道是否更新">
+<meta property="og:description" content="官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint 消息总线Bus介绍和使用场景1、什么是消息总线 ​    一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个 ​    配置更新了，但是其他系统不知道是否更新">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-15T12:56:27.290Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud系列-消息总线Bus">
-<meta name="twitter:description" content="官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint 消息总线Bus介绍和使用场景1、什么是消息总线​    一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个​    配置更新了，但是其他系统不知道是否更新">
+<meta name="twitter:description" content="官方文档http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint 消息总线Bus介绍和使用场景1、什么是消息总线 ​    一个事件，需要广播或者单独传递给某个接口 2、为什么使用这个 ​    配置更新了，但是其他系统不知道是否更新">
 <meta name="twitter:image" content="http://zhengwx1991.cn/images/og_image.png">
 
 
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 分钟 读完 (大约 848 个字)
+                    6 分钟 读完 (大约 832 个字)
                 </span>
                 
                 
@@ -166,51 +166,61 @@
             
         </h1>
         <div class="content">
-            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint</a></p>
-<h3 id="消息总线Bus介绍和使用场景"><a href="#消息总线Bus介绍和使用场景" class="headerlink" title="消息总线Bus介绍和使用场景"></a>消息总线Bus介绍和使用场景</h3><h6 id="1、什么是消息总线"><a href="#1、什么是消息总线" class="headerlink" title="1、什么是消息总线"></a>1、什么是消息总线</h6><p>​    一个事件，需要广播或者单独传递给某个接口</p>
-<h6 id="2、为什么使用这个"><a href="#2、为什么使用这个" class="headerlink" title="2、为什么使用这个"></a>2、为什么使用这个</h6><p>​    配置更新了，但是其他系统不知道是否更新</p>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h3><p><a href="http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-bus/single/spring-cloud-bus.html#_bus_refresh_endpoint</a></p>
+<h3 id="消息总线Bus介绍和使用场景"><a href="#消息总线Bus介绍和使用场景" class="headerlink" title="消息总线Bus介绍和使用场景"></a><strong>消息总线Bus介绍和使用场景</strong></h3><p>1、什么是消息总线</p>
+<p>​    一个事件，需要广播或者单独传递给某个接口</p>
+<p>2、为什么使用这个</p>
+<p>​    配置更新了，但是其他系统不知道是否更新</p>
 <a id="more"></a>
-<h3 id="消息队列RabbitMQ"><a href="#消息队列RabbitMQ" class="headerlink" title="消息队列RabbitMQ"></a>消息队列RabbitMQ</h3><p>1、消息队列介绍<br><a href="https://www.cnblogs.com/linjiqin/p/5720865.html" target="_blank" rel="noopener">https://www.cnblogs.com/linjiqin/p/5720865.html</a></p>
-<p>2、同类产品<br>Kafka<br>ActiveMQ<br>RocketMQ</p>
-<p>3、SpringCloud默认推荐使用RabbitMQ</p>
-<p>4、RabbitMQ介绍<br>官方文档：<a href="http://www.rabbitmq.com/getstarted.html" target="_blank" rel="noopener">http://www.rabbitmq.com/getstarted.html</a><br>中文文档：<a href="http://rabbitmq.mr-ping.com/" target="_blank" rel="noopener">http://rabbitmq.mr-ping.com/</a></p>
-<h3 id="使用Docker搭建RabbitMQ"><a href="#使用Docker搭建RabbitMQ" class="headerlink" title="使用Docker搭建RabbitMQ"></a>使用Docker搭建RabbitMQ</h3><p>简装方式有多种，推荐使用docker安装，极为方便</p>
+<h3 id="消息队列RabbitMQ"><a href="#消息队列RabbitMQ" class="headerlink" title="消息队列RabbitMQ"></a><strong>消息队列RabbitMQ</strong></h3><ol>
+<li>消息队列介绍<br><a href="https://www.cnblogs.com/linjiqin/p/5720865.html" target="_blank" rel="noopener">https://www.cnblogs.com/linjiqin/p/5720865.html</a></li>
+<li>同类产品<br>Kafka<br>ActiveMQ<br>RocketMQ</li>
+<li>SpringCloud默认推荐使用RabbitMQ</li>
+<li>RabbitMQ介绍<br>官方文档：<a href="http://www.rabbitmq.com/getstarted.html" target="_blank" rel="noopener">http://www.rabbitmq.com/getstarted.html</a><br>中文文档：<a href="http://rabbitmq.mr-ping.com/" target="_blank" rel="noopener">http://rabbitmq.mr-ping.com/</a></li>
+</ol>
+<h3 id="使用Docker搭建RabbitMQ"><a href="#使用Docker搭建RabbitMQ" class="headerlink" title="使用Docker搭建RabbitMQ"></a><strong>使用Docker搭建RabbitMQ</strong></h3><p>简装方式有多种，推荐使用docker安装，极为方便</p>
 <p>安装步骤：</p>
-<pre><code>1)拉取镜像
-    docker pull rabbitmq:management
-2)查看当前镜像列表
-    docker images
-3)删除指定镜像
-    docker rmi -f IMAGE_ID (如果需要强制删除加 -f)
-4)创建容器
-    docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management
-参数讲解: 
-    run: 创建一个新的容器并运行一个命令
-    -d: 后台运行容器，并返回容器ID
-    -p: 端口映射，格式为：主机(宿主)端口:容器端口
-    --name=&quot;rabbitmq&quot;: 为容器指定一个名称
-注意：RabbitMQ默认创建了一个 guest 用户，密码也是 guest, 如果访问不了记得查看防火墙，端口或者云服务器的 管理后台:
-    http://127.0.0.1:15672
-其他安装方式：
-    Linux安装：https://blog.csdn.net/qq_34021712/article/details/72567786
-    windows安装：http://www.rabbitmq.com/install-windows.html
-    https://blog.csdn.net/liyuejin/article/details/78410586</code></pre><h3 id="总线Bus整合配置中心config操作流程"><a href="#总线Bus整合配置中心config操作流程" class="headerlink" title="总线Bus整合配置中心config操作流程"></a>总线Bus整合配置中心config操作流程</h3><h6 id="1、启动rabbitmq"><a href="#1、启动rabbitmq" class="headerlink" title="1、启动rabbitmq"></a>1、启动rabbitmq</h6><p>docker run -d –name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management</p>
-<h6 id="2、config-client加入依赖"><a href="#2、config-client加入依赖" class="headerlink" title="2、config-client加入依赖"></a>2、config-client加入依赖</h6><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">&lt;!--配置中心结合消息队列--&gt;</span>		       </span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-bus-amqp<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1)拉取镜像</span><br><span class="line">	docker pull rabbitmq:management</span><br><span class="line">2)查看当前镜像列表</span><br><span class="line">	docker images</span><br><span class="line">3)删除指定镜像</span><br><span class="line">	docker rmi -f IMAGE_ID (如果需要强制删除加 -f)</span><br><span class="line">4)创建容器</span><br><span class="line">	docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management</span><br><span class="line">参数讲解: </span><br><span class="line">    run: 创建一个新的容器并运行一个命令</span><br><span class="line">    -d: 后台运行容器，并返回容器ID</span><br><span class="line">    -p: 端口映射，格式为：主机(宿主)端口:容器端口</span><br><span class="line">    --name="rabbitmq": 为容器指定一个名称</span><br><span class="line">注意：RabbitMQ默认创建了一个 guest 用户，密码也是 guest, 如果访问不了记得查看防火墙，端口或者云服务器的 管理后台:</span><br><span class="line">	http://127.0.0.1:15672</span><br><span class="line">其他安装方式：</span><br><span class="line">	Linux安装：https://blog.csdn.net/qq_34021712/article/details/72567786</span><br><span class="line">	windows安装：http://www.rabbitmq.com/install-windows.html</span><br><span class="line">	https://blog.csdn.net/liyuejin/article/details/78410586</span><br></pre></td></tr></table></figure>
 
-<h6 id="3、在配置文件application-yml中配置连接RabbitMQ"><a href="#3、在配置文件application-yml中配置连接RabbitMQ" class="headerlink" title="3、在配置文件application.yml中配置连接RabbitMQ"></a>3、在配置文件application.yml中配置连接RabbitMQ</h6><p>(如果是本机，则可以直接启动，采用默认连接配置)</p>
+<h3 id="总线Bus整合配置中心config操作流程"><a href="#总线Bus整合配置中心config操作流程" class="headerlink" title="总线Bus整合配置中心config操作流程"></a><strong>总线Bus整合配置中心config操作流程</strong></h3><ol>
+<li>启动rabbitmq</li>
+</ol>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>config-client加入依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">&lt;!--配置中心结合消息队列--&gt;</span>		       </span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-bus-amqp<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在配置文件application.yml中配置连接RabbitMQ<br>(如果是本机，则可以直接启动，采用默认连接配置)</p>
 <figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  rabbitmq:</span></span><br><span class="line"><span class="hljs-attr">    host:</span> <span class="hljs-string">localhost</span></span><br><span class="line"><span class="hljs-attr">    port:</span> <span class="hljs-number">5672</span></span><br><span class="line"><span class="hljs-attr">    username:</span> <span class="hljs-string">guest</span></span><br><span class="line"><span class="hljs-attr">    password:</span> <span class="hljs-string">guest</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#暴露全部的监控信息</span></span><br><span class="line"><span class="hljs-attr">management:</span></span><br><span class="line"><span class="hljs-attr">  endpoints:</span></span><br><span class="line"><span class="hljs-attr">    web:</span></span><br><span class="line"><span class="hljs-attr">      exposure:</span></span><br><span class="line"><span class="hljs-attr">        include:</span> <span class="hljs-string">"*"</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="4、需要刷新配置的地方，增加注解"><a href="#4、需要刷新配置的地方，增加注解" class="headerlink" title="4、需要刷新配置的地方，增加注解"></a>4、需要刷新配置的地方，增加注解</h6><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@RefreshScope</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="5、访问验证post方式"><a href="#5、访问验证post方式" class="headerlink" title="5、访问验证post方式"></a>5、访问验证post方式</h6><p><a href="http://localhost:8773/actuator/bus-refresh" target="_blank" rel="noopener">http://localhost:8773/actuator/bus-refresh</a></p>
-<h6 id="6、动态刷新配置"><a href="#6、动态刷新配置" class="headerlink" title="6、动态刷新配置"></a>6、动态刷新配置</h6><p>在开发和测试环境使用，尽量少在生产环境使用,方式更新出问题，各个系统更新不一致造成更大的问题，尽量还是要相关的系统重新启动拉取最新配置。也防止系统被攻击，被攻击了系统配置导致全部系统都受影响    </p>
-<h4 id="微服务相关项目改造配置中心"><a href="#微服务相关项目改造配置中心" class="headerlink" title="微服务相关项目改造配置中心"></a>微服务相关项目改造配置中心</h4><h6 id="1、git里面新增对应项目的配置文件，都要添加下面的配置"><a href="#1、git里面新增对应项目的配置文件，都要添加下面的配置" class="headerlink" title="1、git里面新增对应项目的配置文件，都要添加下面的配置"></a>1、git里面新增对应项目的配置文件，都要添加下面的配置</h6><figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#服务的名称</span></span><br><span class="line"><span class="hljs-attr">  spring:</span></span><br><span class="line"><span class="hljs-attr">    rabbitmq:</span></span><br><span class="line"><span class="hljs-attr">      host:</span> <span class="hljs-string">localhost</span></span><br><span class="line"><span class="hljs-attr">      port:</span> <span class="hljs-number">5672</span></span><br><span class="line"><span class="hljs-attr">      username:</span> <span class="hljs-string">guest</span></span><br><span class="line"><span class="hljs-attr">      password:</span> <span class="hljs-string">guest</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#暴露全部的监控信息</span></span><br><span class="line"><span class="hljs-attr">management:</span></span><br><span class="line"><span class="hljs-attr">  endpoints:</span></span><br><span class="line"><span class="hljs-attr">    web:</span></span><br><span class="line"><span class="hljs-attr">      exposure:</span></span><br><span class="line"><span class="hljs-attr">        include:</span> <span class="hljs-string">"*"</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="2、项目里面添加maven依赖"><a href="#2、项目里面添加maven依赖" class="headerlink" title="2、项目里面添加maven依赖"></a>2、项目里面添加maven依赖</h6><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!--配置中心客户端--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-config-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--config server--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-bus-amqp<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="3、修改application-properties为bootstrap-yml并拷贝配置文件"><a href="#3、修改application-properties为bootstrap-yml并拷贝配置文件" class="headerlink" title="3、修改application.properties为bootstrap.yml并拷贝配置文件"></a>3、修改application.properties为bootstrap.yml并拷贝配置文件</h6><figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#指定注册中心地址</span></span><br><span class="line"><span class="hljs-attr">eureka:</span></span><br><span class="line"><span class="hljs-attr">  client:</span></span><br><span class="line"><span class="hljs-attr">    serviceUrl:</span></span><br><span class="line"><span class="hljs-attr">      defaultZone:</span> <span class="hljs-attr">http://localhost:8761/eureka/</span></span><br><span class="line"><span class="hljs-comment">#服务的名称</span></span><br><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">    application:</span></span><br><span class="line"><span class="hljs-attr">      name:</span> <span class="hljs-string">order-service</span></span><br><span class="line"><span class="hljs-comment">#指定从哪个配置中心读取</span></span><br><span class="line"><span class="hljs-attr">cloud:</span></span><br><span class="line"><span class="hljs-attr">  config:</span></span><br><span class="line"><span class="hljs-attr">    discovery:</span></span><br><span class="line"><span class="hljs-attr">      service-id:</span> <span class="hljs-string">CONFIG-SERVER</span></span><br><span class="line"><span class="hljs-attr">      enabled:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">    profile:</span> <span class="hljs-string">test</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="4、各个项目启动顺序"><a href="#4、各个项目启动顺序" class="headerlink" title="4、各个项目启动顺序"></a>4、各个项目启动顺序</h6><p>1）注册中心<br>2）配置中心<br>3）对应的服务：商品服务、订单服务。。。<br>4）启动网关</p>
+</li>
+<li><p>需要刷新配置的地方，增加注解</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@RefreshScope</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问验证post方式<br><a href="http://localhost:8773/actuator/bus-refresh" target="_blank" rel="noopener">http://localhost:8773/actuator/bus-refresh</a></p>
+</li>
+<li><p>动态刷新配置<br>在开发和测试环境使用，尽量少在生产环境使用,方式更新出问题，各个系统更新不一致造成更大的问题，尽量还是要相关的系统重新启动拉取最新配置。也防止系统被攻击，被攻击了系统配置导致全部系统都受影响</p>
+</li>
+</ol>
+<h4 id="微服务相关项目改造配置中心"><a href="#微服务相关项目改造配置中心" class="headerlink" title="微服务相关项目改造配置中心"></a><strong>微服务相关项目改造配置中心</strong></h4><ol>
+<li><p>git里面新增对应项目的配置文件，都要添加下面的配置</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#服务的名称</span></span><br><span class="line"><span class="hljs-attr">  spring:</span></span><br><span class="line"><span class="hljs-attr">    rabbitmq:</span></span><br><span class="line"><span class="hljs-attr">      host:</span> <span class="hljs-string">localhost</span></span><br><span class="line"><span class="hljs-attr">      port:</span> <span class="hljs-number">5672</span></span><br><span class="line"><span class="hljs-attr">      username:</span> <span class="hljs-string">guest</span></span><br><span class="line"><span class="hljs-attr">      password:</span> <span class="hljs-string">guest</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#暴露全部的监控信息</span></span><br><span class="line"><span class="hljs-attr">management:</span></span><br><span class="line"><span class="hljs-attr">  endpoints:</span></span><br><span class="line"><span class="hljs-attr">    web:</span></span><br><span class="line"><span class="hljs-attr">      exposure:</span></span><br><span class="line"><span class="hljs-attr">        include:</span> <span class="hljs-string">"*"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>项目里面添加maven依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!--配置中心客户端--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-config-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--config server--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-bus-amqp<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改application.properties为bootstrap.yml并拷贝配置文件</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#指定注册中心地址</span></span><br><span class="line"><span class="hljs-attr">eureka:</span></span><br><span class="line"><span class="hljs-attr">  client:</span></span><br><span class="line"><span class="hljs-attr">    serviceUrl:</span></span><br><span class="line"><span class="hljs-attr">      defaultZone:</span> <span class="hljs-attr">http://localhost:8761/eureka/</span></span><br><span class="line"><span class="hljs-comment">#服务的名称</span></span><br><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">    application:</span></span><br><span class="line"><span class="hljs-attr">      name:</span> <span class="hljs-string">order-service</span></span><br><span class="line"><span class="hljs-comment">#指定从哪个配置中心读取</span></span><br><span class="line"><span class="hljs-attr">cloud:</span></span><br><span class="line"><span class="hljs-attr">  config:</span></span><br><span class="line"><span class="hljs-attr">    discovery:</span></span><br><span class="line"><span class="hljs-attr">      service-id:</span> <span class="hljs-string">CONFIG-SERVER</span></span><br><span class="line"><span class="hljs-attr">      enabled:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">    profile:</span> <span class="hljs-string">test</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>各个项目启动顺序</p>
+<ol>
+<li>注册中心</li>
+<li>配置中心</li>
+<li>对应的服务：商品服务、订单服务。。。</li>
+<li>启动网关</li>
+</ol>
+</li>
+</ol>
 
         </div>
         
@@ -317,7 +327,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -327,7 +337,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -337,7 +347,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -617,6 +627,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -636,7 +654,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -778,7 +796,7 @@
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -950,7 +968,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -978,6 +1003,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1202,7 +1234,7 @@
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1374,7 +1406,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1402,6 +1441,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

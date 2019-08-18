@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="安装详见Dockerhttps://www.runoob.com/docker/centos-docker-install.html 阿里云安装手册：     https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY 常见问题：     https://blog.csdn.net/dalug">
+    <meta name="description" content="安装详见Dockerhttps://www.runoob.com/docker/centos-docker-install.html 阿里云安装手册：https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY 常见问题：https://blog.csdn.net/daluguishou/art">
 <meta name="keywords" content="Linux,Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux安装Docker及应用">
 <meta property="og:url" content="http://zhengwx1991.cn/2019/05/27/Linux安装Docker/index.html">
 <meta property="og:site_name" content="942猫的博客">
-<meta property="og:description" content="安装详见Dockerhttps://www.runoob.com/docker/centos-docker-install.html 阿里云安装手册：     https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY 常见问题：     https://blog.csdn.net/dalug">
+<meta property="og:description" content="安装详见Dockerhttps://www.runoob.com/docker/centos-docker-install.html 阿里云安装手册：https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY 常见问题：https://blog.csdn.net/daluguishou/art">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-15T12:56:27.280Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux安装Docker及应用">
-<meta name="twitter:description" content="安装详见Dockerhttps://www.runoob.com/docker/centos-docker-install.html 阿里云安装手册：     https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY 常见问题：     https://blog.csdn.net/dalug">
+<meta name="twitter:description" content="安装详见Dockerhttps://www.runoob.com/docker/centos-docker-install.html 阿里云安装手册：https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY 常见问题：https://blog.csdn.net/daluguishou/art">
 <meta name="twitter:image" content="http://zhengwx1991.cn/images/og_image.png">
 
 
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    16 分钟 读完 (大约 2407 个字)
+                    14 分钟 读完 (大约 2099 个字)
                 </span>
                 
                 
@@ -166,203 +166,202 @@
             
         </h1>
         <div class="content">
-            <h6 id="安装详见Docker"><a href="#安装详见Docker" class="headerlink" title="安装详见Docker"></a>安装详见Docker</h6><pre><code>https://www.runoob.com/docker/centos-docker-install.html
-阿里云安装手册：
-    https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY
-常见问题：
-    https://blog.csdn.net/daluguishou/article/details/52080250</code></pre><a id="more"></a>
-<h6 id="Docker-安装-Redis"><a href="#Docker-安装-Redis" class="headerlink" title="Docker 安装 Redis"></a>Docker 安装 Redis</h6><pre><code>查询
-    docker search redis
-拉取
-    docker pull redis
-启动镜像
-    docker run -p 6379:6379 -v $PWD/data:/data -d redis redis-server --appendonly yes
-    docker run -p 6379:6379 -v $PWD/data:/data -d --name reids [镜像ID] redis-server --appendonly yes
-命令说明：
-    -p 6379:6379 : 将容器的6379端口映射到主机的6379端口
-    -v $PWD/data:/data : 将主机中当前目录下的data挂载到容器的/data
-    redis-server --appendonly yes : 在容器执行redis-server启动命令，并打开redis持久化配置</code></pre><h6 id="Docker-安装RabbitMQ"><a href="#Docker-安装RabbitMQ" class="headerlink" title="Docker 安装RabbitMQ"></a>Docker 安装RabbitMQ</h6><pre><code>查询
-    docker search rabbitmq
-拉取
-    docker pull rabbitmq:management
-启动镜像
-    docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management</code></pre><h6 id="Docker部署Nginx服务器"><a href="#Docker部署Nginx服务器" class="headerlink" title="Docker部署Nginx服务器"></a>Docker部署Nginx服务器</h6><pre><code>简介：讲解使用Docker部署Nginx服务器实战
-1、获取镜像 
-    docker run (首先会从本地找镜像，如果有则直接启动，没有的话，从镜像仓库拉起，再启动)
-    docker search nignx
-2、列举
-    docker images
-3、拉取
-    docker pull nignx
-3、启动
-    docker run -d --name &quot;xdclass_nginx&quot; -p 8088:80 nginx
-    docker run -d --name &quot;xdclass_nginx2&quot; -p 8089:80 nginx
-    docker run -d --name &quot;xdclass_nginx3&quot; -p 8090:80 nginx
-4、访问
-    如果是阿里云服务，记得配置安全组，腾讯云也需要配置，这个就是一个防火墙</code></pre><h6 id="微服务下的Docker介绍和使用场景"><a href="#微服务下的Docker介绍和使用场景" class="headerlink" title="微服务下的Docker介绍和使用场景"></a>微服务下的Docker介绍和使用场景</h6><h6 id="什么是Dokcer"><a href="#什么是Dokcer" class="headerlink" title="什么是Dokcer"></a>什么是Dokcer</h6><pre><code>百科:一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口；
-使用go语言编写，在LCX（linux容器）基础上进行的封装
-简单来说：
-    1）就是可以快速部署启动应用
-    2）实现虚拟化，完整资源隔离
-    3）一次编写，四处运行（有一定的限制，比如Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用）</code></pre><h6 id="为什么要用Dokcer"><a href="#为什么要用Dokcer" class="headerlink" title="为什么要用Dokcer"></a>为什么要用Dokcer</h6><pre><code>1、提供一次性的环境，假如需要安装Mysql，则需要安装很多依赖库、版本等，如果使用Docker则通过镜像就可以直接启动运行   
-2、快速动态扩容，使用docker部署了一个应用，可以制作成镜像，然后通过Dokcer快速启动
-3、组建微服务架构，可以在一个机器上模拟出多个微服务，启动多个应用
-4、更好的资源隔离和共享
-一句话：开箱即用，快速部署，可移植性强，环境隔离</code></pre><h6 id="Docker仓库、镜像、容器核心知识"><a href="#Docker仓库、镜像、容器核心知识" class="headerlink" title="Docker仓库、镜像、容器核心知识"></a>Docker仓库、镜像、容器核心知识</h6><pre><code>Docker 镜像 - Docker images：容器运行时的只读模板，操作系统+软件运行环境+用户程序
-    可以类比为Java中的类Class
-    class User{
-        private String userName;
-        private int age;
-    }
+            <h3 id="安装详见Docker"><a href="#安装详见Docker" class="headerlink" title="安装详见Docker"></a><strong>安装详见Docker</strong></h3><p><a href="https://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="noopener">https://www.runoob.com/docker/centos-docker-install.html</a></p>
+<p>阿里云安装手册：<br><a href="https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/51853.html?spm=a2c4g.11186623.6.820.RaToNY</a></p>
+<p>常见问题：<br><a href="https://blog.csdn.net/daluguishou/article/details/52080250" target="_blank" rel="noopener">https://blog.csdn.net/daluguishou/article/details/52080250</a></p>
+<a id="more"></a>
+<h3 id="Docker-安装-Redis"><a href="#Docker-安装-Redis" class="headerlink" title="Docker 安装 Redis"></a><strong>Docker 安装 Redis</strong></h3><ol>
+<li><p>查询</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search redis</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拉取</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 6379:6379 -v $PWD/data:/data -d redis redis-server --appendonly yes</span><br><span class="line">docker run -p 6379:6379 -v $PWD/data:/data -d --name reids [镜像ID] redis-server --appendonly yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令说明</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-p 6379:6379 : 将容器的6379端口映射到主机的6379端口</span><br><span class="line">-v $PWD/data:/data : 将主机中当前目录下的data挂载到容器的/data</span><br><span class="line">redis-server --appendonly yes : 在容器执行redis-server启动命令，并打开redis持久化配置</span><br></pre></td></tr></table></figure>
 
-Docker 容器 - Docker containers：容器包含了某个应用运行所需要的全部环境
-    可以类比为Java中的对象Object
-    User user = new User()
+</li>
+</ol>
+<h3 id="Docker-安装RabbitMQ"><a href="#Docker-安装RabbitMQ" class="headerlink" title="Docker 安装RabbitMQ"></a><strong>Docker 安装RabbitMQ</strong></h3><ol>
+<li><p>查询</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search rabbitmq</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拉取</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull rabbitmq:management</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management</span><br></pre></td></tr></table></figure>
 
-Docker 仓库 - Docker registeries： 用来保存镜像，有公有和私有仓库，好比Maven的中央仓库和本地私服
+</li>
+</ol>
+<h3 id="Docker部署Nginx服务器"><a href="#Docker部署Nginx服务器" class="headerlink" title="Docker部署Nginx服务器"></a><strong>Docker部署Nginx服务器</strong></h3><ol>
+<li><p>获取镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker search nignx</span><br><span class="line">// 也可以用</span><br><span class="line">docker run nignx</span><br><span class="line">注意：首先会从本地找镜像，如果有则直接启动，没有的话，从镜像仓库拉起，再启动</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列举</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拉取</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nignx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name "my_nginx" -p 8088:80 nginx</span><br><span class="line">docker run -d --name "my_nginx2" -p 8089:80 nginx</span><br><span class="line">docker run -d --name "my_nginx3" -p 8090:80 nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问<br>如果是阿里云服务，记得配置安全组，腾讯云也需要配置，这个就是一个防火墙</p>
+</li>
+</ol>
+<hr>
+<h3 id="微服务下的Docker介绍和使用场景"><a href="#微服务下的Docker介绍和使用场景" class="headerlink" title="微服务下的Docker介绍和使用场景"></a><strong>微服务下的Docker介绍和使用场景</strong></h3><h6 id="什么是Dokcer"><a href="#什么是Dokcer" class="headerlink" title="什么是Dokcer"></a><strong>什么是Dokcer</strong></h6><p>一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口；<br>使用go语言编写，在LCX（linux容器）基础上进行的封装</p>
+<p>简单来说：</p>
+<ol>
+<li>就是可以快速部署启动应用</li>
+<li>实现虚拟化，完整资源隔离</li>
+<li>一次编写，四处运行（有一定的限制，比如Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用）</li>
+</ol>
+<h6 id="为什么要用Dokcer"><a href="#为什么要用Dokcer" class="headerlink" title="为什么要用Dokcer"></a><strong>为什么要用Dokcer</strong></h6><p>一句话：开箱即用，快速部署，可移植性强，环境隔离</p>
+<ol>
+<li>提供一次性的环境，假如需要安装Mysql，则需要安装很多依赖库、版本等，如果使用Docker则通过镜像就可以直接启动运行</li>
+<li>快速动态扩容，使用docker部署了一个应用，可以制作成镜像，然后通过Dokcer快速启动</li>
+<li>组建微服务架构，可以在一个机器上模拟出多个微服务，启动多个应用</li>
+<li>更好的资源隔离和共享</li>
+</ol>
+<h6 id="Docker仓库、镜像、容器核心知识"><a href="#Docker仓库、镜像、容器核心知识" class="headerlink" title="Docker仓库、镜像、容器核心知识"></a><strong>Docker仓库、镜像、容器核心知识</strong></h6><ul>
+<li><p>Docker镜像<br>Docker images：容器运行时的只读模板，操作系统+软件运行环境+用户程序<br>可以类比为Java中的类Class</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> String userName;</span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Docker 容器<br>Docker containers：容器包含了某个应用运行所需要的全部环境<br>可以类比为Java中的对象Object</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User user = <span class="hljs-keyword">new</span> User()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Docker 仓库<br>Docker registeries： 用来保存镜像，有公有和私有仓库，好比Maven的中央仓库和本地私服</p>
+</li>
+<li><p>对比面向对象的方式<br>Dokcer 里面的镜像 : Java里面的类 Class<br>Docker 里面的容器 : Java里面的对象 Object<br>通过类创建对象，通过镜像创建容器</p>
+</li>
+<li><p>配置国内镜像仓库<br><a href="https://blog.csdn.net/zzy1078689276/article/details/77371782" target="_blank" rel="noopener">https://blog.csdn.net/zzy1078689276/article/details/77371782</a></p>
+</li>
+</ul>
+<h6 id="Docker容器常见命令"><a href="#Docker容器常见命令" class="headerlink" title="Docker容器常见命令"></a><strong>Docker容器常见命令</strong></h6><p>参考文档<br><a href="https://blog.csdn.net/permike/article/details/51879578" target="_blank" rel="noopener">https://blog.csdn.net/permike/article/details/51879578</a></p>
+<p>启动docker</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
 
-镜像仓库：（参考）配置国内镜像仓库：https://blog.csdn.net/zzy1078689276/article/details/77371782
+<p>开机启动docker</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
 
-对比面向对象的方式
-    Dokcer 里面的镜像 : Java里面的类 Class
-    Docker 里面的容器 : Java里面的对象 Object
-    通过类创建对象，通过镜像创建容器</code></pre><h6 id="Docker容器常见命令"><a href="#Docker容器常见命令" class="headerlink" title="Docker容器常见命令"></a>Docker容器常见命令</h6><pre><code>启动docker：
-    systemctl start docker
-开机启动docker：
-    systemctl enable docker
-停止docker：
-    systemctl stop docker
-Docker在云服务上的实际应用
-    常用命令（安装部署好Dokcer后，执行的命令是docker开头）,xxx是镜像名称
-    搜索镜像：docker search xxx        
-    列出当前系统存在的镜像：docker images            
-    拉取镜像：docker pull xxx
-        xxx是具体某个镜像名称(格式 REPOSITORY:TAG)
-        REPOSITORY：表示镜像的仓库源,TAG：镜像的标签
-    运行一个容器：docker run -d --name &quot;xdclass_mq&quot; -p 5672:5672 -p 15672:15672 rabbitmq:management
-        docker run - 运行一个容器
-        -d 后台运行
-        -p 端口映射
-        rabbitmq:management  (格式 REPOSITORY:TAG)，如果不指定tag，默认使用最新的
-        --name &quot;xxx&quot;            
-    列举当前运行的容器：docker ps
-    检查容器内部信息：docker inspect 容器名称
-    删除镜像：docker rmi IMAGE_NAME
-         强制移除镜像不管是否有容器使用该镜像 增加 -f 参数，
-    停止某个容器：docker stop 容器名称
-    启动某个容器：docker start 容器名称
-    移除某个容器： docker rm 容器名称 （容器必须是停止状态）
-文档：https://blog.csdn.net/permike/article/details/51879578</code></pre><h6 id="公司中Docker镜像仓库使用"><a href="#公司中Docker镜像仓库使用" class="headerlink" title="公司中Docker镜像仓库使用"></a>公司中Docker镜像仓库使用</h6><pre><code>1、为啥要用镜像仓库
-2、官方公共镜像仓库和私有镜像仓库
-    公共镜像仓库：
-        官方：https://hub.docker.com/，基于各个软件开发或者有软件提供商开发的
-        非官方：其他组织或者公司开发的镜像，供大家免费试用
-    私有镜像仓库：
-        用于存放公司内部的镜像，不提供给外部试用； 
-        SpringCloud 开发了一个支付系统 -》做成一个镜像 （操作系统+软件运行环境+用户程序）</code></pre><h6 id="阿里云搭建自己的镜像仓库"><a href="#阿里云搭建自己的镜像仓库" class="headerlink" title="阿里云搭建自己的镜像仓库"></a>阿里云搭建自己的镜像仓库</h6><pre><code>1、阿里云镜像仓库：https://dev.aliyun.com/search.html
-    点击管理控制台-》初次使用会提示开通，然后设置密码
-2、使用阿里云私有镜像仓库
-    1)登录： docker login --username=794666918@qq.com registry.cn-shenzhen.aliyuncs.com
-    2) 推送本地镜像：
-        docker tag [ImageId] registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:[镜像版本号]
-        例子：
-        docker tag 2f415b0e9a6e registry.cn-shenzhen.aliyuncs.com/test/sysware_images:rabbitmq-v1.0.2
-        docker push registry.cn-shenzhen.aliyuncs.com/xdclass/sysware_images:rabbitmq-v1.0.2
-    3)拉取镜像
-        线上服务器拉取镜像：
-            docker login --username=794666918@qq.com registry.cn-shenzhen.aliyuncs.com
-            docker pull registry.cn-shenzhen.aliyuncs.com/sysware_images:xd_rabbitmq-v1.0.2
-        启动容器：
-            docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 2f415b0e9a6e</code></pre><h4 id="SpringCloud和Docker整合部署"><a href="#SpringCloud和Docker整合部署" class="headerlink" title="SpringCloud和Docker整合部署"></a>SpringCloud和Docker整合部署</h4><h6 id="使用Docker的maven插件，构建springboot应用"><a href="#使用Docker的maven插件，构建springboot应用" class="headerlink" title="使用Docker的maven插件，构建springboot应用"></a>使用Docker的maven插件，构建springboot应用</h6><h6 id="官方文档："><a href="#官方文档：" class="headerlink" title="官方文档："></a>官方文档：</h6><pre><code>https://spring.io/guides/gs/spring-boot-docker/
-1、步骤：maven里面添加配置pom.xml
-     &lt;properties&gt;
-       &lt;docker.image.prefix&gt;xdclass&lt;/docker.image.prefix&gt;
-    &lt;/properties&gt;
-    &lt;build&gt;
-        &lt;finalName&gt;docker-demo&lt;/finalName&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;com.spotify&lt;/groupId&gt;
-                &lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;1.3.6&lt;/version&gt;
-                &lt;configuration&gt;
-                    &lt;repository&gt;${docker.image.prefix}/${project.artifactId}&lt;/repository&gt;
-                    &lt;buildArgs&gt;
-                        &lt;JAR_FILE&gt;target/${project.build.finalName}.jar&lt;/JAR_FILE&gt;
-                    &lt;/buildArgs&gt;
-                &lt;/configuration&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
-    配置说明
-    Spotify 的 docker-maven-plugin 插件是用maven插件方式构建docker镜像的。
-    ${project.build.finalName} 产出物名称，缺省为${project.artifactId}-${project.version}</code></pre><h6 id="打包SpringCloud镜像并上传私有仓库并部署"><a href="#打包SpringCloud镜像并上传私有仓库并部署" class="headerlink" title="打包SpringCloud镜像并上传私有仓库并部署"></a>打包SpringCloud镜像并上传私有仓库并部署</h6><pre><code>1、创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）
-    什么是Dockerfile : 由一系列命令和参数构成的脚本，这些命令应用于基础镜像, 最终创建一个新的镜像
-    FROM openjdk:8-jdk-alpine
-    VOLUME /tmp
-    ARG JAR_FILE
-    COPY ${JAR_FILE} app.jar
-    ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
-    参数讲解：
-    FROM &lt;image&gt;:&lt;tag&gt; 需要一个基础镜像，可以是公共的或者是私有的， 后续构建会基于此镜像，如果同一个Dockerfile中建立多个镜像时，可以使用多个FROM指令
+<p>停止docker：</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop docker</span><br></pre></td></tr></table></figure>
 
-    VOLUME  配置一个具有持久化功能的目录，主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp。改步骤是可选的，如果涉及到文件系统的应用就很有必要了。/tmp目录用来持久化到 Docker 数据文件夹，因为 Spring Boot 使用的内嵌 Tomcat 容器默认使用/tmp作为工作目录 
+<p>列举当前运行的容器</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
 
-    ARG  设置编译镜像时加入的参数， ENV 是设置容器的环境变量
-    COPY : 只支持将本地文件复制到容器 ,还有个ADD更强大但复杂点
-    ENTRYPOINT 容器启动时执行的命令
-    EXPOSE 8080 暴露镜像端口
-2、构建镜像
-    mvn install dockerfile:build
-打标签
-    docker tag a1b9fc71720d registry.cn-shenzhen.aliyuncs.com/sysware_images:docker-demo-v201808
-推送到镜像仓库
-    docker push registry.cn-shenzhen.aliyuncs.com/sysware_images:docker-demo-v201808
-应用服务器拉取镜像
-    docker pull registry.cn-shenzhen.aliyuncs.com/sysware_images:docker-demo-v201808
-    docker run -d --name xdclass_docker_demo1 -p 8099:8080  a1b9fc71720d
-3、查看启动日志 docker logs -f  containerid
-文档：https://yeasy.gitbooks.io/docker_practice/image/dockerfile/</code></pre><h6 id="注册中心打包Docker镜像"><a href="#注册中心打包Docker镜像" class="headerlink" title="注册中心打包Docker镜像"></a>注册中心打包Docker镜像</h6><pre><code>使用Docker打包注册中心，上传私有镜像仓库并部署
-1、新增maven插件
-&lt;properties&gt;
-    &lt;docker.image.prefix&gt;xdclass&lt;/docker.image.prefix&gt;
-&lt;/properties&gt;
-&lt;build&gt;
-    &lt;finalName&gt;docker-demo&lt;/finalName&gt;
-    &lt;plugins&gt;
-        &lt;plugin&gt;
-            &lt;groupId&gt;com.spotify&lt;/groupId&gt;
-            &lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
-            &lt;version&gt;1.3.6&lt;/version&gt;
-            &lt;configuration&gt;
-                &lt;repository&gt;${docker.image.prefix}/${project.artifactId}&lt;/repository&gt;
-                &lt;buildArgs&gt;
-                    &lt;JAR_FILE&gt;target/${project.build.finalName}.jar&lt;/JAR_FILE&gt;
-                &lt;/buildArgs&gt;
-            &lt;/configuration&gt;
-        &lt;/plugin&gt;
-    &lt;/plugins&gt;
-&lt;/build&gt;
-2、新建Dockerfile
-    FROM openjdk:8-jdk-alpine
-    VOLUME /tmp
-    ARG JAR_FILE
-    COPY ${JAR_FILE} app.jar
-    ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
-3、打包：
-    mvn install dockerfile:build
-4、推送阿里云镜像仓库
-    阿里云镜像仓库：https://dev.aliyun.com/search.html
-5、查看日志 docker logs -f  containerid</code></pre><h6 id="生产环境常见问题之配置中心访问"><a href="#生产环境常见问题之配置中心访问" class="headerlink" title="生产环境常见问题之配置中心访问"></a>生产环境常见问题之配置中心访问</h6><pre><code>生产环境部署常见问题，配置中心访问路径变化        
-1、配置中心访问出错，路径不对           
-    解决：修改所有的注册中心，增加下面配置
-instance:
-instance-id: ${spring.cloud.client.ip-address}:${server.port}
-prefer-ip-address: true
-docker tag 50a12cd66210 registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:config-server-v20180826</code></pre><h6 id="Docker镜像打包商品服务和订单服务、网关"><a href="#Docker镜像打包商品服务和订单服务、网关" class="headerlink" title="Docker镜像打包商品服务和订单服务、网关"></a>Docker镜像打包商品服务和订单服务、网关</h6><pre><code>注意：
-1、maven打包构建，会触发单元测试，部分情况可以跳过，
-mvn install -Dmaven.test.skip=true dockerfile:build
-2、生产环境不能用localhost 或者 127.0.0.1, 一定要用内网通信ip (虚拟主机映射 hosts)</code></pre>
+<p>检查容器内部信息</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器ID</span><br></pre></td></tr></table></figure>
+
+<p>删除镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f 镜像ID</span><br><span class="line">强制移除镜像不管是否有容器使用该镜像 增加 -f 参数</span><br></pre></td></tr></table></figure>
+
+<p>停止某个容器</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器ID</span><br></pre></td></tr></table></figure>
+
+<p>启动某个容器</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器ID</span><br></pre></td></tr></table></figure>
+
+<p>移除某个容器</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器ID （容器必须是停止状态）</span><br></pre></td></tr></table></figure>
+
+<h6 id="公司中Docker镜像仓库使用"><a href="#公司中Docker镜像仓库使用" class="headerlink" title="公司中Docker镜像仓库使用"></a><strong>公司中Docker镜像仓库使用</strong></h6><ol>
+<li>为啥要用镜像仓库</li>
+<li>官方公共镜像仓库和私有镜像仓库<ul>
+<li>公共镜像仓库<br>官方：<a href="https://hub.docker.com/，基于各个软件开发或者有软件提供商开发的" target="_blank" rel="noopener">https://hub.docker.com/，基于各个软件开发或者有软件提供商开发的</a><br>非官方：其他组织或者公司开发的镜像，供大家免费试用</li>
+<li>私有镜像仓库<br>用于存放公司内部的镜像，不提供给外部试用<br>SpringCloud 开发了一个支付系统 -》做成一个镜像 （操作系统+软件运行环境+用户程序）</li>
+</ul>
+</li>
+</ol>
+<h6 id="阿里云搭建自己的镜像仓库"><a href="#阿里云搭建自己的镜像仓库" class="headerlink" title="阿里云搭建自己的镜像仓库"></a><strong>阿里云搭建自己的镜像仓库</strong></h6><ol>
+<li><p>阿里云镜像仓库<br><a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a></p>
+</li>
+<li><p>使用阿里云私有镜像仓库</p>
+<ol>
+<li><p>登录</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login --username=59xxxxx@qq.com registry.cn-shenzhen.aliyuncs.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送本地镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag [ImageId] registry.cn-shenzhen.aliyuncs.com/test/test_images:[镜像版本号]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拉取镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-shenzhen.aliyuncs.com/sysware_images:xd_rabbitmq-v1.0.2</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="SpringCloud和Docker整合部署"><a href="#SpringCloud和Docker整合部署" class="headerlink" title="SpringCloud和Docker整合部署"></a><strong>SpringCloud和Docker整合部署</strong></h3><h6 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h6><h6 id="https-spring-io-guides-gs-spring-boot-docker"><a href="#https-spring-io-guides-gs-spring-boot-docker" class="headerlink" title="https://spring.io/guides/gs/spring-boot-docker/"></a><a href="https://spring.io/guides/gs/spring-boot-docker/" target="_blank" rel="noopener">https://spring.io/guides/gs/spring-boot-docker/</a></h6><ul>
+<li><h6 id="使用Docker的maven插件，构建springboot应用"><a href="#使用Docker的maven插件，构建springboot应用" class="headerlink" title="使用Docker的maven插件，构建springboot应用"></a><strong>使用Docker的maven插件，构建springboot应用</strong></h6><p>maven里面添加配置pom.xml</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">docker.image.prefix</span>&gt;</span>xdclass<span class="hljs-tag">&lt;/<span class="hljs-name">docker.image.prefix</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">finalName</span>&gt;</span>docker-demo<span class="hljs-tag">&lt;/<span class="hljs-name">finalName</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.spotify<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dockerfile-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.6<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">repository</span>&gt;</span>$&#123;docker.image.prefix&#125;/$&#123;project.artifactId&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">repository</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">buildArgs</span>&gt;</span></span><br><span class="line">                    <span class="hljs-tag">&lt;<span class="hljs-name">JAR_FILE</span>&gt;</span>target/$&#123;project.build.finalName&#125;.jar<span class="hljs-tag">&lt;/<span class="hljs-name">JAR_FILE</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;/<span class="hljs-name">buildArgs</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>配置说明<br>Spotify 的 docker-maven-plugin 插件是用maven插件方式构建docker镜像的。<br>${project.build.finalName} 产出物名称，缺省为${project.artifactId}-${project.version}</p>
+</li>
+</ul>
+<h6 id="打包SpringCloud镜像并上传私有仓库并部署"><a href="#打包SpringCloud镜像并上传私有仓库并部署" class="headerlink" title="打包SpringCloud镜像并上传私有仓库并部署"></a><strong>打包SpringCloud镜像并上传私有仓库并部署</strong></h6><ol>
+<li><p>创建Dockerfile<br>创建Dockerfile,默认是根目录，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）<br>什么是Dockerfile : 由一系列命令和参数构成的脚本，这些命令应用于基础镜像, 最终创建一个新的镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jdk-alpine</span><br><span class="line">VOLUME /tmp</span><br><span class="line">ARG JAR_FILE</span><br><span class="line">COPY $&#123;JAR_FILE&#125; app.jar</span><br><span class="line">ENTRYPOINT ["java","-jar","/app.jar"]</span><br></pre></td></tr></table></figure>
+
+<p>参数讲解：<br>FROM <image>:<tag> 需要一个基础镜像，可以是公共的或者是私有的， 后续构建会基于此镜像，如果同一个Dockerfile中建立多个镜像时，可以使用多个FROM指令<br>VOLUME  配置一个具有持久化功能的目录，主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp。改步骤是可选的，如果涉及到文件系统的应用就很有必要了。/tmp目录用来持久化到 Docker 数据文件夹，因为 Spring Boot 使用的内嵌 Tomcat 容器默认使用/tmp作为工作目录 ARG  设置编译镜像时加入的参数，<br>ENV 是设置容器的环境变量<br>COPY : 只支持将本地文件复制到容器 ,还有个ADD更强大但复杂点<br>ENTRYPOINT 容器启动时执行的命令<br>EXPOSE 8080 暴露镜像端口</tag></image></p>
+</li>
+<li><p>构建镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install dockerfile:build</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打标签</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag a1b9fc71720d registry.cn-shenzhen.aliyuncs.com/sysware_images:docker-demo-v201808</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送到镜像仓库</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push registry.cn-shenzhen.aliyuncs.com/sysware_images:docker-demo-v201808</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应用服务器拉取镜像</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-shenzhen.aliyuncs.com/sysware_images:docker-demo-v201808</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name xdclass_docker_demo1 -p 8099:8080  a1b9fc71720d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看启动日志</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f 容器ID</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>文档<br><a href="https://yeasy.gitbooks.io/docker_practice/image/dockerfile/" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/image/dockerfile/</a></p>
+<h6 id="注册中心打包Docker镜像"><a href="#注册中心打包Docker镜像" class="headerlink" title="注册中心打包Docker镜像"></a><strong>注册中心打包Docker镜像</strong></h6><ol>
+<li><p>新增maven插件</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">docker.image.prefix</span>&gt;</span>xdclass<span class="hljs-tag">&lt;/<span class="hljs-name">docker.image.prefix</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">finalName</span>&gt;</span>docker-demo<span class="hljs-tag">&lt;/<span class="hljs-name">finalName</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.spotify<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dockerfile-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.3.6<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">repository</span>&gt;</span>$&#123;docker.image.prefix&#125;/$&#123;project.artifactId&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">repository</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">buildArgs</span>&gt;</span></span><br><span class="line">                    <span class="hljs-tag">&lt;<span class="hljs-name">JAR_FILE</span>&gt;</span>target/$&#123;project.build.finalName&#125;.jar<span class="hljs-tag">&lt;/<span class="hljs-name">JAR_FILE</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;/<span class="hljs-name">buildArgs</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建Dockerfile</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jdk-alpine</span><br><span class="line">VOLUME /tmp</span><br><span class="line">ARG JAR_FILE</span><br><span class="line">COPY $&#123;JAR_FILE&#125; app.jar</span><br><span class="line">ENTRYPOINT ["java","-jar","/app.jar"]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打包</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install dockerfile:build</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送阿里云镜像仓库<br><a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a></p>
+</li>
+<li><p>查看日志</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f  containerid</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h6 id="生产环境常见问题之配置中心访问"><a href="#生产环境常见问题之配置中心访问" class="headerlink" title="生产环境常见问题之配置中心访问"></a><strong>生产环境常见问题之配置中心访问</strong></h6><p>生产环境部署常见问题，配置中心访问路径变化</p>
+<ul>
+<li>问题：配置中心访问出错，路径不对<br>解决：修改所有的注册中心，增加下面配置</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">instance:</span><br><span class="line">instance-id: $&#123;spring.cloud.client.ip-address&#125;:$&#123;server.port&#125;</span><br><span class="line">prefer-ip-address: true</span><br><span class="line">docker tag 50a12cd66210 registry.cn-shenzhen.aliyuncs.com/xdclass/xdclass_images:config-server-v20180826</span><br></pre></td></tr></table></figure>
+
+<h6 id="Docker镜像打包商品服务和订单服务、网关"><a href="#Docker镜像打包商品服务和订单服务、网关" class="headerlink" title="Docker镜像打包商品服务和订单服务、网关"></a><strong>Docker镜像打包商品服务和订单服务、网关</strong></h6><ol>
+<li><p>maven打包构建，会触发单元测试，部分情况可以跳过</p>
+<p>mvn install -Dmaven.test.skip=true dockerfile:build</p>
+</li>
+<li><p>生产环境不能用localhost 或者 127.0.0.1, 一定要用内网通信ip (虚拟主机映射 hosts)</p>
+</li>
+</ol>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -468,7 +467,7 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -478,7 +477,7 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -488,7 +487,7 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -768,6 +767,14 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -787,7 +794,7 @@ mvn install -Dmaven.test.skip=true dockerfile:build
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -929,7 +936,7 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1101,7 +1108,14 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1129,6 +1143,13 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1353,7 +1374,7 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1525,7 +1546,14 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1553,6 +1581,13 @@ mvn install -Dmaven.test.skip=true dockerfile:build
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

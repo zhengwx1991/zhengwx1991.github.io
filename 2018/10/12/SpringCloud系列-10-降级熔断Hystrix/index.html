@@ -16,7 +16,7 @@
 <meta property="og:description" content="官方文档https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategyhttps://github.com/Netflix/Hystrixhttps://github.com/Netflix/Hystrix/wikihttps://github.com/Netflix/Hystrix/wiki/D">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-15T12:56:27.287Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud系列-降级熔断Hystrix">
 <meta name="twitter:description" content="官方文档https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategyhttps://github.com/Netflix/Hystrixhttps://github.com/Netflix/Hystrix/wikihttps://github.com/Netflix/Hystrix/wiki/D">
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 分钟 读完 (大约 1295 个字)
+                    8 分钟 读完 (大约 1201 个字)
                 </span>
                 
                 
@@ -166,123 +166,89 @@
             
         </h1>
         <div class="content">
-            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy</a><br><a href="https://github.com/Netflix/Hystrix" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix</a><br><a href="https://github.com/Netflix/Hystrix/wiki" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki</a><br><a href="https://github.com/Netflix/Hystrix/wiki/Dashboard" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Dashboard</a></p>
-<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/zhengwx1991/order_service.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/order_service.git</a></p>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h3><p><a href="https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy</a><br><a href="https://github.com/Netflix/Hystrix" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix</a><br><a href="https://github.com/Netflix/Hystrix/wiki" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki</a><br><a href="https://github.com/Netflix/Hystrix/wiki/Dashboard" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Dashboard</a><br><a href="http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients</a></p>
+<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><strong>项目地址</strong></h3><p><a href="https://github.com/zhengwx1991/order_service.git" target="_blank" rel="noopener">https://github.com/zhengwx1991/order_service.git</a></p>
 <a id="more"></a>
-<h3 id="什么是分布式核心知识之熔断、降级"><a href="#什么是分布式核心知识之熔断、降级" class="headerlink" title="什么是分布式核心知识之熔断、降级"></a>什么是分布式核心知识之熔断、降级</h3><pre><code>1、熔断：
-    保险丝，熔断服务，为了防止整个系统故障，包含子和下游服务
-    下单服务 -》商品服务
-            -》用户服务 （出现异常-》熔断）
-2、降级：
-    抛弃一些非核心的接口和数据
-    旅行箱的例子：只带核心的物品，抛弃非核心的，等有条件的时候再去携带这些物品        
-3、熔断和降级互相交集
-    相同点：
-        1）从可用性和可靠性触发，为了防止系统崩溃
-        2）最终让用户体验到的是某些功能暂时不能用
-    不同点
-        1）服务熔断一般是下游服务故障导致的，而服务降级一般是从整体系统负荷考虑，由调用方控制</code></pre><h3 id="Netflix开源组件断路器Hystrix介绍"><a href="#Netflix开源组件断路器Hystrix介绍" class="headerlink" title="Netflix开源组件断路器Hystrix介绍"></a>Netflix开源组件断路器Hystrix介绍</h3><pre><code>文档地址：
-    https://github.com/Netflix/Hystrix
-    https://github.com/Netflix/Hystrix/wiki
-1、什么是Hystrix？
-    1）hystrix对应的中文名字是“豪猪”
-2、为什么要用？
-    在一个分布式系统里，一个服务依赖多个服务，可能存在某个服务调用失败，
-    比如超时、异常等，如何能够保证在一个依赖出问题的情况下，不会导致整体服务失败，
-    通过Hystrix就可以解决
-    http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients
-3、提供了熔断、隔离、Fallback、cache、监控等功能
-4、熔断后怎么处理？
-    出现错误之后可以 fallback 错误的处理信息
-    兜底数据</code></pre><h3 id="Feign结合Hystrix断路器开发（上）"><a href="#Feign结合Hystrix断路器开发（上）" class="headerlink" title="Feign结合Hystrix断路器开发（上）"></a>Feign结合Hystrix断路器开发（上）</h3><pre><code>1、加入依赖
-注意：网上新旧版本问题，所以要以官网为主，不然部分注解会丢失，最新版本 2.0
-&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;
-&lt;/dependency&gt;
-2、增加注解
-    启动类里面增加注解
-    @EnableCircuitBreaker
-    注解越来越多-》 可以用@SpringCloudApplication注解代替，里边包含了众多springcloud的注解，如果想要知道自己用了哪些注解，也可以单独写，不用@SpringCloudApplication
-3、API接口编码实战
-    熔断-》降级
-    1）最外层api使用，好比异常处理（网络异常，参数或者内部调用问题）
-        api方法上增加 @HystrixCommand(fallbackMethod = &quot;saveOrderFail&quot;)
-        编写fallback方法实现，方法签名一定要和api方法签名一致（注意点！！！）</code></pre><h3 id="Feign结合Hystrix断路器开发（下）"><a href="#Feign结合Hystrix断路器开发（下）" class="headerlink" title="Feign结合Hystrix断路器开发（下）"></a>Feign结合Hystrix断路器开发（下）</h3><pre><code>1、feign结合Hystrix        
-1）开启feign支持hystrix  (注意，一定要开启，旧版本默认支持，新版本默认关闭)
-    feign:
-      hystrix:
-        enabled: true    
-2）FeignClient(name=&quot;xxx&quot;, fallback=xxx.class ), class需要继承当前FeignClient的类</code></pre><h3 id="熔断降级服务异常报警通知实战"><a href="#熔断降级服务异常报警通知实战" class="headerlink" title="熔断降级服务异常报警通知实战"></a>熔断降级服务异常报警通知实战</h3><pre><code>完善服务熔断处理，报警机制完善
-1、加入redis依赖
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-2、配置redis链接信息
-  redis:
-    database: 0
-    host: 127.0.0.1
-    port: 6379
-    timeout: 2000
-3、使用
-    //监控报警
-    String saveOrderKye = &quot;save-order&quot;;
-    String sendValue = redisTemplate.opsForValue().get(saveOrderKye);
-    final String ip = request.getRemoteAddr();
-    new Thread( ()-&gt;{
-        if (StringUtils.isBlank(sendValue)) {
-            System.out.println(&quot;紧急短信，用户下单失败，请离开查找原因,ip地址是=&quot;+ip);
-            //发送一个http请求，调用短信服务 TODO
-            redisTemplate.opsForValue().set(saveOrderKye, &quot;save-order-fail&quot;, 20, TimeUnit.SECONDS);
-        }else{
-            System.out.println(&quot;已经发送过短信，20秒内不重复发送&quot;);
-        }
-    }).start();</code></pre><h3 id="源码分析Hystrix降级策略和调整"><a href="#源码分析Hystrix降级策略和调整" class="headerlink" title="源码分析Hystrix降级策略和调整"></a>源码分析Hystrix降级策略和调整</h3><pre><code>1、查看默认讲解策略 HystrixCommandProperties
-    1）execution.isolation.strategy   隔离策略
-        THREAD 线程池隔离 （默认）
-        SEMAPHORE 信号量
-            信号量适用于接口并发量高的情况，如每秒数千次调用的情况，导致的线程开销过高，通常只适用于非网络调用，执行速度快
-    2）execution.isolation.thread.timeoutInMilliseconds  超时时间，默认 1000毫秒
-    3）execution.timeout.enabled 是否开启超时限制 （一定不要禁用）
-    4）execution.isolation.semaphore.maxConcurrentRequests 隔离策略为 信号量的时候，如果达到最大并发数时，后续请求会被拒绝，默认是10
-官方文档:
-    https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy
-2、调整策略
-    超时时间调整
-    hystrix:
-      command:
-        default:
-          execution:
-            isolation:
-              thread:
-                timeoutInMilliseconds: 4000</code></pre><h3 id="断路器Dashboard监控仪表盘使用"><a href="#断路器Dashboard监控仪表盘使用" class="headerlink" title="断路器Dashboard监控仪表盘使用"></a>断路器Dashboard监控仪表盘使用</h3><pre><code>断路器Dashboard基础使用和查看，开发时也可以不用这个，作为拓展
-1、加入依赖
-     &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix-dashboard&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-2、启动类增加注解
-    @EnableHystrixDashboard     
-3、配置文件增加endpoint
-    management:
-      endpoints:
-        web:
-          exposure:
-            include: &quot;*&quot;
-4、访问入口
-    http://localhost:8781/hystrix
-    Hystrix Dashboard输入： http://localhost:8781/actuator/hystrix.stream 
-参考资料
-    默认开启监控配置
-    https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-security-actuator
-    配置文件类：spring-configuration-metadata.json</code></pre><h3 id="断路器监控仪表参数讲解和模拟熔断"><a href="#断路器监控仪表参数讲解和模拟熔断" class="headerlink" title="断路器监控仪表参数讲解和模拟熔断"></a>断路器监控仪表参数讲解和模拟熔断</h3><pre><code>断路器监控仪表盘参数和模拟熔断
-1、sse  server-send-event推送到前端
-资料：https://github.com/Netflix/Hystrix/wiki/Dashboard</code></pre>
+<h3 id="什么是分布式核心知识之熔断、降级"><a href="#什么是分布式核心知识之熔断、降级" class="headerlink" title="什么是分布式核心知识之熔断、降级"></a><strong>什么是分布式核心知识之熔断、降级</strong></h3><ol>
+<li><p>熔断<br>保险丝，熔断服务，为了防止整个系统故障，包含子和下游服务</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">下单服务 --&gt;&gt;商品服务</span><br><span class="line">	    --&gt;&gt;用户服务(出现异常--&gt;&gt;熔断)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>降级<br>抛弃一些非核心的接口和数据<br>旅行箱的例子：只带核心的物品，抛弃非核心的，等有条件的时候再去携带这些物品</p>
+</li>
+<li><p>熔断和降级互相交集</p>
+<ul>
+<li>相同点：<br>1)从可用性和可靠性触发，为了防止系统崩溃<br>2)最终让用户体验到的是某些功能暂时不能用</li>
+<li>不同点：<br>1)服务熔断一般是下游服务故障导致的，而服务降级一般是从整体系统负荷考虑，由调用方控制        </li>
+</ul>
+</li>
+</ol>
+<h3 id="Netflix开源组件断路器Hystrix介绍"><a href="#Netflix开源组件断路器Hystrix介绍" class="headerlink" title="Netflix开源组件断路器Hystrix介绍"></a><strong>Netflix开源组件断路器Hystrix介绍</strong></h3><ol>
+<li>什么是Hystrix<br>hystrix对应的中文名字是“豪猪</li>
+<li>为什么要用Hystrix<br>在一个分布式系统里，一个服务依赖多个服务，可能存在某个服务调用失败，比如超时、异常等，如何能够保证在一个依赖出问题的情况下，不会导致整体服务失败，通过Hystrix就可以解决。<br><a href="http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-netflix/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients</a></li>
+<li>提供了熔断、隔离、Fallback、cache、监控等功能</li>
+<li>熔断后怎么处理<br>出现错误之后可以 fallback 错误的处理信息<br>兜底数据</li>
+</ol>
+<h3 id="Feign结合Hystrix断路器"><a href="#Feign结合Hystrix断路器" class="headerlink" title="Feign结合Hystrix断路器"></a><strong>Feign结合Hystrix断路器</strong></h3><ol>
+<li><p>加入依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注意：网上新旧版本问题，所以要以官网为主，不然部分注解会丢失</span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-hystrix<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>增加注解启动类里面增加注解<br>@EnableCircuitBreaker<br>注解越来越多-》 可以用@SpringCloudApplication注解代替，里边包含了众多springcloud的注解，如果想要知道自己用了哪些注解，也可以单独写，不用@SpringCloudApplication</p>
+</li>
+<li><p>API接口编码实战<br>熔断–&gt;&gt;降级<br>最外层api使用，好比异常处理(网络异常，参数或者内部调用问题)<br>api方法上增加 @HystrixCommand(fallbackMethod = “saveOrderFail”)<br>编写fallback方法实现，方法签名一定要和api方法签名一致(注意点！！！)</p>
+</li>
+<li><p>开启feign支持hystrix</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 注意，一定要开启，旧版本默认支持，新版本默认关闭</span></span><br><span class="line"><span class="hljs-attr">feign:</span></span><br><span class="line"><span class="hljs-attr">  hystrix:</span></span><br><span class="line">	<span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>FeignClient(name=”xxx”, fallback=xxx.class ), class需要继承当前FeignClient的类</p>
+</li>
+</ol>
+<h3 id="熔断降级服务异常报警通知"><a href="#熔断降级服务异常报警通知" class="headerlink" title="熔断降级服务异常报警通知"></a><strong>熔断降级服务异常报警通知</strong></h3><ol>
+<li><p>加入redis依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置redis链接信息</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">redis:</span></span><br><span class="line"><span class="hljs-attr">  database:</span> <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-attr">  host:</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span></span><br><span class="line"><span class="hljs-attr">  port:</span> <span class="hljs-number">6379</span></span><br><span class="line"><span class="hljs-attr">  timeout:</span> <span class="hljs-number">2000</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//监控报警</span></span><br><span class="line">String saveOrderKye = <span class="hljs-string">"save-order"</span>;</span><br><span class="line">String sendValue = redisTemplate.opsForValue().get(saveOrderKye);</span><br><span class="line"><span class="hljs-keyword">final</span> String ip = request.getRemoteAddr();</span><br><span class="line"><span class="hljs-keyword">new</span> Thread( ()-&gt;&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (StringUtils.isBlank(sendValue)) &#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"紧急短信，用户下单失败，请离开查找原因,ip地址是="</span>+ip);</span><br><span class="line">        <span class="hljs-comment">//发送一个http请求，调用短信服务 TODO</span></span><br><span class="line">        redisTemplate.opsForValue().set(saveOrderKye, <span class="hljs-string">"save-order-fail"</span>, <span class="hljs-number">20</span>, TimeUnit.SECONDS);</span><br><span class="line">    &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"已经发送过短信，20秒内不重复发送"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="源码分析Hystrix降级策略和调整"><a href="#源码分析Hystrix降级策略和调整" class="headerlink" title="源码分析Hystrix降级策略和调整"></a><strong>源码分析Hystrix降级策略和调整</strong></h3><ol>
+<li><p>查看默认讲解策略 HystrixCommandProperties</p>
+<ul>
+<li>execution.isolation.strategy   隔离策略<br>THREAD 线程池隔离 (默认)<br>SEMAPHORE 信号量<br>信号量适用于接口并发量高的情况，如每秒数千次调用的情况，导致的线程开销过高，通常只适用于非网络调用，执行速度快</li>
+<li>execution.isolation.thread.timeoutInMilliseconds  超时时间，默认 1000毫秒</li>
+<li>execution.timeout.enabled 是否开启超时限制 (一定不要禁用)</li>
+<li>execution.isolation.semaphore.maxConcurrentRequests 隔离策略为 信号量的时候，如果达到最大并发数时，后续请求会被拒绝，默认是10</li>
+<li>官方文档：<a href="https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.strategy</a></li>
+</ul>
+</li>
+<li><p>调整策略</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 超时时间调整</span></span><br><span class="line"><span class="hljs-attr">hystrix:</span></span><br><span class="line"><span class="hljs-attr">  command:</span></span><br><span class="line">	<span class="hljs-attr">default:</span></span><br><span class="line">	  <span class="hljs-attr">execution:</span></span><br><span class="line">		<span class="hljs-attr">isolation:</span></span><br><span class="line">		  <span class="hljs-attr">thread:</span></span><br><span class="line">		    <span class="hljs-attr">timeoutInMilliseconds:</span> <span class="hljs-number">4000</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="断路器Dashboard监控仪表盘使用"><a href="#断路器Dashboard监控仪表盘使用" class="headerlink" title="断路器Dashboard监控仪表盘使用"></a><strong>断路器Dashboard监控仪表盘使用</strong></h3><p>断路器Dashboard基础使用和查看，开发时也可以不用这个，作为拓展。<br>参考资料:<br>默认开启监控配置：<a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-security-actuator" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-security-actuator</a><br>配置文件类：spring-configuration-metadata.json</p>
+<ol>
+<li><p>加入依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-hystrix-dashboard<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动类增加注解</p>
+</li>
+</ol>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@EnableHystrixDashboard</span></span><br></pre></td></tr></table></figure>
+
+
+<ol start="3">
+<li><p>配置文件增加endpoint</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">management:</span></span><br><span class="line"><span class="hljs-attr">  endpoints:</span></span><br><span class="line">	<span class="hljs-attr">web:</span></span><br><span class="line">	  <span class="hljs-attr">exposure:</span></span><br><span class="line">		<span class="hljs-attr">include:</span> <span class="hljs-string">"*"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问入口<br><a href="http://localhost:8781/hystrix" target="_blank" rel="noopener">http://localhost:8781/hystrix</a><br>Hystrix Dashboard输入： <a href="http://localhost:8781/actuator/hystrix.stream" target="_blank" rel="noopener">http://localhost:8781/actuator/hystrix.stream</a> </p>
+</li>
+</ol>
+<h3 id="断路器监控仪表参数讲解和模拟熔断"><a href="#断路器监控仪表参数讲解和模拟熔断" class="headerlink" title="断路器监控仪表参数讲解和模拟熔断"></a><strong>断路器监控仪表参数讲解和模拟熔断</strong></h3><p>sse  server-send-event推送到前端<br>资料：<a href="https://github.com/Netflix/Hystrix/wiki/Dashboard" target="_blank" rel="noopener">https://github.com/Netflix/Hystrix/wiki/Dashboard</a></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -388,7 +354,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -398,7 +364,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -408,7 +374,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -688,6 +654,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -707,7 +681,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -849,7 +823,7 @@
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1021,7 +995,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1049,6 +1030,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1273,7 +1261,7 @@
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1445,7 +1433,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1473,6 +1468,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

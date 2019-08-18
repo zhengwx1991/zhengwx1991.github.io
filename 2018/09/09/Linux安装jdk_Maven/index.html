@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
+    <meta name="description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
 <meta name="keywords" content="Linux,JDK,MAVEN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux安装JDK、MAVEN">
 <meta property="og:url" content="http://zhengwx1991.cn/2018/09/09/Linux安装jdk_Maven/index.html">
 <meta property="og:site_name" content="942猫的博客">
-<meta property="og:description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
+<meta property="og:description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-10T03:38:28.973Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux安装JDK、MAVEN">
-<meta name="twitter:description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
+<meta name="twitter:description" content="下载JDK1.8下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
 <meta name="twitter:image" content="http://zhengwx1991.cn/images/og_image.png">
 
 
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 384 个字)
+                    3 分钟 读完 (大约 389 个字)
                 </span>
                 
                 
@@ -166,10 +166,12 @@
             
         </h1>
         <div class="content">
-            <h6 id="下载JDK1-8"><a href="#下载JDK1-8" class="headerlink" title="下载JDK1.8"></a>下载JDK1.8</h6><pre><code>下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中
-https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</code></pre><a id="more"></a>
-<h6 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h6><pre><code>解压安装包并移动到/usr/local/路径下
-tar -zxvf jdk-8u221-linux-i586.tar.gz -C /usr/local/</code></pre><h6 id="更改环境变量"><a href="#更改环境变量" class="headerlink" title="更改环境变量"></a>更改环境变量</h6><pre><code>vi /etc/profile
+            <h3 id="下载JDK1-8"><a href="#下载JDK1-8" class="headerlink" title="下载JDK1.8"></a><strong>下载JDK1.8</strong></h3><p>下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中<br><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+<a id="more"></a>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a><strong>解压</strong></h3><p>解压安装包并移动到/usr/local/路径下</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u221-linux-i586.tar.gz -C /usr/local/</span><br></pre></td></tr></table></figure>
+
+<h3 id="更改环境变量"><a href="#更改环境变量" class="headerlink" title="更改环境变量"></a><strong>更改环境变量</strong></h3><pre><code>vi /etc/profile
 在最下面，按i进入insert模式，添加一下内容
     JAVA_HOME=/usr/local/jdk1.8.0_211
     export JAVA_HOME
@@ -179,28 +181,22 @@ tar -zxvf jdk-8u221-linux-i586.tar.gz -C /usr/local/</code></pre><h6 id="更改�
     export PATH
 按esc进入命令行模式，再输入:wq  回车保存退出
 激活配置
-    source /etc/profile</code></pre><h6 id="查看版本号确认成功"><a href="#查看版本号确认成功" class="headerlink" title="查看版本号确认成功"></a>查看版本号确认成功</h6><pre><code>java -version
+    source /etc/profile</code></pre><h3 id="查看版本号确认成功"><a href="#查看版本号确认成功" class="headerlink" title="查看版本号确认成功"></a><strong>查看版本号确认成功</strong></h3><pre><code>java -version
 
 系统出现如下提示，表示安装成功
 java version &quot;1.8.0_211&quot;
 Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
-Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)</code></pre><h6 id="下载maven"><a href="#下载maven" class="headerlink" title="下载maven"></a>下载maven</h6><pre><code>https://maven.apache.org/download.cgi
-下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中</code></pre><h6 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a>解压</h6><pre><code>解压安装包并移动到/usr/local/路径下
-tar -zxvf apache-maven-3.6.1-bin.tar.gz -C /usr/local/</code></pre><h6 id="更改环境变量-1"><a href="#更改环境变量-1" class="headerlink" title="更改环境变量"></a>更改环境变量</h6><pre><code>vi /etc/profile
-在最下面，按i进入insert模式，添加一下内容
-    MAVEN_HOME=/usr/local/apache-maven-3.6.1
-    export MAVEN_HOME
-    PATH=$PATH:$MAVEN_HOME/bin
-    export PATH
-按esc进入命令行模式，再输入:wq  回车保存退出
-激活配置
-    source /etc/profile</code></pre><h6 id="查看版本号确认成功-1"><a href="#查看版本号确认成功-1" class="headerlink" title="查看版本号确认成功"></a>查看版本号确认成功</h6><pre><code>mvn -version
+Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)</code></pre><hr>
+<h3 id="下载maven"><a href="#下载maven" class="headerlink" title="下载maven"></a><strong>下载maven</strong></h3><p>下载.tar.gz后缀的文件到本地，下载完将文件拷入服务器中<br><a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">https://maven.apache.org/download.cgi</a></p>
+<h3 id="解压-1"><a href="#解压-1" class="headerlink" title="解压"></a><strong>解压</strong></h3><p>解压安装包并移动到/usr/local/路径下</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-maven-3.6.1-bin.tar.gz -C /usr/local/</span><br></pre></td></tr></table></figure>
 
-系统出现如下提示，表示安装成功
-Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-05T03:00:29+08:00)
-Maven home: /usr/local/apache-maven-3.6.1
-Java version: 1.8.0_211, vendor: Oracle Corporation, runtime: /usr/local/jdk1.8.0_211/jre
-Default locale: en_US, platform encoding: UTF-8</code></pre>
+<h6 id="更改环境变量-1"><a href="#更改环境变量-1" class="headerlink" title="更改环境变量"></a>更改环境变量</h6><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br><span class="line">在最下面，按i进入insert模式，添加一下内容</span><br><span class="line">	MAVEN_HOME=/usr/local/apache-maven-3.6.1</span><br><span class="line">	export MAVEN_HOME</span><br><span class="line">	PATH=$PATH:$MAVEN_HOME/bin</span><br><span class="line">	export PATH</span><br><span class="line">按esc进入命令行模式，再输入:wq  回车保存退出</span><br><span class="line">激活配置</span><br><span class="line">	source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看版本号确认成功-1"><a href="#查看版本号确认成功-1" class="headerlink" title="查看版本号确认成功"></a><strong>查看版本号确认成功</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mvn -version</span><br><span class="line"></span><br><span class="line">系统出现如下提示，表示安装成功</span><br><span class="line">Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-05T03:00:29+08:00)</span><br><span class="line">Maven home: /usr/local/apache-maven-3.6.1</span><br><span class="line">Java version: 1.8.0_211, vendor: Oracle Corporation, runtime: /usr/local/jdk1.8.0_211/jre</span><br><span class="line">Default locale: en_US, platform encoding: UTF-8</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -262,8 +258,8 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/09/Linux常用命令/">
-                <span class="level-item">Linux常用命令</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/09/ZooKeeper使用/">
+                <span class="level-item">ZooKeeper的使用</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -306,7 +302,7 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -316,7 +312,7 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -326,7 +322,7 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -606,6 +602,14 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -625,7 +629,7 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -767,7 +771,7 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -939,7 +943,14 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -967,6 +978,13 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1191,7 +1209,7 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1363,7 +1381,14 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1391,6 +1416,13 @@ Default locale: en_US, platform encoding: UTF-8</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

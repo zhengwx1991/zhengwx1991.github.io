@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="微服务下的链路追踪什么是分布式链路追踪系统，及使用好处">
+    <meta name="description" content="官方文档http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#sleuth-adding-project">
 <meta name="keywords" content="SpringCloud,Sleuth,ZipKin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringCloud系列-链路追踪系统Sleuth和ZipKin">
 <meta property="og:url" content="http://zhengwx1991.cn/2018/10/14/SpringCloud系列-15-链路追踪系统Sleuth和ZipKin/index.html">
 <meta property="og:site_name" content="942猫的博客">
-<meta property="og:description" content="微服务下的链路追踪什么是分布式链路追踪系统，及使用好处">
+<meta property="og:description" content="官方文档http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#sleuth-adding-project">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-15T12:56:27.288Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud系列-链路追踪系统Sleuth和ZipKin">
-<meta name="twitter:description" content="微服务下的链路追踪什么是分布式链路追踪系统，及使用好处">
+<meta name="twitter:description" content="官方文档http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#sleuth-adding-project">
 <meta name="twitter:image" content="http://zhengwx1991.cn/images/og_image.png">
 
 
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 697 个字)
+                    4 分钟 读完 (大约 615 个字)
                 </span>
                 
                 
@@ -166,56 +166,54 @@
             
         </h1>
         <div class="content">
-            <h3 id="微服务下的链路追踪"><a href="#微服务下的链路追踪" class="headerlink" title="微服务下的链路追踪"></a>微服务下的链路追踪</h3><pre><code>什么是分布式链路追踪系统，及使用好处</code></pre><a id="more"></a>
-<h3 id="SpringCloud的链路追踪组件Sleuth"><a href="#SpringCloud的链路追踪组件Sleuth" class="headerlink" title="SpringCloud的链路追踪组件Sleuth"></a>SpringCloud的链路追踪组件Sleuth</h3><pre><code>分布式链路追踪组件Sleuth
-1、官方文档
-http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#sleuth-adding-project
-2、什么是Sleuth
-    一个组件，专门用于记录链路数据的开源组件
-    [order-service,96f95a0dd81fe3ab,852ef4cfcdecabf3,false]
-    1、第一个值，spring.application.name的值
-    2、第二个值，96f95a0dd81fe3ab ，sleuth生成的一个ID，叫Trace ID，用来标识一条请求链路，一条请求链路中包含一个Trace ID，多个Span ID
-    3、第三个值，852ef4cfcdecabf3、spanid 基本的工作单元，获取元数据，如发送一个http
-    4、第四个值：false，是否要将该信息输出到zipkin服务中来收集和展示。
-3、添加依赖
-    &lt;dependency&gt;
-     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-     &lt;artifactId&gt;spring-cloud-starter-sleuth&lt;/artifactId&gt;
-    &lt;/dependency&gt;</code></pre><h3 id="SpringCloud的链路追踪组件Sleuth常见问题说明"><a href="#SpringCloud的链路追踪组件Sleuth常见问题说明" class="headerlink" title="SpringCloud的链路追踪组件Sleuth常见问题说明"></a>SpringCloud的链路追踪组件Sleuth常见问题说明</h3><pre><code>分布式链路追踪组件Sleuth常见问题说明</code></pre><h3 id="可视化链路追踪系统Zipkin部署"><a href="#可视化链路追踪系统Zipkin部署" class="headerlink" title="可视化链路追踪系统Zipkin部署"></a>可视化链路追踪系统Zipkin部署</h3><pre><code>1、什么是zipkin
-    官网：https://zipkin.io/
-    大规模分布式系统的APM工具（Application Performance Management）,基于Google Dapper的基础实现，和sleuth结合可以提供可视化web界面分析调用链路耗时情况            
-2、同类产品
-    鹰眼（EagleEye）
-    CAT
-    twitter开源zipkin，结合sleuth
-    Pinpoint，运用JavaAgent字节码增强技术
-    StackDriver Trace (Google) 
-3、开始使用
-    https://github.com/openzipkin/zipkin
-    https://zipkin.io/pages/quickstart.html
-    zipkin组成：Collector、Storage、Restful API、Web UI组成
-4、知识拓展：OpenTracing
-OpenTracing 已进入 CNCF，正在为全球的分布式追踪，提供统一的概念和数据标准。 
-通过提供平台无关、厂商无关的 API，使得开发人员能够方便的添加（或更换）追踪系统的实现。
-推荐阅读：
-    http://blog.daocloud.io/cncf-3/
-    https://www.zhihu.com/question/27994350
-    https://yq.aliyun.com/articles/514488?utm_content=m_43347</code></pre><h3 id="链路追踪组件Zipkin-Sleuth"><a href="#链路追踪组件Zipkin-Sleuth" class="headerlink" title="链路追踪组件Zipkin+Sleuth"></a>链路追踪组件Zipkin+Sleuth</h3><pre><code>使用Zipkin+Sleuth业务分析调用链路分析        
-1、文档
-    http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#_sleuth_with_zipkin_via_http          
-sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进行跟踪信息的存储以及提供Rest API即可，Zipkin UI调用其API接口进行数据展示
-默认存储是内存，可也用mysql、或者elasticsearch等存储
-2、加入依赖
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-里面包含 spring-cloud-starter-sleuth、spring-cloud-sleuth-zipkin
-3、文档说明
-    http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#_features_2
-4、配置zipkin.base-url
-5、配置采样百分闭spring.sleuth.sampler
-推荐资料：https://blog.csdn.net/jrn1012/article/details/77837710</code></pre>
+            <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><strong>官方文档</strong></h3><p><a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#sleuth-adding-project" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#sleuth-adding-project</a></p>
+<a id="more"></a>
+<h3 id="SpringCloud的链路追踪组件Sleuth"><a href="#SpringCloud的链路追踪组件Sleuth" class="headerlink" title="SpringCloud的链路追踪组件Sleuth"></a><strong>SpringCloud的链路追踪组件Sleuth</strong></h3><ol>
+<li><p>什么是Sleuth<br>一个组件，专门用于记录链路数据的开源组件</p>
+<p> [order-service,96f95a0dd81fe3ab,852ef4cfcdecabf3,false]</p>
+<ul>
+<li>第一个值，spring.application.name的值</li>
+<li>第二个值，96f95a0dd81fe3ab ，sleuth生成的一个ID，叫Trace ID，用来标识一条请求链路，一条请求链路中包含一个Trace ID，多个Span ID</li>
+<li>第三个值，852ef4cfcdecabf3、spanid 基本的工作单元，获取元数据，如发送一个http</li>
+<li>第四个值：false，是否要将该信息输出到zipkin服务中来收集和展示</li>
+</ul>
+</li>
+<li><p>添加依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-sleuth<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="可视化链路追踪系统Zipkin部署"><a href="#可视化链路追踪系统Zipkin部署" class="headerlink" title="可视化链路追踪系统Zipkin部署"></a><strong>可视化链路追踪系统Zipkin部署</strong></h3><ol>
+<li><p>什么是zipkin<br>大规模分布式系统的APM工具（Application Performance Management）,基于Google Dapper的基础实现，和sleuth结合可以提供可视化web界面分析调用链路耗时情况<br>官网：<a href="https://zipkin.io/" target="_blank" rel="noopener">https://zipkin.io/</a></p>
+</li>
+<li><p>同类产品<br>鹰眼（EagleEye）<br>CAT<br>twitter开源zipkin，结合sleuth<br>Pinpoint，运用JavaAgent字节码增强技术<br>StackDriver Trace (Google) </p>
+</li>
+<li><p>开始使用<br><a href="https://github.com/openzipkin/zipkin" target="_blank" rel="noopener">https://github.com/openzipkin/zipkin</a><br><a href="https://zipkin.io/pages/quickstart.html" target="_blank" rel="noopener">https://zipkin.io/pages/quickstart.html</a><br>zipkin组成：Collector、Storage、Restful API、Web UI组成</p>
+</li>
+<li><p>知识拓展：OpenTracing<br>OpenTracing 已进入 CNCF，正在为全球的分布式追踪，提供统一的概念和数据标准。<br>通过提供平台无关、厂商无关的 API，使得开发人员能够方便的添加（或更换）追踪系统的实现。</p>
+</li>
+<li><p>推荐阅读<br><a href="http://blog.daocloud.io/cncf-3/" target="_blank" rel="noopener">http://blog.daocloud.io/cncf-3/</a><br><a href="https://www.zhihu.com/question/27994350" target="_blank" rel="noopener">https://www.zhihu.com/question/27994350</a><br><a href="https://yq.aliyun.com/articles/514488?utm_content=m_43347" target="_blank" rel="noopener">https://yq.aliyun.com/articles/514488?utm_content=m_43347</a></p>
+</li>
+</ol>
+<h3 id="链路追踪组件Zipkin-Sleuth"><a href="#链路追踪组件Zipkin-Sleuth" class="headerlink" title="链路追踪组件Zipkin+Sleuth"></a><strong>链路追踪组件Zipkin+Sleuth</strong></h3><p>使用Zipkin+Sleuth业务分析调用链路分析</p>
+<p>推荐资料：<a href="https://blog.csdn.net/jrn1012/article/details/77837710" target="_blank" rel="noopener">https://blog.csdn.net/jrn1012/article/details/77837710</a></p>
+<ol>
+<li><p>官方文档<br><a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#_sleuth_with_zipkin_via_http" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#_sleuth_with_zipkin_via_http</a><br>sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进行跟踪信息的存储以及提供Rest API即可，Zipkin UI调用其API接口进行数据展示<br>默认存储是内存，可也用mysql、或者elasticsearch等存储</p>
+</li>
+<li><p>加入依赖</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-zipkin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>里面包含 spring-cloud-starter-sleuth、spring-cloud-sleuth-zipkin</p>
+</li>
+<li><p>文档说明</p>
+<p><a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#_features_2" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html#_features_2</a></p>
+</li>
+<li><p>配置zipkin.base-url</p>
+</li>
+<li><p>配置采样百分闭spring.sleuth.sampler</p>
+</li>
+</ol>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -321,7 +319,7 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -331,7 +329,7 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -341,7 +339,7 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -621,6 +619,14 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -640,7 +646,7 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -782,7 +788,7 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -954,7 +960,14 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -982,6 +995,13 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1206,7 +1226,7 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1378,7 +1398,14 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1406,6 +1433,13 @@ sleuth收集跟踪信息通过http请求发送给zipkin server，zipkinserver进
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

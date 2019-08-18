@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="下载MySQLwget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm安装mysql源yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
+    <meta name="description" content="下载MySQL1wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  安装MySQL源1yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
 <meta name="keywords" content="Linux,MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux安装MySQL">
 <meta property="og:url" content="http://zhengwx1991.cn/2018/09/09/Linux安装MySQL/index.html">
 <meta property="og:site_name" content="942猫的博客">
-<meta property="og:description" content="下载MySQLwget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm安装mysql源yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
+<meta property="og:description" content="下载MySQL1wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  安装MySQL源1yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zhengwx1991.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-10T03:37:26.772Z">
+<meta property="og:updated_time" content="2019-08-18T10:02:19.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux安装MySQL">
-<meta name="twitter:description" content="下载MySQLwget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm安装mysql源yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
+<meta name="twitter:description" content="下载MySQL1wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm  安装MySQL源1yum -y localinstall mysql57-community-release-el7-11.noarch.rpm">
 <meta name="twitter:image" content="http://zhengwx1991.cn/images/og_image.png">
 
 
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 226 个字)
+                    2 分钟 读完 (大约 235 个字)
                 </span>
                 
                 
@@ -166,31 +166,24 @@
             
         </h1>
         <div class="content">
-            <h4 id="下载MySQL"><a href="#下载MySQL" class="headerlink" title="下载MySQL"></a>下载MySQL</h4><pre><code>wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</code></pre><h4 id="安装mysql源"><a href="#安装mysql源" class="headerlink" title="安装mysql源"></a>安装mysql源</h4><pre><code>yum -y localinstall mysql57-community-release-el7-11.noarch.rpm</code></pre><a id="more"></a>
-<h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><pre><code>yum -y install mysql-community-server</code></pre><h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><pre><code>systemctl start mysqld</code></pre><h4 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h4><pre><code>systemctl enable mysqld
-systemctl daemon-reload</code></pre><h4 id="修改root本地登录密码"><a href="#修改root本地登录密码" class="headerlink" title="修改root本地登录密码"></a>修改root本地登录密码</h4><pre><code>vi /etc/my.cnf
-在[mysqld]后面任意一行添加&quot;&quot;用来跳过密码验证的过程
-skip-grant-tables
-vi /var/log/mysqld.log
-password 改成!TestTest
-// root 登陆
-mysql -u root -p
-ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;!Test123456&apos;;</code></pre><h4 id="设置允许远程登录"><a href="#设置允许远程登录" class="headerlink" title="设置允许远程登录"></a>设置允许远程登录</h4><pre><code>flush privileges;
-GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;!TestTest&apos; WITH GRANT OPTION;
-exit;</code></pre><h4 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h4><pre><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent
-// 刷新防火墙规则
-firewall-cmd --reload
-// 验证端口,查询防火墙开放端口
-firewall-cmd --zone=public --list-port
-// 重启防火墙
-systemctl restart firewalld.service</code></pre><h4 id="配置默认编码为UTF-8"><a href="#配置默认编码为UTF-8" class="headerlink" title="配置默认编码为UTF-8"></a>配置默认编码为UTF-8</h4><pre><code>vi /etc/my.cnf
-[mysqld]
-character_set_server=utf8
-init_connect=&apos;SET NAMES utf8&apos;
-// 重启服务
-systemctl restart mysqld
-// 查看编码
-show variables like &apos;%character%&apos;;</code></pre>
+            <h3 id="下载MySQL"><a href="#下载MySQL" class="headerlink" title="下载MySQL"></a><strong>下载MySQL</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装MySQL源"><a href="#安装MySQL源" class="headerlink" title="安装MySQL源"></a><strong>安装MySQL源</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y localinstall mysql57-community-release-el7-11.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a><strong>安装MySQL</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-community-server</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a><strong>启动</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a><strong>设置开机启动</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable mysqld</span><br><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改root本地登录密码"><a href="#修改root本地登录密码" class="headerlink" title="修改root本地登录密码"></a><strong>修改root本地登录密码</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line">在[mysqld]后面任意一行添加""用来跳过密码验证的过程</span><br><span class="line">skip-grant-tables</span><br><span class="line">vi /var/log/mysqld.log</span><br><span class="line">password 改成!TestTest</span><br><span class="line">// root 登陆</span><br><span class="line">mysql -u root -p</span><br><span class="line">ALTER USER 'root'@'localhost' IDENTIFIED BY '!Test123456';</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置允许远程登录"><a href="#设置允许远程登录" class="headerlink" title="设置允许远程登录"></a><strong>设置允许远程登录</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '!TestTest' WITH GRANT OPTION;</span><br><span class="line">exit;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a><strong>设置防火墙</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line">// 刷新防火墙规则</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">// 验证端口,查询防火墙开放端口</span><br><span class="line">firewall-cmd --zone=public --list-port</span><br><span class="line">// 重启防火墙</span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置默认编码为UTF-8"><a href="#配置默认编码为UTF-8" class="headerlink" title="配置默认编码为UTF-8"></a><strong>配置默认编码为UTF-8</strong></h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line">[mysqld]</span><br><span class="line">character_set_server=utf8</span><br><span class="line">init_connect='SET NAMES utf8'</span><br><span class="line">// 重启服务</span><br><span class="line">systemctl restart mysqld</span><br><span class="line">// 查看编码</span><br><span class="line">show variables like '%character%';</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -296,7 +289,7 @@ show variables like &apos;%character%&apos;;</code></pre>
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -306,7 +299,7 @@ show variables like &apos;%character%&apos;;</code></pre>
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -316,7 +309,7 @@ show variables like &apos;%character%&apos;;</code></pre>
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        37
                     </p>
                 </div>
             </div>
@@ -596,6 +589,14 @@ show variables like &apos;%character%&apos;;</code></pre>
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/ZooKeeper/">
+            <span class="level-start">
+                <span class="level-item">ZooKeeper</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/博客/">
             <span class="level-start">
                 <span class="level-item">博客</span>
@@ -615,7 +616,7 @@ show variables like &apos;%character%&apos;;</code></pre>
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
+        <a href="/tags/Bus/" style="font-size: 10px;">Bus</a> <a href="/tags/Config/" style="font-size: 10px;">Config</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Eureka/" style="font-size: 10px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 10px;">Feign</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/GitLab/" style="font-size: 10px;">GitLab</a> <a href="/tags/Hystrix/" style="font-size: 10px;">Hystrix</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/LogBack/" style="font-size: 10px;">LogBack</a> <a href="/tags/MAVEN/" style="font-size: 10px;">MAVEN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Nexus/" style="font-size: 10px;">Nexus</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Redish/" style="font-size: 10px;">Redish</a> <a href="/tags/Sleuth/" style="font-size: 10px;">Sleuth</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16.67px;">SpringCloud</a> <a href="/tags/ZipKin/" style="font-size: 10px;">ZipKin</a> <a href="/tags/ZooKeeper/" style="font-size: 10px;">ZooKeeper</a> <a href="/tags/Zuul/" style="font-size: 10px;">Zuul</a> <a href="/tags/banner/" style="font-size: 10px;">banner</a> <a href="/tags/devtools/" style="font-size: 10px;">devtools</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/多环境/" style="font-size: 10px;">多环境</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/异步任务/" style="font-size: 10px;">异步任务</a> <a href="/tags/热部署/" style="font-size: 10px;">热部署</a>
     </div>
 </div>
 
@@ -757,7 +758,7 @@ show variables like &apos;%character%&apos;;</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -929,7 +930,14 @@ show variables like &apos;%character%&apos;;</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -957,6 +965,13 @@ show variables like &apos;%character%&apos;;</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1181,7 +1196,7 @@ show variables like &apos;%character%&apos;;</code></pre>
                     <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1353,7 +1368,14 @@ show variables like &apos;%character%&apos;;</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Redis/">
                         <span class="tag">Redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Redish/">
+                        <span class="tag">Redish</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1381,6 +1403,13 @@ show variables like &apos;%character%&apos;;</code></pre>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ZipKin/">
                         <span class="tag">ZipKin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ZooKeeper/">
+                        <span class="tag">ZooKeeper</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
